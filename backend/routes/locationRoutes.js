@@ -1,0 +1,1 @@
+//api pull routes for locations
