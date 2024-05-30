@@ -1,0 +1,1 @@
+//spin up server that connects to each route and mongo db
