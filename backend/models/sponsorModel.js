@@ -7,19 +7,32 @@ const sponsorSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  description: {
+  email: {
     type: String,
     required: false,
   },
-  addedUsers: {
-    type: Array,
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "user",
     required: false,
+  },
+  location: {
+    type: String,
+    required: true,
+  },
+  datesOfSponsoring: {
+    type: Array,
+    required: true,
   },
   timestamp: {
     type: Date,
     default: Date.now,
   },
+  isGuest: {
+    type: Boolean,
+    default: true,
+  },
 });
 
 // Create a model for a User
-module.exports = mongoose.model("sponsor", sponorSchema);
+module.exports = mongoose.model("sponsor", sponsorSchema);
