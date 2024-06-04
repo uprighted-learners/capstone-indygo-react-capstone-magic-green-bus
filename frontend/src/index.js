@@ -1,11 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
 
-// import Map from "ol/Map.js";
-// import View from "ol/View.js";
-// import OSM from "ol/source/OSM.js";
-// import TileLayer from "ol/layer/Tile.js";
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
 
 // new Map({
 //   layers: [new TileLayer({ source: new OSM() })],
@@ -18,3 +16,4 @@ import App from "./App";
 
 // const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(<App />);
+
