@@ -1,10 +1,9 @@
 //login and register routes 
+const express = require('express');
+const router = express.Router();
+const userControllers = require('../controllers/authControllers.js')
 
+ router.post('/login', userControllers.loginUser)
 
-//login user - post - /login/user
-
-
-//register user - post - /create/user
-
-
-//delete user - delete - /delete/user/:id
+router.post('/register', userControllers.registerNewUser)
+module.exports = router;

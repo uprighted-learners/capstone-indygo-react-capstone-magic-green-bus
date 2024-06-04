@@ -10,3 +10,4 @@ const userSchema = new mongoose.Schema({
   isAdmin: { type: Boolean, default: false },
 });
 module.exports = mongoose.model("user", userSchema); //data  has a dresscode
+
