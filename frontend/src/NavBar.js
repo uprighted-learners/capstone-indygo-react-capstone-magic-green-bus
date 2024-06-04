@@ -1,27 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './NavBar.css';
 
 export default function NavBar() {
   return (
     <nav>
       <ul>
         <li>
-          <Link to='/'>Home</Link>
+          <Link to='/'>HOME</Link>
         </li>
         <li>
-          <Link to='/about'>About</Link>
+          <Link to='/about'>ABOUT</Link>
         </li>
         <li>
-          <Link to='/Auth'>Auth</Link>
+          <Link to='/Auth'>AUTH</Link>
         </li>
         <li>
-          <Link to='/contacts'>contacts</Link>
+          <Link to='/contacts'>CONTACTS</Link>
         </li>
         <li>
-          <Link to='/locations'>Locations</Link>
+          <Link to='/locations'>LOCATIONS</Link>
         </li>
         <li>
-          <Link to='/sponsor'>Sponsor</Link>
+          <Link to='/sponsor'>SPONSOR</Link>
         </li>
       </ul>
     </nav>
