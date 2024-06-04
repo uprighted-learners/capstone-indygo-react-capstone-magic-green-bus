@@ -1,7 +1,10 @@
-import React from 'react'
+import React from "react";
+import Sponsor from "./components/Sponsor";
 
 export default function App() {
   return (
-    <div>App</div>
-  )
+    <>
+      <Sponsor />
+    </>
+  );
 }
