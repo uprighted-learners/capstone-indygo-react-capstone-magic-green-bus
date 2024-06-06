@@ -8,6 +8,7 @@ import Contact from './components/Contact';
 import Locations from './components/Locations';
 import Sponsor from './components/Sponsor';
 
+
 function App() {
   return (
     <Router>
@@ -25,4 +26,3 @@ function App() {
 }
 
 export default App;
-
