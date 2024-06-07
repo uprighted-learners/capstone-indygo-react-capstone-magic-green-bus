@@ -1,8 +1,6 @@
 //form sign up routes
-const express = require("express");
-const router = express.Router();
-
-const sponsorController = require("../controllers/sponsorController");
+const router = require("express").Router();
+const sponsorController = require("../controllers/sponsorControllers");
 //get all sign ups - get - /sponsor/all
 router.get("/all", sponsorController.getAllSponsors);
 
