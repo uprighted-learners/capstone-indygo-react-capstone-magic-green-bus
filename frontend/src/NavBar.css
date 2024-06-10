@@ -1,0 +1,33 @@
+nav {
+  margin-top: 10%;
+  width: 100%;
+  background-color: black; /* Optional: background color for the nav */
+  padding: 10px;
+}
+
+ul {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0;
+  margin: 20px;
+  display: flex;
+  flex-direction: row; /* Arrange items vertically */
+  align-items: flex-start; /* Align items to the start of the column */
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2.2em;
+}
+
+li {
+  margin: 20px 40px; /* Add some space between the items */
+}
+
+a {
+  text-decoration: none; /* Remove underline from links */
+  color: whitesmoke; /* Optional: change link color */
+  font-style: italic;
+}
+
+a:hover {
+  color: #0056b3; /* Optional: change link color on hover */
+}
+
