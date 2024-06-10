@@ -15,12 +15,14 @@ function App() {
       <NavBar />
       <Auth />
       <Routes>
-        <Route path='/' components={<Home />} />
-        <Route path='/about' components={<About />} />
-        <Route path='/Auth' components={<Auth />} />
-        <Route path='/contact' components={<Contact />} />
-        <Route path='/locations' components={<Locations />} />
-        <Route path='/sponsor' components={<Sponsor />} />
+
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/auth' element={<Auth />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/locations' element={<Locations />} />
+        <Route path='/sponsor' element={<Sponsor />} />
+
       </Routes>
     </Router>
   );
