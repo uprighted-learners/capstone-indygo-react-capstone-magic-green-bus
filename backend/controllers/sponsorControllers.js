@@ -37,4 +37,3 @@ export const getSponsorById = async (req, res) => {
 //function for deleting sponsor sign up
 //export const deleteSponsor = async (req, res) => {
     
-
