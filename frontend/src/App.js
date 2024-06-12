@@ -12,6 +12,7 @@ function App() {
   return (
     <Router>
       <NavBar />
+      <Auth />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
@@ -25,3 +26,4 @@ function App() {
 }
 
 export default App;
+

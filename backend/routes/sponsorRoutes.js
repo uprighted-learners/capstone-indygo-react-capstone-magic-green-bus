@@ -17,3 +17,4 @@ router.put("/update/:id", sponsorController.updateSponsor);
 router.delete("/delete/:id", sponsorController.deleteSponsor);
 
 module.exports = router;
+

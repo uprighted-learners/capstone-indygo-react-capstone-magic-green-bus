@@ -43,7 +43,6 @@ exports.updateSponsor = async (req, res) => {
     res.status(409).json({ message: error.message });
   }
 };
-
 //DELETE == 'delete' a sponsor
 exports.deleteSponsor = async (req, res) => {
   const { id } = req.params;
