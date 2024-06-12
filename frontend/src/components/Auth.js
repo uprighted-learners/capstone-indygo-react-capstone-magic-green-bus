@@ -11,8 +11,8 @@ export default function Auth() {
 
   const loginUser = async () => {
     try {
-      const response = await fetch('http://localhost:3000/login', {
-        method: 'POST',
+      const response = await fetch("http://localhost:3000/users/login", {
+        method: "POST",
         headers: {
           'Content-Type': 'application/json',
         },
@@ -54,10 +54,11 @@ export default function Auth() {
         }),
       });
       if (!response.ok) {
-        throw new Error('Signup failed');
+        throw new Error("Signup failed");//this crashes backend 
       }
       alert('Signup successful, please log in.');
       setIsLoginMode(true);
+      navigate('/')
     } catch (error) {
       console.error('Signup error:', error.message);
     }
@@ -75,10 +76,25 @@ export default function Auth() {
   const toggleLogin = () => {
     setIsLoginMode(!isLoginMode);
   };
+  const logoutUser = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("username");
+    setIsLoginMode(false);
+    navigate("/");
+  };
+  // if(setIsLoggedIn(true)){
+  //  document.getElementById("logOutBtn").disable = false
+  // }
 
   return (
-    <div>
-      <h1>{isLoginMode ? 'Login' : 'Sign Up'}</h1>
+   <div>
+    {isLoginMode ? (
+        <div>
+          <button onClick={logoutUser}>Logout</button>
+        </div>
+      ) : (
+        <div>
+      <h1>{isLoginMode ? "Login" : "Sign Up"}</h1>
       <form onSubmit={handleSubmit}>
         {!isLoginMode ? (
           <>
@@ -110,17 +126,21 @@ export default function Auth() {
               />
             </label>
           </>
-        ) : (
-          <div>Todo</div>
-        )}{' '}
-        {/*come back to make login page here */}
-        <button type='submit'>{isLoginMode ? 'Login' : 'Sign Up'}</button>
+        ): <div>
+          <label>username: 
+          <input type='username' value={username} onChange={(e) => setUsername(e.target.value)} required></input>
+          </label>
+          <label>password:<input type='password' value={password} onChange={(e)=> setPassword(e.target.value)} required></input></label>
+         </div>}
+        <button type="submit">{isLoginMode ? "Login" : "Sign Up"}</button>
       </form>
       <p>
         {isLoginMode ? "Don't have an account?" : 'Already have an account?'}
         <button type='button' onClick={toggleLogin}>
           {isLoginMode ? 'Sign Up' : 'Login'}
         </button>
+        <button type='button' onClick={(logoutUser)}Logout>Logout</button>
+
       </p>
       <div className='auth-pic'>
         <img
@@ -130,6 +150,7 @@ export default function Auth() {
         />
       </div>
     </div>
-  );
+  )}
+</div>
+  ) 
 }
-

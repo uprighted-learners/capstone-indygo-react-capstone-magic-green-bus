@@ -1,7 +1,7 @@
 //login and register functionallity 
 const User = require('../models/userModel')//tranfering our User model that will contain the "dress code" for our data
 require('dotenv').config()//configures our dotenv file allowing use of our envioirmental variables
-const bcrypt = require('bcrypt');//allowing our file to depend on bcrypt to encrypt passwords when sent to the  database
+const bcrypt = require('bcrypt');//allowing our file to depend on bcrypt to encrypt passwords when sent to the  database 
 const jwt = require('jsonwebtoken');//authentication token depending on jsonwebteoken being installed
 const SALT = process.env.SALT//uses enviroment variable assuming the salt rounds are set via .env
 
@@ -70,13 +70,13 @@ if(!validAdminPassword){
 }
 exports.loginUser = async (req, res) => {
     try {
-      const user = await User.findOne({ email: req.body.email });
-      if (!user) {
-        res.status(400).json({ message: "Invalid Credentials" });
-      }
+      const user = await User.findOne({username: req.body.username});
+      if (!user) 
+      throw new Error('invalid credentials')
+      
       const validPassword = await bcrypt.compare(req.body.password, user.password);
       if (!validPassword) {
-        res.status(400).json({ message: "Invalid Credentials" });
+      throw new Error('invalid credentials')
       }
       const token = jwt.sign({ id: user._id }, SALT);
       res.json({ token });
@@ -115,6 +115,8 @@ if (!user) {
         res.status(500).json({ message: "Internal server error" });
     }
   }
+  //is admin, or user id matches updating/ deleting a user
+  //else is current user = user.find { id: req.params.id }
 //should a user be allowed to delete their account
 //should a user be allowed to update their account given theirs no name s or profiles dispalyed
 //should we implement admin perms for these reasons to see all users and update/delete their accounts
