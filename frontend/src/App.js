@@ -8,24 +8,22 @@ import Contact from './components/Contact';
 import Locations from './components/Locations';
 import Sponsor from './components/Sponsor';
 
-
 function App() {
   return (
     <Router>
       <NavBar />
       <Auth />
       <Routes>
-
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/auth' element={<Auth />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/locations' element={<Locations />} />
         <Route path='/sponsor' element={<Sponsor />} />
-
       </Routes>
     </Router>
   );
 }
 
 export default App;
+

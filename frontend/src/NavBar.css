@@ -1,11 +1,11 @@
-nav {
+.navWrapper {
+  justify-self: center;
   margin-top: 10%;
-  width: 100%;
   background-color: black; /* Optional: background color for the nav */
   padding: 10px;
 }
 
-ul {
+.navList {
   list-style-type: none; /* Remove bullet points */
   padding: 0;
   margin: 20px;
@@ -17,7 +17,7 @@ ul {
   font-size: 2.2em;
 }
 
-li {
+.navItem {
   margin: 20px 40px; /* Add some space between the items */
 }
 
