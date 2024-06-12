@@ -5,12 +5,10 @@ require('dotenv').config(); // Importing the dotenv module
 const app = express(); // Importing the express module
 const { connect } = require('./db.js');
 
-
 //middleware setup
 app.use(express.json()); // Importing the express module
 app.use(cors()); // Uncomment this line if you want to use CORS middleware
 app.use(express.static('public')); //this public folder is where we will store our images
-
 
 const authRoutes = require('./routes/authRoutes');
 app.use('/users', authRoutes);
@@ -23,6 +21,6 @@ app.get('/green/bus', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    connect()
+  connect();
   console.log(`Server is running on port ${PORT}`);
 });
