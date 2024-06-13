@@ -24,6 +24,9 @@ export default function NavBar() {
         <li>
           <Link to='/sponsor'>SPONSOR</Link>
         </li>
+        <li>
+          <Link to='/map'>MAP</Link>
+        </li>
       </ul>
     </nav>
   );
