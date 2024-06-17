@@ -13,7 +13,7 @@ export default function NavBar() {
           <Link to='/about'>ABOUT</Link>
         </li>
         <li>
-          <Link to='/Auth'>AUTH</Link>
+          <Link to='/Auth'>LOGIN</Link>
         </li>
         <li>
           <Link to='/contacts'>CONTACTS</Link>
