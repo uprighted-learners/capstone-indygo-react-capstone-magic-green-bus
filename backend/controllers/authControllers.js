@@ -35,6 +35,7 @@ console.log(error)
 res.status(404).json({message: "internal server error"})
     }
 }
+
 exports.registerAdmin = async (req, res) => {
     try{
         const hashedPassword = await bcrypt.hash(req.body.password)
@@ -71,13 +72,16 @@ if(!validAdminPassword){
 exports.loginUser = async (req, res) => {
     try {
       const user = await User.findOne({username: req.body.username});
+      console.log(user)
       if (!user) 
       throw new Error('invalid credentials')
+       
       
+     
       const validPassword = await bcrypt.compare(req.body.password, user.password);
-      if (!validPassword) {
+      if (!validPassword) 
       throw new Error('invalid credentials')
-      }
+      
       const token = jwt.sign({ id: user._id }, SALT);
       res.json({ token });
     } catch (error) {
