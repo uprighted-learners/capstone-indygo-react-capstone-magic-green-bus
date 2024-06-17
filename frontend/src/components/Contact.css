@@ -1,0 +1,12 @@
+.img-home-wrapper img {
+  border: 5px solid black;
+}
+
+.indy-contact-link {
+  color: 'blue';
+  padding: '10px';
+  font-size: '75px';
+  display: 'flex';
+  width: '15% ';
+  padding-left: '25%';
+}

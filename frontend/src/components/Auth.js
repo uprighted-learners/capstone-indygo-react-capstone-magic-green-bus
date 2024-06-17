@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";//declaring react and useState to apply it within the project
 import { useNavigate } from "react-router-dom";//declaring our imports to navigate through the website
 
@@ -11,12 +12,15 @@ export default function Auth() {//our authentication funciton responsible for ex
   const [updatedUserPassword, setUpdatedUserPassword] = useState('')
   const navigate = useNavigate();//making a variable for navigation
 
+  
   const loginUser = async () => {
     try {
       const response = await fetch("http://localhost:3000/users/login", {//fetching from the backend in this case from our local host at the end point directly related to the login process
         method: "POST",//declaring a method of POST to the backend
         headers: {
+
           "Content-Type": "application/json",//setting the headers for the JSON response
+
         },
         body: JSON.stringify({//setting the body for the JSON response to strings 
           username: username,//data turned to a string so our inputs will expect strings
@@ -24,6 +28,7 @@ export default function Auth() {//our authentication funciton responsible for ex
         }),
       });
       if (!response.ok) {
+
         throw new Error("Authentication failed");//validating the response failed and throwing an erorr
       }
      
@@ -37,18 +42,19 @@ export default function Auth() {//our authentication funciton responsible for ex
 
       setUsername("");//when a user is logging in, our server expects the username to be a string
       setPassword("");
+
       setIsLoginMode(true);
     } catch (error) {
-      console.error("Login error:", error.message);
+      console.error('Login error:', error.message);
     }
   };
 
   const createUser = async () => {
     try {
-      const response = await fetch("http://localhost:3000/users/register", {
-        method: "POST",
+      const response = await fetch('http://localhost:3000/users/register', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           username: username,
@@ -59,11 +65,11 @@ export default function Auth() {//our authentication funciton responsible for ex
       if (!response.ok) {
         throw new Error("Signup failed");//this crashes backend 
       }
-      alert("Signup successful, please log in.");
+      alert('Signup successful, please log in.');
       setIsLoginMode(true);
       navigate('/')
     } catch (error) {
-      console.error("Signup error:", error.message);
+      console.error('Signup error:', error.message);
     }
   };
 
@@ -159,7 +165,7 @@ export default function Auth() {//our authentication funciton responsible for ex
             <label>
               Username:
               <input
-                type="text"
+                type='text'
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 required
@@ -168,21 +174,21 @@ export default function Auth() {//our authentication funciton responsible for ex
             <label>
               Email:
               <input
-                type="email"
+                type='email'
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
             </label>
             <label>
-          Password:
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </label>
+              Password:
+              <input
+                type='password'
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </label>
           </>
         ): <div>
           <label>username: 
@@ -193,20 +199,24 @@ export default function Auth() {//our authentication funciton responsible for ex
         <button type="submit">{isLoginMode ? "Login" : "Sign Up"}</button>
       </form>
       <p>
-        {isLoginMode ? "Don't have an account?" : "Already have an account?"}
-        <button type="button" onClick={toggleLogin}>
-          {isLoginMode ? "Sign Up" : "Login"}
+        {isLoginMode ? "Don't have an account?" : 'Already have an account?'}
+        <button type='button' onClick={toggleLogin}>
+          {isLoginMode ? 'Sign Up' : 'Login'}
         </button>
         <button type='button' onClick={(logoutUser)}Logout>Logout</button>
         <button id="guestButton" onClick={(continueGuest)}>Continue as Guest</button>
         <button type='button' onClick={(updatePassword)}>Forgot your password?</button>
         <button id='deleteButton'>Delete</button>
       </p>
+      <div className='auth-pic'>
+        <img
+          style={{ width: '50%' }}
+          src='https://i.etsystatic.com/8174292/r/il/48a81a/3632435075/il_1588xN.3632435075_26nn.jpg'
+          alt='IndyGo Bus'
+        />
+      </div>
     </div>
 
 </div>
   ) 
 }
-
-
- 

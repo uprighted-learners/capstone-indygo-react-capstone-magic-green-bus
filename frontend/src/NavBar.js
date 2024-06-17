@@ -4,9 +4,9 @@ import './NavBar.css';
 
 export default function NavBar() {
   return (
-    <nav>
-      <ul>
-        <li>
+    <nav className='navWrapper'>
+      <ul className='navList'>
+        <li className='navItem'>
           <Link to='/'>HOME</Link>
         </li>
         <li>
@@ -16,13 +16,16 @@ export default function NavBar() {
           <Link to='/Auth'>LOGIN</Link>
         </li>
         <li>
-          <Link to='/contacts'>CONTACTS</Link>
+          <Link to='/contact'>CONTACT US</Link>
         </li>
         <li>
           <Link to='/locations'>LOCATIONS</Link>
         </li>
         <li>
           <Link to='/sponsor'>SPONSOR</Link>
+        </li>
+        <li>
+          <Link to='/map'>MAP</Link>
         </li>
       </ul>
     </nav>
