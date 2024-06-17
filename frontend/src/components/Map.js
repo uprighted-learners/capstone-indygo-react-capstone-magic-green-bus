@@ -1,8 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import L from 'leaflet'; // Import Leaflet library
 import "leaflet/dist/leaflet.css";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
-export default function Map() {
+// Custom icon configuration
+const customIcon = new L.Icon({
+  iconUrl: 'https://www.iconpacks.net/icons/2/free-location-map-icon-2956-thumb.png', // icon image link
+  iconSize: [32, 32], // Size of the icon
+  iconAnchor: [16, 32], // Anchor point of the icon, usually half of the icon size
+});
+
+export default function App() {
   // State to store the locations fetched from the API
   const [locations, setLocations] = useState([]);
 
@@ -43,9 +51,9 @@ export default function Map() {
       />
       {/* Iterate over locations and add markers for each location */}
       {locations.map(location => (
-        <Marker key={location.id} position={[location.latitude, location.longitude]}>
+        <Marker key={location.id} position={[location.latitude, location.longitude]} icon={customIcon}>
           {/* Popup component to display the location description */}
-          <Popup>{location.description}</Popup>
+          <Popup>{location.description}, {location.id}</Popup>
         </Marker>
       ))}
     </MapContainer>
