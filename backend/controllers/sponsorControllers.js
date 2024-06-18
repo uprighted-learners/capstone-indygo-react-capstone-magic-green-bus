@@ -1,4 +1,3 @@
-
 //sponsor sign up functionality
 const Sponsor = require("../models/sponsorModel");
 exports.getAllSponsors = async (req, res) => {
@@ -27,7 +26,7 @@ exports.createSponsor = async (req, res) => {
     await newSponsor.save();
     res.status(201).json(newSponsor);
   } catch (error) {
-    res.status(409).json({ message: error.message });
+    res.status(500).json({ message: error.message });
   }
 };
 //UPDATE == 'update' a sponsor
@@ -53,4 +52,3 @@ exports.deleteSponsor = async (req, res) => {
     res.status(409).json({ message: error.message });
   }
 };
-
