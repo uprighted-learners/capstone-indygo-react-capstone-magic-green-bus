@@ -1,3 +1,23 @@
 .img-home-wrapper img {
   border: 5px solid black;
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.footer {
+  position: fixed;
+  margin-top: auto;
+  display: flex;
+  color: green;
+  justify-content: center;
+  font-size: 30px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+

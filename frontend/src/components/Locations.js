@@ -1,5 +1,6 @@
 import React from 'react';
 import './Locations.css';
+import Footer from './Footer';
 
 export default function Locations() {
   return (

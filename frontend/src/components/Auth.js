@@ -1,4 +1,10 @@
 
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './Auth.css';
+import Footer from './Footer';
+
+
 import React, { useState } from "react";//declaring react and useState to apply it within the project
 import { useNavigate } from "react-router-dom";//declaring our imports to navigate through the website
 
@@ -15,8 +21,10 @@ export default function Auth() {//our authentication funciton responsible for ex
   
   const loginUser = async () => {
     try {
+
       const response = await fetch("http://localhost:3000/users/login", {//fetching from the backend in this case from our local host at the end point directly related to the login process
         method: "POST",//declaring a method of POST to the backend
+
         headers: {
 
           "Content-Type": "application/json",//setting the headers for the JSON response
@@ -63,11 +71,11 @@ export default function Auth() {//our authentication funciton responsible for ex
         }),
       });
       if (!response.ok) {
-        throw new Error("Signup failed");//this crashes backend 
+        throw new Error('Signup failed'); //this crashes backend
       }
       alert('Signup successful, please log in.');
       setIsLoginMode(true);
-      navigate('/')
+      navigate('/');
     } catch (error) {
       console.error('Signup error:', error.message);
     }
@@ -86,10 +94,10 @@ export default function Auth() {//our authentication funciton responsible for ex
     setIsLoginMode(!isLoginMode);
   };
   const logoutUser = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("username");
+    localStorage.removeItem('token');
+    localStorage.removeItem('username');
     setIsLoginMode(false);
-    navigate("/");
+    navigate('/');
   };
 
 
@@ -156,6 +164,7 @@ export default function Auth() {//our authentication funciton responsible for ex
 //   deleteUser(userId);
 // })
   return (
+
    <div>
         <div>
       <h1>{isLoginMode ? "Login" : "Sign Up"}</h1>
@@ -220,3 +229,4 @@ export default function Auth() {//our authentication funciton responsible for ex
 </div>
   ) 
 }
+
