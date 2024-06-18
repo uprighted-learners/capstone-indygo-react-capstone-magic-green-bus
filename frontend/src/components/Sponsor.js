@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Sponsor.css';
+import Footer from './Footer';
 
 export default function SponsorRegister() {
   const [name, setName] = useState('');

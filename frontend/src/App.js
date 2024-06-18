@@ -7,6 +7,7 @@ import Auth from './components/Auth';
 import Contact from './components/Contact';
 import Locations from './components/Locations';
 import Sponsor from './components/Sponsor';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='/locations' element={<Locations />} />
         <Route path='/sponsor' element={<Sponsor />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
