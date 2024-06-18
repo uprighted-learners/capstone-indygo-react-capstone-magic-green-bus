@@ -5,7 +5,6 @@ import "./Sponsor.css";
 export default function SponsorRegister() {
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
-  // const [email, setEmail] = useState("");
   const [userId, setUserId] = useState("");
   const [datesOfSponsoring, setDatesOfSponsoring] = useState([]);
   const [isGuest, setIsGuest] = useState(true);
@@ -23,21 +22,17 @@ export default function SponsorRegister() {
           body: JSON.stringify({
             name,
             userId,
-            // email,
             location,
             datesOfSponsoring,
-            isGuest,
           }),
         }
       );
       console.log(response);
       if (response.ok) {
         setName("");
-        // setEmail("");
         setLocation("");
         setDatesOfSponsoring([]);
         setUserId("");
-        localStorage.getItem("token") ? setIsGuest(false) : setIsGuest(true);
         alert("User created successfully!");
       } else {
         alert("Failed to create user");
@@ -47,10 +42,7 @@ export default function SponsorRegister() {
     }
   };
   const changeDateArray = (e) => {
-    setDatesOfSponsoring((prevDatesOfSponsoring) => [
-      ...prevDatesOfSponsoring,
-      e.target.value,
-    ]);
+    setDatesOfSponsoring((prevDatesOfSponsoring) => [e.target.value]);
   };
   return (
     <div>
@@ -63,13 +55,6 @@ export default function SponsorRegister() {
           onChange={(e) => setName(e.target.value)}
           required
         />
-        {/* <label>Email</label>
-        <input
-          type="text"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        /> */}
         <label>User Id</label>
         <input
           type="text"
