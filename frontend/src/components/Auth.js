@@ -2,11 +2,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Auth.css';
-import Footer from './Footer';
-
-
-import React, { useState } from "react";//declaring react and useState to apply it within the project
-import { useNavigate } from "react-router-dom";//declaring our imports to navigate through the website
 
 export default function Auth() {//our authentication funciton responsible for executing all the authentication functions within it
   const [username, setUsername] = useState("");
@@ -14,8 +9,6 @@ export default function Auth() {//our authentication funciton responsible for ex
   const [email, setEmail] = useState("");
   const [isLoginMode, setIsLoginMode] = useState(true);//tracking login state
   const [isGuest, setIsGuest] = useState(false);
-  const [updatedUserName, setUpdatedUserName] = useState('')//these will be used for the update form although hasnt been made yet
-  const [updatedUserPassword, setUpdatedUserPassword] = useState('')
   const navigate = useNavigate();//making a variable for navigation
 
   
@@ -125,7 +118,7 @@ export default function Auth() {//our authentication funciton responsible for ex
   //   }
   // };
   
-  let guestButton = document.getElementById("guestButton");
+  
   const continueGuest = () => {
      setIsGuest(true);//just setting setIsGuest to true because we don't want that to count as being logged in incase permissions variy for logged in users vs Guests down the road
      navigate("/")
@@ -214,7 +207,6 @@ export default function Auth() {//our authentication funciton responsible for ex
         </button>
         <button type='button' onClick={(logoutUser)}Logout>Logout</button>
         <button id="guestButton" onClick={(continueGuest)}>Continue as Guest</button>
-        <button type='button' onClick={(updatePassword)}>Forgot your password?</button>
         <button id='deleteButton'>Delete</button>
       </p>
       <div className='auth-pic'>
