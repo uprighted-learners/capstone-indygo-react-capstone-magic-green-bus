@@ -20,7 +20,7 @@ const authRoutes = require('./routes/authRoutes');
 app.use('/users', authRoutes);
 
 // Importing PORT from the .env file
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 
 // this is a test to make sure the server is running correctly
 app.get("/green/bus", (req, res) => {
