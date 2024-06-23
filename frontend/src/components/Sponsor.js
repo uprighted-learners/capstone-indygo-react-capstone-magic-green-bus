@@ -1,12 +1,20 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+
+
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+
 import './Sponsor.css';
 import Footer from './Footer';
 
 export default function SponsorRegister() {
-  const [name, setName] = useState('');
-  const [location, setLocation] = useState('');
-  const [userId, setUserId] = useState('');
+
+  const location = useLocation();// Retrieve selected location from previous page (map)
+  const selectedLocation = location.state.location; // Get selected location from state from map.js
+
+  const [name, setName] = useState("");
+  const [locationInput, setLocationInput] = useState("");
+  const [userId, setUserId] = useState("");
+
   const [datesOfSponsoring, setDatesOfSponsoring] = useState([]);
   const [isGuest, setIsGuest] = useState(true);
   const handleSubmit = async (e) => {
@@ -23,15 +31,17 @@ export default function SponsorRegister() {
           body: JSON.stringify({
             name,
             userId,
-            location,
+            location: locationInput,
             datesOfSponsoring,
           }),
         },
       );
       console.log(response);
       if (response.ok) {
-        setName('');
-        setLocation('');
+
+        setName("");
+        setLocationInput("");
+
         setDatesOfSponsoring([]);
         setUserId('');
         alert('User created successfully!');
@@ -45,6 +55,13 @@ export default function SponsorRegister() {
   const changeDateArray = (e) => {
     setDatesOfSponsoring((prevDatesOfSponsoring) => [e.target.value]);
   };
+  //use effect hook to allow the set location autfill to work along with be able to change the location if needed 
+  useEffect(() => {
+    if (selectedLocation) {
+      setLocationInput(selectedLocation.id);
+    }
+  }, [selectedLocation]);
+
   return (
     <div>
       <h2>Register New Sponsor</h2>
@@ -65,9 +82,11 @@ export default function SponsorRegister() {
         />
         <label>Location:</label>
         <input
-          type='location'
-          value={location}
-          onChange={(e) => setLocation(e.target.value)}
+
+          type="location"
+          value={locationInput}
+          onChange={(e) => setLocationInput(e.target.value)}
+
           required
         />
         <label>Dates of Sponsorship:</label>
