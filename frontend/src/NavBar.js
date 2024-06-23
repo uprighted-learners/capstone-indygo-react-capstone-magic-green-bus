@@ -7,25 +7,22 @@ export default function NavBar() {
     <nav className='navWrapper'>
       <ul className='navList'>
         <li className='navItem'>
-          <Link to='/'>HOME</Link>
+          <Link to='/'>ABOUT</Link>
         </li>
+        {/* <li>
+          <Link to='/home'>HOME</Link>
+        </li> */}
         <li>
-          <Link to='/about'>ABOUT</Link>
-        </li>
-        <li>
-          <Link to='/Auth'>LOGIN</Link>
+          <Link to='/map'>MAP</Link>
         </li>
         <li>
           <Link to='/contact'>CONTACT US</Link>
         </li>
         <li>
-          <Link to='/locations'>LOCATIONS</Link>
-        </li>
-        <li>
           <Link to='/sponsor'>SPONSOR</Link>
         </li>
         <li>
-          <Link to='/map'>MAP</Link>
+          <Link to='/Auth'>LOGIN</Link>
         </li>
       </ul>
     </nav>

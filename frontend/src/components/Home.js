@@ -16,3 +16,5 @@ export default function Home() {
   );
 }
 
+//Home is commented out bc william may not want it, but its not deleted in case he does want it
+

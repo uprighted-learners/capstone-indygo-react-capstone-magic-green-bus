@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import L from 'leaflet'; // Import Leaflet library
+
 import "leaflet/dist/leaflet.css";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { useNavigate } from 'react-router-dom';
 
+
 // Custom icon configuration
 const customIcon = new L.Icon({
-  iconUrl: 'https://www.iconpacks.net/icons/2/free-location-map-icon-2956-thumb.png', // icon image link
+  iconUrl:
+    'https://www.iconpacks.net/icons/2/free-location-map-icon-2956-thumb.png', // icon image link
   iconSize: [32, 32], // Size of the icon
   iconAnchor: [16, 32], // Anchor point of the icon, usually half of the icon size
 });
@@ -25,14 +28,17 @@ export default function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
+
         // Fetch data from the GIS API
         const response = await fetch('https://xmaps.indy.gov/arcgis/rest/services/OpenData/OpenData_Transportation/MapServer/4/query?where=1%3D1&outFields=*&outSR=4326&f=json');
+
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
         // Parse the response as JSON
         const data = await response.json();
         // Map the fetched features to the format needed for locations state
+
         const locationsData = data.features.map(feature => ({
           id: feature.attributes.IDENTIFIER,
           description: feature.attributes.DESCRIPTION,
@@ -51,6 +57,7 @@ export default function App() {
         const extractedLocations = sponsorData.map(sponsor => sponsor.location);
         setSponsoredLocations(extractedLocations);
         console.log(extractedLocations); //*****this will be removed once I can further test the sponsor forms
+
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -58,7 +65,7 @@ export default function App() {
 
     // Call the fetchData function
     fetchData();
-  }, []); 
+  }, []);
 
   // Function to check if a location is sponsored
   const isSponsored = (locationId) => {
@@ -73,6 +80,7 @@ export default function App() {
   };
 
   return (
+
     // MapContainer component from react-leaflet to render the map
     <MapContainer center={[39.768577, -86.158098]} zoom={13}>
       {/* TileLayer component to add the base map layer */}
@@ -93,5 +101,7 @@ export default function App() {
         </Marker>
       ))}
     </MapContainer>
+
   );
 }
+
