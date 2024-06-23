@@ -9,14 +9,22 @@ import Footer from './Footer';
 export default function SponsorRegister() {
 
   const location = useLocation();// Retrieve selected location from previous page (map)
-  const selectedLocation = location.state.location; // Get selected location from state from map.js
+  const selectedLocation = location.state?.location; // Get selected location from state from map.js
 
   const [name, setName] = useState("");
   const [locationInput, setLocationInput] = useState("");
   const [userId, setUserId] = useState("");
 
   const [datesOfSponsoring, setDatesOfSponsoring] = useState([]);
-  const [isGuest, setIsGuest] = useState(true);
+  // const [isGuest, setIsGuest] = useState(true);
+
+  //use effect hook to allow the set location autfill to work along with be able to change the location if needed 
+  useEffect(() => {
+    if (selectedLocation) {
+      setLocationInput(selectedLocation.id);
+    }
+  }, [selectedLocation]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(datesOfSponsoring);
@@ -55,12 +63,6 @@ export default function SponsorRegister() {
   const changeDateArray = (e) => {
     setDatesOfSponsoring((prevDatesOfSponsoring) => [e.target.value]);
   };
-  //use effect hook to allow the set location autfill to work along with be able to change the location if needed 
-  useEffect(() => {
-    if (selectedLocation) {
-      setLocationInput(selectedLocation.id);
-    }
-  }, [selectedLocation]);
 
   return (
     <div>
