@@ -7,7 +7,9 @@ export default function SponsorRegister() {
   const [location, setLocation] = useState("");
   const [userId, setUserId] = useState("");
   const [datesOfSponsoring, setDatesOfSponsoring] = useState([]);
-  const [isGuest, setIsGuest] = useState(true);
+  const [isGuest] = useState(true);
+  const isLoggedIn = localStorage.getItem("token") ? true : false;
+  const loggedInUser = localStorage.getItem("username");
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(datesOfSponsoring);
