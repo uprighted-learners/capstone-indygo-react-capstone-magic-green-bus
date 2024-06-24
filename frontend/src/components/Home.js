@@ -1,5 +1,6 @@
 import React from 'react';
 import './Home.css';
+import Footer from './Footer';
 
 export default function Home() {
   return (
@@ -14,4 +15,6 @@ export default function Home() {
     </>
   );
 }
+
+//Home is commented out bc william may not want it, but its not deleted in case he does want it
 
