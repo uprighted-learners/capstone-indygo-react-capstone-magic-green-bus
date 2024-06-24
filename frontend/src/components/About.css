@@ -1,3 +1,9 @@
 .img-home-wrapper img {
   border: 5px solid black;
 }
+.Contact-Container-Row{
+display: flex;
+flex-direction: column;
+
+}
+

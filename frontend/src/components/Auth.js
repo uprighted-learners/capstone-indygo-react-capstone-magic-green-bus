@@ -58,7 +58,6 @@ export default function Auth() {//our authentication funciton responsible for ex
         },
         body: JSON.stringify({
           username: username,
-          email: email,
           password: password,
         }),
       });
@@ -117,7 +116,7 @@ export default function Auth() {//our authentication funciton responsible for ex
   //   }
   // };
   
-  let guestButton = document.getElementById("guestButton");
+  
   const continueGuest = () => {
      setIsGuest(true);//just setting setIsGuest to true because we don't want that to count as being logged in incase permissions variy for logged in users vs Guests down the road
      navigate("/")
@@ -155,6 +154,7 @@ export default function Auth() {//our authentication funciton responsible for ex
 //   console.log(userId)
 //   deleteUser(userId);
 // })
+
   return (
    <div>
         <div>
@@ -168,15 +168,6 @@ export default function Auth() {//our authentication funciton responsible for ex
                 type='text'
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                required
-              />
-            </label>
-            <label>
-              Email:
-              <input
-                type='email'
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
                 required
               />
             </label>
@@ -205,8 +196,8 @@ export default function Auth() {//our authentication funciton responsible for ex
         </button>
         <button type='button' onClick={(logoutUser)}Logout>Logout</button>
         <button id="guestButton" onClick={(continueGuest)}>Continue as Guest</button>
-        <button type='button' onClick={(updatePassword)}>Forgot your password?</button>
-        <button id='deleteButton'>Delete</button>
+        {/* <button type='button' onClick={(updatePassword)}>Forgot your password?</button> */}
+        {/* <button id='deleteButton'>Delete</button> */}
       </p>
       <div className='auth-pic'>
         <img

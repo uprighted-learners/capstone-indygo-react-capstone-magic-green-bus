@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import './Sponsor.css';
 
 export default function SponsorRegister() {
@@ -46,8 +45,11 @@ export default function SponsorRegister() {
   };
 
   return (
-    <div>
-      <h2>Register New Sponsor</h2>
+    
+    <div className='sponsor-form-container'>
+ 
+      <h2 className='New-Sponsor'>Register New Sponsor</h2>
+      <br></br>
       <form onSubmit={handleSubmit}>
         <label>Name:</label>
         <input
@@ -56,13 +58,7 @@ export default function SponsorRegister() {
           onChange={(e) => setName(e.target.value)}
           required
         />
-        <label>Email</label>
-        <input
-          type='text'
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
+        <br></br>
         <label>User Id</label>
         <input
           type='text'
@@ -70,6 +66,7 @@ export default function SponsorRegister() {
           onChange={(e) => setUserId(e.target.value)}
           required
         />
+        <br></br>
         <label>Location:</label>
         <input
           type='location'
@@ -77,6 +74,7 @@ export default function SponsorRegister() {
           onChange={(e) => setLocation(e.target.value)}
           required
         />
+        <br></br>
         <label>Dates of Sponsorship:</label>
         <input
           type='datesOfSponsoring'
@@ -84,9 +82,16 @@ export default function SponsorRegister() {
           onChange={(e) => setDatesOfSponsoring(e.target.value)}
           required
         />
-        <button type='submit'>Register</button>
-      </form>
+        <br></br>
+   { localStorage.getItem("token") ? <button onChange={console.log("hi")}> Click Me! </button> : <p>You must be logged in to view this button</p> }
+      </form><br></br>
+      <img
+          src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVrsXtoBS6GbuRmp_-W0FftkzFOl9FkJrJWQ&s'
+          alt='IndyGo Logo'
+        />
       <div className='sponsor-pic'>
+        <h1>SPONSOR A STOP!</h1>
+      <p c> take the the take the time to sponsor a bus stop near you NOW!!!. With the value of your information that allow us to collect data, and build infastructure, we can provide fast bus stops all over indeanapolis. With your input we can return accurate bus stops accordingto your coordinats</p>
         <img
           src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVrsXtoBS6GbuRmp_-W0FftkzFOl9FkJrJWQ&s'
           alt='IndyGo Logo'

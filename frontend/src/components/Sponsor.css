@@ -1,0 +1,48 @@
+
+.sponsor-form-container {
+    width: 100%;
+    
+}
+@media only screen and (min-width: 299px) and (max-width: 863px){
+    body{
+      padding: 0px;
+      margin: 0px;
+    }
+    .navList {
+      flex-direction: row; /* Arrange items vertically */
+      font-weight: 900;
+     font-size: .60rem;
+     justify-content: center;
+     text-align: center;
+     width: 30%;
+    }
+}
+@media only screen and (min-width: 900px) and (max-width: 1199px) {
+    body{
+      background-color: yellow; /* Optional: background color for the nav */
+    }
+   .navList {
+      flex-direction: row; /* Arrange items vertically */
+      font-weight: 900;
+     font-size: 1rem;
+    }
+    .sponsor-form-container{
+width: 30%;
+display:block;
+ position: relative;
+    }
+    .sponsor-pic{
+position: relative;
+left:300px;
+bottom: 220px;
+    }
+.New-Sponsor {
+    color: white;
+}
+}
+.New-Sponsor{
+    width: 100%;
+    display: flex;
+    
+    color: white;
+}
