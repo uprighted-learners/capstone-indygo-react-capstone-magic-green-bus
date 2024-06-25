@@ -21,10 +21,24 @@ exports.getSponsorById = async (req, res) => {
 //POST == 'create' a new sponsor
 exports.createSponsor = async (req, res) => {
   const sponsor = req.body;
-  const newSponsor = new Sponsor(sponsor);
+  const { name, userId, location, datesOfSponsoring } = sponsor;
+  // const newSponsor = new Sponsor(sponsor);
   try {
+    const existingSponsor = await Sponsor.findOne({ location })
+    if (existingSponsor) {
+      res.status(409).json({ message: "Location already sponsored" });
+    } else {
+    //create new sponsor
+    const newSponsor = new Sponsor({
+      name,
+      userId,
+      location,
+      datesOfSponsoring,
+    });
+
     await newSponsor.save();
     res.status(201).json(newSponsor);
+  }
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

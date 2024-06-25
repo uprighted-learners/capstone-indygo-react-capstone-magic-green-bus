@@ -53,8 +53,10 @@ export default function SponsorRegister() {
         setDatesOfSponsoring([]);
         setUserId('');
         alert('User created successfully!');
+      } else if (response.status === 409) {
+        alert('Location already sponsored!');
       } else {
-        alert('Failed to create user');
+        alert('Failed to sponsor, please check information')
       }
     } catch (error) {
       alert(error.message);
