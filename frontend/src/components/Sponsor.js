@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import { jwtDecode } from "jwt-decode";
+
 import "./Sponsor.css";
+import Footer from "./Footer";
+
+import React, { useState } from "react";
+
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 export default function SponsorRegister() {
   const [name, setName] = useState("");
@@ -38,13 +45,12 @@ export default function SponsorRegister() {
 
         setDatesOfSponsoring([]);
 
-        setUserId('');
-        alert('User created successfully!');
+        setUserId("");
+        alert("User created successfully!");
       } else if (response.status === 409) {
-        alert('Location already sponsored!');
+        alert("Location already sponsored!");
       } else {
-        alert('Failed to sponsor, please check information')
-
+        alert("Failed to sponsor, please check information");
       }
     } catch (error) {
       alert(error.message);
@@ -55,59 +61,65 @@ export default function SponsorRegister() {
   };
 
   return (
-    <>
-      <div className='sponsor-form-container'>
+    
+    <div className='sponsor-form-container'>
+ 
+      <h2 className='New-Sponsor'>Register New Sponsor</h2>
+      <br></br>
+      <form onSubmit={handleSubmit}>
+        <label>Name:</label>
+        <input
+          list="name-options"
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
 
-        <h2 className='New-Sponsor'>Register New Sponsor</h2>
+        *<label>Location:</label>
+        <input
+
+
         <br></br>
-        <form onSubmit={handleSubmit}>
-          <label>Name:</label>
-          <input
-            list="name-options"
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
 
-          *<label>Location:</label>
-          <input
-            type='text'
-            value={userId}
-            onChange={(e) => setUserId(e.target.value)}
-            required
-          />
-          <br></br>
-          <label>Location:</label>
-          <input
+        <label>User Id</label>
+        <input
+          type='text'
+          value={userId}
+          onChange={(e) => setUserId(e.target.value)}
+          required
+        />
+        <br></br>
+        <label>Location:</label>
+        <input
 
 
-            type="location"
-            value={locationInput}
-            onChange={(e) => setLocationInput(e.target.value)}
-            required
-          />
-          <br></br>
-          <label>Dates of Sponsorship:</label>
-          <input
-            type="datesOfSponsoring"
-            value={datesOfSponsoring}
-            onChange={(e) => changeDateArray(e)}
-            required
-          />
+          type="location"
+          value={locationInput}
+          onChange={(e) => setLocationInput(e.target.value)}
+          required
+        />
+        <br></br>
+        <label>Dates of Sponsorship:</label>
+        <input
+          type="datesOfSponsoring"
+          value={datesOfSponsoring}
+          onChange={(e) => changeDateArray(e)}
+          required
+        />
 
 
-          <br></br>
-          {localStorage.getItem("token") ? <button onChange={console.log("hi")}> Click Me! </button> : <p>You must be logged in to view this button</p>}
-        </form><br></br>
-        <img
+        <br></br>
+   { localStorage.getItem("token") ? <button onChange={console.log("hi")}> Click Me! </button> : <p>You must be logged in to view this button</p> }
+      </form><br></br>
+      <img
           src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVrsXtoBS6GbuRmp_-W0FftkzFOl9FkJrJWQ&s'
           alt='IndyGo Logo'
         />
 
         <button type='submit'>Register</button>
 
-      </div>
+      </form>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -175,11 +187,9 @@ export default function SponsorRegister() {
         eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
         voluptatem.
       </p>
-
-
-      <div className='sponsor-pic'>
+      <div className="sponsor-pic">
         <h1>SPONSOR A STOP!</h1>
-        <p c> take the the take the time to sponsor a bus stop near you NOW!!!. With the value of your information that allow us to collect data, and build infastructure, we can provide fast bus stops all over indeanapolis. With your input we can return accurate bus stops accordingto your coordinats</p>
+      <p c> take the the take the time to sponsor a bus stop near you NOW!!!. With the value of your information that allow us to collect data, and build infastructure, we can provide fast bus stops all over indeanapolis. With your input we can return accurate bus stops accordingto your coordinats</p>
 
         <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVrsXtoBS6GbuRmp_-W0FftkzFOl9FkJrJWQ&s"
