@@ -1,24 +1,24 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './Auth.css';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "./Auth.css";
 
 export default function Auth() {
   //our authentication funciton responsible for executing all the authentication functions within it
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
   const [isLoginMode, setIsLoginMode] = useState(true); //tracking login state
   const [isGuest, setIsGuest] = useState(false);
   const navigate = useNavigate(); //making a variable for navigation
 
   const loginUser = async () => {
     try {
-      const response = await fetch('http://localhost:3000/users/login', {
+      const response = await fetch("http://localhost:8080/users/login", {
         //fetching from the backend in this case from our local host at the end point directly related to the login process
-        method: 'POST', //declaring a method of POST to the backend
+        method: "POST", //declaring a method of POST to the backend
 
         headers: {
-          'Content-Type': 'application/json', //setting the headers for the JSON response
+          "Content-Type": "application/json", //setting the headers for the JSON response
         },
         body: JSON.stringify({
           //setting the body for the JSON response to strings
@@ -27,32 +27,32 @@ export default function Auth() {
         }),
       });
       if (!response.ok) {
-        throw new Error('Authentication failed'); //validating the response failed and throwing an erorr
+        throw new Error("Authentication failed"); //validating the response failed and throwing an erorr
       }
 
       const data = await response.json(); //response.json is method that reads the response body and parses it as JSON returing a promise that resolved with the result of parsing the body text as JSON data
       //also uses the await keyword that sas to await the response until the promise(response) is resolved
-      alert('Login successful'); //user feedback saying the login was successful
-      navigate('/'); //naviagates to the home page(but currently ineffective)
-      localStorage.setItem('token', data.token); //storing our authentication token via key value pairs token' as the key and data.token as its value
-      localStorage.setItem('username', data.username); //similar to the previous line storing our username associated with the token above
+      alert("Login successful"); //user feedback saying the login was successful
+      navigate("/"); //naviagates to the home page(but currently ineffective)
+      localStorage.setItem("token", data.token); //storing our authentication token via key value pairs token' as the key and data.token as its value
+      localStorage.setItem("username", data.username); //similar to the previous line storing our username associated with the token above
       window.location.reload();
 
-      setUsername(''); //when a user is logging in, our server expects the username to be a string
-      setPassword('');
+      setUsername(""); //when a user is logging in, our server expects the username to be a string
+      setPassword("");
 
       setIsLoginMode(true);
     } catch (error) {
-      console.error('Login error:', error.message);
+      console.error("Login error:", error.message);
     }
   };
 
   const createUser = async () => {
     try {
-      const response = await fetch('http://localhost:3000/users/register', {
-        method: 'POST',
+      const response = await fetch("http://localhost:3000/users/register", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           username: username,
@@ -60,13 +60,13 @@ export default function Auth() {
         }),
       });
       if (!response.ok) {
-        throw new Error('Signup failed'); //this crashes backend
+        throw new Error("Signup failed"); //this crashes backend
       }
-      alert('Signup successful, please log in.');
+      alert("Signup successful, please log in.");
       setIsLoginMode(true);
-      navigate('/');
+      navigate("/");
     } catch (error) {
-      console.error('Signup error:', error.message);
+      console.error("Signup error:", error.message);
     }
   };
 
@@ -83,10 +83,10 @@ export default function Auth() {
     setIsLoginMode(!isLoginMode);
   };
   const logoutUser = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('username');
+    localStorage.removeItem("token");
+    localStorage.removeItem("username");
     setIsLoginMode(false);
-    navigate('/');
+    navigate("/");
   };
 
   // const updatePassword = async () => {//make a notification/form to navigate to when a button is selected
@@ -122,7 +122,7 @@ export default function Auth() {
 
   const continueGuest = () => {
     setIsGuest(true); //just setting setIsGuest to true because we don't want that to count as being logged in incase permissions variy for logged in users vs Guests down the road
-    navigate('/');
+    navigate("/");
   };
   // guestButton.addEventListener("click", function(){
   //   continueGuest();
@@ -204,14 +204,14 @@ export default function Auth() {
 
       </p>
       <div>
-        <h1>{isLoginMode ? 'Login' : 'Sign Up'}</h1>
+        <h1>{isLoginMode ? "Login" : "Sign Up"}</h1>
         <form onSubmit={handleSubmit}>
           {!isLoginMode ? (
             <>
               <label>
                 Username:
                 <input
-                  type='text'
+                  type="text"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   required
@@ -220,7 +220,7 @@ export default function Auth() {
               <label>
                 Email:
                 <input
-                  type='email'
+                  type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -229,7 +229,7 @@ export default function Auth() {
               <label>
                 Password:
                 <input
-                  type='password'
+                  type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
@@ -241,7 +241,7 @@ export default function Auth() {
               <label>
                 username:
                 <input
-                  type='username'
+                  type="username"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   required
@@ -250,7 +250,7 @@ export default function Auth() {
               <label>
                 password:
                 <input
-                  type='password'
+                  type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
@@ -258,26 +258,26 @@ export default function Auth() {
               </label>
             </div>
           )}
-          <button type='submit'>{isLoginMode ? 'Login' : 'Sign Up'}</button>
+          <button type="submit">{isLoginMode ? "Login" : "Sign Up"}</button>
         </form>
         <p>
-          {isLoginMode ? "Don't have an account?" : 'Already have an account?'}
-          <button type='button' onClick={toggleLogin}>
-            {isLoginMode ? 'Sign Up' : 'Login'}
+          {isLoginMode ? "Don't have an account?" : "Already have an account?"}
+          <button type="button" onClick={toggleLogin}>
+            {isLoginMode ? "Sign Up" : "Login"}
           </button>
-          <button type='button' onClick={logoutUser} Logout>
+          <button type="button" onClick={logoutUser} Logout>
             Logout
           </button>
-          <button id='guestButton' onClick={continueGuest}>
+          <button id="guestButton" onClick={continueGuest}>
             Continue as Guest
           </button>
-          <button id='deleteButton'>Delete</button>
+          <button id="deleteButton">Delete</button>
         </p>
-        <div className='auth-pic'>
+        <div className="auth-pic">
           <img
-            style={{ width: '50%' }}
-            src='https://i.etsystatic.com/8174292/r/il/48a81a/3632435075/il_1588xN.3632435075_26nn.jpg'
-            alt='IndyGo Bus'
+            style={{ width: "50%" }}
+            src="https://i.etsystatic.com/8174292/r/il/48a81a/3632435075/il_1588xN.3632435075_26nn.jpg"
+            alt="IndyGo Bus"
           />
         </div>
         <p>
@@ -302,11 +302,11 @@ export default function Auth() {
           dui velit non nulla.
         </p>
       </div>
-      <div className='fillerPicture'>
+      <div className="fillerPicture">
         <img
-          style={{ width: '50%' }}
-          src='https://i.etsystatic.com/8174292/r/il/48a81a/3632435075/il_1588xN.3632435075_26nn.jpg'
-          alt='IndyGo Bus'
+          style={{ width: "50%" }}
+          src="https://i.etsystatic.com/8174292/r/il/48a81a/3632435075/il_1588xN.3632435075_26nn.jpg"
+          alt="IndyGo Bus"
         />
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
@@ -333,4 +333,3 @@ export default function Auth() {
     </div>
   );
 }
-

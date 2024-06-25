@@ -1,3 +1,10 @@
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { jwtDecode } from "jwt-decode";
+
+
+import "./Sponsor.css";
+import Footer from "./Footer";
 
 import React, { useState } from 'react';
 
@@ -7,60 +14,54 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 
-import './Sponsor.css';
-import Footer from './Footer';
+
 
 export default function SponsorRegister() {
-
-  const location = useLocation();// Retrieve selected location from previous page (map)
+  const location = useLocation(); // Retrieve selected location from previous page (map)
   const selectedLocation = location.state?.location; // Get selected location from state from map.js
-
   const [name, setName] = useState("");
   const [locationInput, setLocationInput] = useState("");
-  const [userId, setUserId] = useState("");
 
   const [datesOfSponsoring, setDatesOfSponsoring] = useState([]);
-  // const [isGuest, setIsGuest] = useState(true);
-
-  //use effect hook to allow the set location autfill to work along with be able to change the location if needed 
-  useEffect(() => {
-    if (selectedLocation) {
-      setLocationInput(selectedLocation.id);
-    }
-  }, [selectedLocation]);
+  const [isGuest, setIsGuest] = useState(true);
+  const isLoggedIn = localStorage.getItem("token") ? true : false;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(datesOfSponsoring);
     try {
       const response = await fetch(
-        'http://localhost:8080/sponsor/create', //go check registerSponsor in backend/routes/sponsorRoutes to make sure names match.js
+        "http://localhost:8080/sponsor/create", //go check registerSponsor in backend/routes/sponsorRoutes to make sure names match.js
         {
-          method: 'POST',
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
           body: JSON.stringify({
             name,
-            userId,
             location: locationInput,
             datesOfSponsoring,
           }),
-        },
+        }
       );
       console.log(response);
       if (response.ok) {
-
         setName("");
         setLocationInput("");
+        const token = localStorage.getItem("token");
+        const decoded = jwtDecode(token);
+        console.log(decoded);
+        console.log(token);
 
         setDatesOfSponsoring([]);
+
         setUserId('');
         alert('User created successfully!');
       } else if (response.status === 409) {
         alert('Location already sponsored!');
       } else {
         alert('Failed to sponsor, please check information')
+
       }
     } catch (error) {
       alert(error.message);
@@ -79,11 +80,16 @@ export default function SponsorRegister() {
       <form onSubmit={handleSubmit}>
         <label>Name:</label>
         <input
-          type='name'
+          list="name-options"
+          type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
         />
+
+        *<label>Location:</label>
+        <input
+
 
         <br></br>
 
@@ -98,20 +104,21 @@ export default function SponsorRegister() {
         <label>Location:</label>
         <input
 
+
           type="location"
           value={locationInput}
           onChange={(e) => setLocationInput(e.target.value)}
-
           required
         />
         <br></br>
         <label>Dates of Sponsorship:</label>
         <input
-          type='datesOfSponsoring'
+          type="datesOfSponsoring"
           value={datesOfSponsoring}
           onChange={(e) => changeDateArray(e)}
           required
         />
+
 
         <br></br>
    { localStorage.getItem("token") ? <button onChange={console.log("hi")}> Click Me! </button> : <p>You must be logged in to view this button</p> }
@@ -122,6 +129,7 @@ export default function SponsorRegister() {
         />
 
         <button type='submit'>Register</button>
+
       </form>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
@@ -191,12 +199,14 @@ export default function SponsorRegister() {
         voluptatem.
       </p>
 
+
       <div className='sponsor-pic'>
         <h1>SPONSOR A STOP!</h1>
       <p c> take the the take the time to sponsor a bus stop near you NOW!!!. With the value of your information that allow us to collect data, and build infastructure, we can provide fast bus stops all over indeanapolis. With your input we can return accurate bus stops accordingto your coordinats</p>
+
         <img
-          src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVrsXtoBS6GbuRmp_-W0FftkzFOl9FkJrJWQ&s'
-          alt='IndyGo Logo'
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVrsXtoBS6GbuRmp_-W0FftkzFOl9FkJrJWQ&s"
+          alt="IndyGo Logo"
         />
       </div>
       <p>
@@ -219,11 +229,11 @@ export default function SponsorRegister() {
         ut felis. Suspendisse ultrices, risus id facilisis ullamcorper, libero
         felis varius felis, et cursus dui velit non nulla.
       </p>
-      <div className='aboutPic'>
+      <div className="aboutPic">
         <img
-          style={{ width: '30%' }}
-          src='https://st2.depositphotos.com/3765139/6173/i/950/depositphotos_61730885-stock-photo-old-bus-retro-style2.jpg'
-          alt='IndyGo Bus'
+          style={{ width: "30%" }}
+          src="https://st2.depositphotos.com/3765139/6173/i/950/depositphotos_61730885-stock-photo-old-bus-retro-style2.jpg"
+          alt="IndyGo Bus"
         />
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
         consequat nisi id risus malesuada, vitae commodo nulla efficitur. Sed at
@@ -245,11 +255,11 @@ export default function SponsorRegister() {
         felis varius felis, et cursus dui velit non nulla.
       </div>
       <img
-        style={{ width: '30%' }}
-        src='https://st2.depositphotos.com/3765139/6173/i/950/depositphotos_61730885-stock-photo-old-bus-retro-style2.jpg'
-        alt='IndyGo Bus'
+        style={{ width: "30%" }}
+        src="https://st2.depositphotos.com/3765139/6173/i/950/depositphotos_61730885-stock-photo-old-bus-retro-style2.jpg"
+        alt="IndyGo Bus"
       />
-      <div className='randomParagraph'>
+      <div className="randomParagraph">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
           consequat nisi id risus malesuada, vitae commodo nulla efficitur. Sed
@@ -272,10 +282,10 @@ export default function SponsorRegister() {
           dui velit non nulla.
         </p>
       </div>
-      <div className='contact-pic'>
+      <div className="contact-pic">
         <img
-          src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1MItdHg7Dft465SwXLUCH5IkW6bwP53V4LduwJQhMDI_-jDbmKhihTQqtIcicppNOoyo&usqp=CAU'
-          alt='IndyGo Bus'
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1MItdHg7Dft465SwXLUCH5IkW6bwP53V4LduwJQhMDI_-jDbmKhihTQqtIcicppNOoyo&usqp=CAU"
+          alt="IndyGo Bus"
         />
       </div>
       <p>
@@ -348,4 +358,3 @@ export default function SponsorRegister() {
     </div>
   );
 }
-
