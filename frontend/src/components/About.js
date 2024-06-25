@@ -1,40 +1,39 @@
 import React from 'react';
 import './About.css';
-import Footer from './Footer';
 
 export default function About() {
   return (
+    <>
+      <div className='Contact-Container-Row'>
+        <h1 className='Row-Header'>About Us</h1>
+        <p>Hello, we are indygo, one of the largest transportation buissnesses in indeanapolis. A common goal among indygo is that of bettering the community, seemlessly this website is centered around,  allowing a user to pick a bus stop and keep track of whos gonna clean it(sponsoring). This website is highly immersive if youre looking to get involved and feeling extra zestful, please think about setting up a time to sponsor a bus stop.  </p>
+        <div className='about-pic'>
 
-    <div className='Contact-Container-Row'>
-      <h1 className='Row-Header'>About Us</h1>
-      <p>Hello, we are indygo, one of the largest transportation buissnesses in indeanapolis. A common goal among indygo is that of bettering the community, seemlessly this website is centered around,  allowing a user to pick a bus stop and keep track of whos gonna clean it(sponsoring). This website is highly immersive if youre looking to get involved and feeling extra zestful, please think about setting up a time to sponsor a bus stop.  </p>
-      <div className='about-pic'>
-
-        <img
-          style={{ width: '30%' }}
-          src='https://st2.depositphotos.com/3765139/6173/i/950/depositphotos_61730885-stock-photo-old-bus-retro-style2.jpg'
-          alt='IndyGo Bus'
-        />
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-        consequat nisi id risus malesuada, vitae commodo nulla efficitur. Sed at
-        volutpat leo, at fermentum neque. Aliquam erat volutpat. Fusce auctor
-        sapien a mauris ullamcorper, a interdum elit vehicula. Phasellus in
-        justo sit amet odio sodales vehicula sit amet eget magna. Ut vel ligula
-        vitae turpis dignissim lacinia. Curabitur sit amet eros ut lacus aliquam
-        blandit. Sed ut arcu purus. Suspendisse potenti. Morbi non metus nulla.
-        Donec dictum fringilla nisl, eget consectetur felis tempus id. Cras et
-        viverra turpis. Vestibulum faucibus dui in velit vulputate, a cursus
-        risus tristique. Integer scelerisque, metus at ultricies pulvinar, orci
-        libero tristique est, in suscipit ex velit nec dolor. Maecenas tempor,
-        nunc non facilisis venenatis, justo lacus convallis erat, at porttitor
-        mi magna sit amet eros. Etiam eget ligula sit amet neque blandit
-        faucibus a et tortor. Aenean sit amet erat sit amet elit efficitur
-        pellentesque. Nam vehicula sapien nec urna efficitur vestibulum. Mauris
-        sit amet malesuada turpis. Nullam non urna id justo egestas gravida vel
-        ut felis. Suspendisse ultrices, risus id facilisis ullamcorper, libero
-        felis varius felis, et cursus dui velit non nulla.
+          <img
+            style={{ width: '30%' }}
+            src='https://st2.depositphotos.com/3765139/6173/i/950/depositphotos_61730885-stock-photo-old-bus-retro-style2.jpg'
+            alt='IndyGo Bus'
+          />
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+          consequat nisi id risus malesuada, vitae commodo nulla efficitur. Sed at
+          volutpat leo, at fermentum neque. Aliquam erat volutpat. Fusce auctor
+          sapien a mauris ullamcorper, a interdum elit vehicula. Phasellus in
+          justo sit amet odio sodales vehicula sit amet eget magna. Ut vel ligula
+          vitae turpis dignissim lacinia. Curabitur sit amet eros ut lacus aliquam
+          blandit. Sed ut arcu purus. Suspendisse potenti. Morbi non metus nulla.
+          Donec dictum fringilla nisl, eget consectetur felis tempus id. Cras et
+          viverra turpis. Vestibulum faucibus dui in velit vulputate, a cursus
+          risus tristique. Integer scelerisque, metus at ultricies pulvinar, orci
+          libero tristique est, in suscipit ex velit nec dolor. Maecenas tempor,
+          nunc non facilisis venenatis, justo lacus convallis erat, at porttitor
+          mi magna sit amet eros. Etiam eget ligula sit amet neque blandit
+          faucibus a et tortor. Aenean sit amet erat sit amet elit efficitur
+          pellentesque. Nam vehicula sapien nec urna efficitur vestibulum. Mauris
+          sit amet malesuada turpis. Nullam non urna id justo egestas gravida vel
+          ut felis. Suspendisse ultrices, risus id facilisis ullamcorper, libero
+          felis varius felis, et cursus dui velit non nulla.
+        </div>
       </div>
-    </div>
       <img
         style={{ width: '30%' }}
         src='https://st2.depositphotos.com/3765139/6173/i/950/depositphotos_61730885-stock-photo-old-bus-retro-style2.jpg'

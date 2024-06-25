@@ -1,30 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useState } from "react";
 import { jwtDecode } from "jwt-decode";
-
-
 import "./Sponsor.css";
-import Footer from "./Footer";
-
-import React, { useState } from 'react';
-
-
-
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-
-
-
 
 export default function SponsorRegister() {
-  const location = useLocation(); // Retrieve selected location from previous page (map)
-  const selectedLocation = location.state?.location; // Get selected location from state from map.js
   const [name, setName] = useState("");
   const [locationInput, setLocationInput] = useState("");
+  const [userId, setUserId] = useState("")
 
   const [datesOfSponsoring, setDatesOfSponsoring] = useState([]);
-  const [isGuest, setIsGuest] = useState(true);
-  const isLoggedIn = localStorage.getItem("token") ? true : false;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -72,65 +55,59 @@ export default function SponsorRegister() {
   };
 
   return (
-    
-    <div className='sponsor-form-container'>
- 
-      <h2 className='New-Sponsor'>Register New Sponsor</h2>
-      <br></br>
-      <form onSubmit={handleSubmit}>
-        <label>Name:</label>
-        <input
-          list="name-options"
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
+    <>
+      <div className='sponsor-form-container'>
 
-        *<label>Location:</label>
-        <input
-
-
+        <h2 className='New-Sponsor'>Register New Sponsor</h2>
         <br></br>
+        <form onSubmit={handleSubmit}>
+          <label>Name:</label>
+          <input
+            list="name-options"
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
 
-        <label>User Id</label>
-        <input
-          type='text'
-          value={userId}
-          onChange={(e) => setUserId(e.target.value)}
-          required
-        />
-        <br></br>
-        <label>Location:</label>
-        <input
-
-
-          type="location"
-          value={locationInput}
-          onChange={(e) => setLocationInput(e.target.value)}
-          required
-        />
-        <br></br>
-        <label>Dates of Sponsorship:</label>
-        <input
-          type="datesOfSponsoring"
-          value={datesOfSponsoring}
-          onChange={(e) => changeDateArray(e)}
-          required
-        />
+          *<label>Location:</label>
+          <input
+            type='text'
+            value={userId}
+            onChange={(e) => setUserId(e.target.value)}
+            required
+          />
+          <br></br>
+          <label>Location:</label>
+          <input
 
 
-        <br></br>
-   { localStorage.getItem("token") ? <button onChange={console.log("hi")}> Click Me! </button> : <p>You must be logged in to view this button</p> }
-      </form><br></br>
-      <img
+            type="location"
+            value={locationInput}
+            onChange={(e) => setLocationInput(e.target.value)}
+            required
+          />
+          <br></br>
+          <label>Dates of Sponsorship:</label>
+          <input
+            type="datesOfSponsoring"
+            value={datesOfSponsoring}
+            onChange={(e) => changeDateArray(e)}
+            required
+          />
+
+
+          <br></br>
+          {localStorage.getItem("token") ? <button onChange={console.log("hi")}> Click Me! </button> : <p>You must be logged in to view this button</p>}
+        </form><br></br>
+        <img
           src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVrsXtoBS6GbuRmp_-W0FftkzFOl9FkJrJWQ&s'
           alt='IndyGo Logo'
         />
 
         <button type='submit'>Register</button>
 
-      </form>
+      </div>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -202,7 +179,7 @@ export default function SponsorRegister() {
 
       <div className='sponsor-pic'>
         <h1>SPONSOR A STOP!</h1>
-      <p c> take the the take the time to sponsor a bus stop near you NOW!!!. With the value of your information that allow us to collect data, and build infastructure, we can provide fast bus stops all over indeanapolis. With your input we can return accurate bus stops accordingto your coordinats</p>
+        <p c> take the the take the time to sponsor a bus stop near you NOW!!!. With the value of your information that allow us to collect data, and build infastructure, we can provide fast bus stops all over indeanapolis. With your input we can return accurate bus stops accordingto your coordinats</p>
 
         <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVrsXtoBS6GbuRmp_-W0FftkzFOl9FkJrJWQ&s"
@@ -355,6 +332,6 @@ export default function SponsorRegister() {
         eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
         voluptatem.
       </p>
-    </div>
+    </>
   );
 }

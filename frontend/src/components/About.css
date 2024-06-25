@@ -2,11 +2,11 @@
   border: 5px solid black;
 }
 
-.Contact-Container-Row{
-display: flex;
-flex-direction: column;
+.Contact-Container-Row {
+  display: flex;
+  flex-direction: column;
+}
 
-  
 body {
   display: flex;
   flex-direction: column;
@@ -25,4 +25,3 @@ body {
   bottom: 0;
   width: 100%;
 }
-
