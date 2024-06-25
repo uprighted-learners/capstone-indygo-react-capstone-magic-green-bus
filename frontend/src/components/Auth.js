@@ -113,12 +113,6 @@ export default function Auth() {
   //   }
   // };
 
-  
-  
-  const continueGuest = () => {
-     setIsGuest(true);//just setting setIsGuest to true because we don't want that to count as being logged in incase permissions variy for logged in users vs Guests down the road
-     navigate("/")
-
 
   const continueGuest = () => {
     setIsGuest(true); //just setting setIsGuest to true because we don't want that to count as being logged in incase permissions variy for logged in users vs Guests down the road
@@ -160,7 +154,6 @@ export default function Auth() {
 
   return (
    <div>
-        <div>
       <h1>{isLoginMode ? "Login" : "Sign Up"}</h1>
       <form onSubmit={handleSubmit}>
         {!isLoginMode ? (
