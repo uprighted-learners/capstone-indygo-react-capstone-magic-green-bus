@@ -14,14 +14,10 @@ exports.registerNewUser = async (req, res) => {//an asyncronous function for try
         const user = new User({
             username: req.body.username,
             password: hashedPassword,
-            email: req.body.email,
-            timestamp: Date.now(),
-            isAdmin: req.body.isAdmin = false,//a data object that will be passed to the server  when the user is logged 
-            //and to store our data and buld infastructures in the database
         } )
-
-const {username, email, password} = req.body
-if(!username || !email || !password){
+console.log(req.body)
+const {username,  password} = req.body
+if(!username  || !password){
     throw new Error("please provide this info")
 }
 if(password < 10){
@@ -36,39 +32,7 @@ res.status(404).json({message: "internal server error"})
     }
 }
 
-exports.registerAdmin = async (req, res) => {
-    try{
-        const hashedPassword = await bcrypt.hash(req.body.password)
-        isAdmin = new isAdmin
-        const user = new User({
-            username: req.body.username,
-            password: hashedPassword,
-            email: req.body.email,
-            timestamp: Date.now(),
-            isAdmin: req.body.isAdmin = true,//a data object that will be passed to the server  when the user is logged 
-            //and to store our data and buld infastructures in the database
-        })
-        }
-    catch(error){
-        console.log(error)
-        res.status(404).json({message: "internal server error"})
-    }
-}
-exports.adminLogin = async (req, res) => {
-    try{
-const user = await User.findOne({email: req.body.email})
-if(!user){
-    throw new Error("user not found")
-}
-const validAdminPassword = await bcrypt.compare(req.body.password, user.password)
-if(!validAdminPassword){
-    res.status(404).json({message: "invalid admin password"})
-}
-    }catch(error){
-        console.log(error)
-        res.status(404).json({message: "internal server error"})
-    }
-}
+
 exports.loginUser = async (req, res) => {
     try {
       const user = await User.findOne({username: req.body.username});
@@ -91,7 +55,7 @@ exports.loginUser = async (req, res) => {
   }
 exports.updateUser = async (req, res)=>{
   try{
-    const user = await User.findOneAndUpdate({email: req.body.email, password: req.body.password, username: req.body.username})
+    const user = await User.findOneAndUpdate({password: req.body.password, username: req.body.username})
 if (!user) {
     res.status(404).json({ message: "User not found" });
   }
