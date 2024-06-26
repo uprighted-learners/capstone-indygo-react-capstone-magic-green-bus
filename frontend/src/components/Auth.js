@@ -5,7 +5,6 @@ import "./Auth.css";
 export default function Auth() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
   const [isLoginMode, setIsLoginMode] = useState(true);
   const [isGuest, setIsGuest] = useState(false);
   const navigate = useNavigate();
@@ -17,6 +16,7 @@ export default function Auth() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
       });
+      console.log(response)
       if (!response.ok) throw new Error(errorMessage);
       const data = await response.json();
       localStorage.setItem("token", data.token);
@@ -31,7 +31,7 @@ export default function Auth() {
   };
 
   const loginUser = () => authenticateUser("http://localhost:8080/users/login", "Login failed");
-  const createUser = () => authenticateUser("http://localhost:3000/users/register", "Signup failed");
+  const createUser = () => authenticateUser("http://localhost:8080/users/register", "Signup failed");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -46,6 +46,7 @@ export default function Auth() {
   const logoutUser = () => {
     localStorage.clear();
     setIsLoginMode(true);
+    alert('Logout successful.');
     navigate("/");
   };
 
@@ -63,12 +64,6 @@ export default function Auth() {
           Username:
           <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} required />
         </label>
-        {!isLoginMode && (
-          <label>
-            Email:
-            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-          </label>
-        )}
         <label>
           Password:
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
