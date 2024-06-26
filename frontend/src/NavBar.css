@@ -60,9 +60,6 @@ a:hover {
     justify-content: center;
     align-items: center;
     position: relative;
-   
-   
-    
   }
   .navItem2{
     position: relative;
@@ -82,14 +79,6 @@ a:hover {
     position: relative;
     left: 60px;  
   }
-  .navItem6{
- position: relative;
- left: 70px;
-}
-.navItem7{
-  position: relative;
-  left: 80px;
-}
 }
 @media only screen and (width: 899px) and (height: 863px) {
   /* Your CSS styles for this specific viewport size */
@@ -142,16 +131,6 @@ left: 240px;
   }
   .navItem5 {
     font-size: 2.1em; /* Adjust font size for slightly bigger items */
-    margin-left: 15px; /* Adjust spacing between items */
-    margin-right: 15px; /* Adjust spacing between items */
-  }
-  .navItem6 {
-    font-size: 2.1em; /* Adjust font size for slightly bigger items */
-    margin-left: 15px; /* Adjust spacing between items */
-    margin-right: 15px; /* Adjust spacing between items */
-  }
-  .navItem7 {
-    font-size:2.1em; /* Adjust font size for slightly bigger items */
     margin-left: 15px; /* Adjust spacing between items */
     margin-right: 15px; /* Adjust spacing between items */
   }
