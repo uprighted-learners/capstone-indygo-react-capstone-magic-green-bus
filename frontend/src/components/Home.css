@@ -6,18 +6,49 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  font:  Arial,
 }
 
-.footer {
-  position: fixed;
-  margin-top: auto;
-  display: flex;
-  color: green;
-  justify-content: center;
-  font-size: 30px;
-  position: fixed;
-  left: 0;
-  bottom: 0;
+.Hero-Container-Img{
   width: 100%;
+  height: 400px;
+  position: relative;
+  top: -150px;
+  filter: brightness(0.5)
+  
 }
+.hero-section-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 400px;
+  position: relative;
+  top: -570px;
+  color: white;
+  font-weight: 900;
+}
+.Home-Button{
+  width: 200px;
+  height: 50px;
+  background-color: #3DAE2B;
+  border: none;
+  border-radius: 25px;
+  font-size: 20px;
+  font-weight: 600;
+  color:white;
+  margin-top: 20px;
+  cursor: pointer;
+}
+@media only screen and (min-width: 600px) and (max-width: 899px) {
+  .Hero-Container-Img{
+    width: 100%;
+    height: 400px;
+    position: relative;
+    top: -100px;
+    filter: brightness(0.5)
+    
+  }
 
+}
