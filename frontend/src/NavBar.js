@@ -2,12 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
 
+
 export default function NavBar() {
   return (
     <nav className='navWrapper'>
       <ul className='navList'>
+        
         <li className='navItem'>
-          <Link to='/'>ABOUT</Link>
+          <Link to='/'>HOME</Link>
         </li>
 
         <li className='navItem2'>

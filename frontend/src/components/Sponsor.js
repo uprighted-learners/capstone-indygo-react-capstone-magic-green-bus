@@ -1,17 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
-
-
 import "./Sponsor.css";
-import Footer from "./Footer";
-
-import React, { useState } from 'react';
 
 
 
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+
 
 
 
@@ -23,7 +17,7 @@ export default function SponsorRegister() {
   const [locationInput, setLocationInput] = useState("");
 
   const [datesOfSponsoring, setDatesOfSponsoring] = useState([]);
-  const [isGuest, setIsGuest] = useState(true);
+  
   const isLoggedIn = localStorage.getItem("token") ? true : false;
 
   const handleSubmit = async (e) => {
@@ -87,14 +81,11 @@ export default function SponsorRegister() {
           required
         />
 
-        *<label>Location:</label>
+        <label>Location:</label>
         <input
 
 
-        <br></br>
-
-        <label>User Id</label>
-        <input
+  
           type='text'
           value={userId}
           onChange={(e) => setUserId(e.target.value)}
@@ -122,7 +113,8 @@ export default function SponsorRegister() {
 
         <br></br>
    { localStorage.getItem("token") ? <button onChange={console.log("hi")}> Click Me! </button> : <p>You must be logged in to view this button</p> }
-      </form><br></br>
+   </form>
+      <form><br></br>
       <img
           src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVrsXtoBS6GbuRmp_-W0FftkzFOl9FkJrJWQ&s'
           alt='IndyGo Logo'
@@ -356,5 +348,5 @@ export default function SponsorRegister() {
         voluptatem.
       </p>
     </div>
-  );
-}
+  )
+};

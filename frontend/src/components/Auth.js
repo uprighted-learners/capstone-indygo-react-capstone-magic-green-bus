@@ -6,7 +6,7 @@ export default function Auth() {
   //our authentication funciton responsible for executing all the authentication functions within it
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
+
   const [isLoginMode, setIsLoginMode] = useState(true); //tracking login state
   const [isGuest, setIsGuest] = useState(false);
   const navigate = useNavigate(); //making a variable for navigation
@@ -118,12 +118,8 @@ export default function Auth() {
   const continueGuest = () => {
      setIsGuest(true);//just setting setIsGuest to true because we don't want that to count as being logged in incase permissions variy for logged in users vs Guests down the road
      navigate("/")
+  }
 
-
-  const continueGuest = () => {
-    setIsGuest(true); //just setting setIsGuest to true because we don't want that to count as being logged in incase permissions variy for logged in users vs Guests down the road
-    navigate("/");
-  };
   // guestButton.addEventListener("click", function(){
   //   continueGuest();
   // })
@@ -160,14 +156,17 @@ export default function Auth() {
 
   return (
    <div>
-        <div>
-      <h1>{isLoginMode ? "Login" : "Sign Up"}</h1>
+        <div className="container-section">
+      <h1 className='Login-Title'>{isLoginMode ? "Login" : "Sign Up"}
+      <label className='prompt-overlay'>To Sponsor A Stop</label>
+      </h1>
       <form onSubmit={handleSubmit}>
         {!isLoginMode ? (
           <>
-            <label>
+            <label className='username-label'>
               Username:
               <input
+              className='username-input-signup'
                 type='text'
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
@@ -177,103 +176,38 @@ export default function Auth() {
             <label>
               Password:
               <input
+              className='password-input-signup'
                 type='password'
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
             </label>
+         
           </>
+         
         ): <div>
           <label>username: 
-          <input type='username' value={username} onChange={(e) => setUsername(e.target.value)} required></input>
+          <input className='username-input-login'type='username' value={username} onChange={(e) => setUsername(e.target.value)} required></input><br></br>
           </label>
-          <label>password:<input type='password' value={password} onChange={(e)=> setPassword(e.target.value)} required></input></label>
+          <label>password:<input  className='password-input-login' type='password' value={password} onChange={(e)=> setPassword(e.target.value)} required></input></label>
          </div>}
-        <button type="submit">{isLoginMode ? "Login" : "Sign Up"}</button>
+        <button className='Login-Button' type="submit">{isLoginMode ? "Login" : "Sign Up"}</button>
       </form>
       <p>
         {isLoginMode ? "Don't have an account?" : 'Already have an account?'}
         <button type='button' onClick={toggleLogin}>
           {isLoginMode ? 'Sign Up' : 'Login'}
         </button>
-        <button type='button' onClick={(logoutUser)}Logout>Logout</button>
+        { localStorage.getItem("token") ? <button   onClick={(logoutUser)} onChange={console.log("hi")}> Click Me! </button> : <p></p> }
         <button id="guestButton" onClick={(continueGuest)}>Continue as Guest</button>
         {/* <button type='button' onClick={(updatePassword)}>Forgot your password?</button> */}
         {/* <button id='deleteButton'>Delete</button> */}
 
       </p>
       <div>
-        <h1>{isLoginMode ? "Login" : "Sign Up"}</h1>
-        <form onSubmit={handleSubmit}>
-          {!isLoginMode ? (
-            <>
-              <label>
-                Username:
-                <input
-                  type="text"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                  required
-                />
-              </label>
-              <label>
-                Email:
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-              </label>
-              <label>
-                Password:
-                <input
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                />
-              </label>
-            </>
-          ) : (
-            <div>
-              <label>
-                username:
-                <input
-                  type="username"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                  required
-                ></input>
-              </label>
-              <label>
-                password:
-                <input
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                ></input>
-              </label>
-            </div>
-          )}
-          <button type="submit">{isLoginMode ? "Login" : "Sign Up"}</button>
-        </form>
-        <p>
-          {isLoginMode ? "Don't have an account?" : "Already have an account?"}
-          <button type="button" onClick={toggleLogin}>
-            {isLoginMode ? "Sign Up" : "Login"}
-          </button>
-          <button type="button" onClick={logoutUser} Logout>
-            Logout
-          </button>
-          <button id="guestButton" onClick={continueGuest}>
-            Continue as Guest
-          </button>
-          <button id="deleteButton">Delete</button>
-        </p>
-        <div className="auth-pic">
+       
+        {/* <div className="auth-pic">
           <img
             style={{ width: "50%" }}
             src="https://i.etsystatic.com/8174292/r/il/48a81a/3632435075/il_1588xN.3632435075_26nn.jpg"
@@ -328,8 +262,9 @@ export default function Auth() {
           urna id justo egestas gravida vel ut felis. Suspendisse ultrices,
           risus id facilisis ullamcorper, libero felis varius felis, et cursus
           dui velit non nulla.
-        </p>
+        </p> */}
       </div>
     </div>
-  );
-}
+   </div>
+  )
+};
