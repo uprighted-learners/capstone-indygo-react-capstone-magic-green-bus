@@ -2,6 +2,7 @@ import React from 'react';
 import './About.css';
 
 
+
 export default function About() {
   return (
 <>
@@ -26,8 +27,8 @@ export default function About() {
           alt='IndyGo Bus'
         />
        
+
       </div>
-    </div>
       <img
         style={{ width: '30%' }}
         src='https://st2.depositphotos.com/3765139/6173/i/950/depositphotos_61730885-stock-photo-old-bus-retro-style2.jpg'

@@ -3,91 +3,56 @@ import { useNavigate } from "react-router-dom";
 import "./Auth.css";
 
 export default function Auth() {
-  //our authentication funciton responsible for executing all the authentication functions within it
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+
   const [isLoginMode, setIsLoginMode] = useState(true); //tracking login state
+
   const [isGuest, setIsGuest] = useState(false);
-  const navigate = useNavigate(); //making a variable for navigation
+  const navigate = useNavigate();
 
-  const loginUser = async () => {
+  const authenticateUser = async (url, errorMessage) => {
     try {
-      const response = await fetch("http://localhost:8080/users/login", {
-        //fetching from the backend in this case from our local host at the end point directly related to the login process
-        method: "POST", //declaring a method of POST to the backend
-
-        headers: {
-          "Content-Type": "application/json", //setting the headers for the JSON response
-        },
-        body: JSON.stringify({
-          //setting the body for the JSON response to strings
-          username: username, //data turned to a string so our inputs will expect strings
-          password: password,
-        }),
-      });
-      if (!response.ok) {
-        throw new Error("Authentication failed"); //validating the response failed and throwing an erorr
-      }
-
-      const data = await response.json(); //response.json is method that reads the response body and parses it as JSON returing a promise that resolved with the result of parsing the body text as JSON data
-      //also uses the await keyword that sas to await the response until the promise(response) is resolved
-      alert("Login successful"); //user feedback saying the login was successful
-      navigate("/"); //naviagates to the home page(but currently ineffective)
-      localStorage.setItem("token", data.token); //storing our authentication token via key value pairs token' as the key and data.token as its value
-      localStorage.setItem("username", data.username); //similar to the previous line storing our username associated with the token above
-      window.location.reload();
-
-      setUsername(""); //when a user is logging in, our server expects the username to be a string
-      setPassword("");
-
-      setIsLoginMode(true);
-    } catch (error) {
-      console.error("Login error:", error.message);
-    }
-  };
-
-  const createUser = async () => {
-    try {
-      const response = await fetch("http://localhost:3000/users/register", {
+      const response = await fetch(url, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          username: username,
-          password: password,
-        }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password }),
       });
-      if (!response.ok) {
-        throw new Error("Signup failed"); //this crashes backend
-      }
-      alert("Signup successful, please log in.");
-      setIsLoginMode(true);
+      console.log(response)
+      if (!response.ok) throw new Error(errorMessage);
+      const data = await response.json();
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("username", data.username);
+      alert('Authentication successful.');
       navigate("/");
+      setUsername("");
+      setPassword("");
     } catch (error) {
-      console.error("Signup error:", error.message);
+      console.error("Authentication error:", error.message);
     }
   };
+
+  const loginUser = () => authenticateUser("http://localhost:8080/users/login", "Login failed");
+  const createUser = () => authenticateUser("http://localhost:8080/users/register", "Signup failed");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (isLoginMode) {
-      loginUser();
-    } else {
-      createUser();
-    }
+    isLoginMode ? loginUser() : createUser();
   };
 
-  const toggleLogin = () => {
+  const toggleLoginMode = () => {
     setIsLoginMode(!isLoginMode);
+    setIsGuest(false);
   };
+
   const logoutUser = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("username");
-    setIsLoginMode(false);
+    localStorage.clear();
+    setIsLoginMode(true);
+    alert('Logout successful.');
     navigate("/");
   };
+
 
   // const updatePassword = async () => {//make a notification/form to navigate to when a button is selected
   //   try {
@@ -193,11 +158,12 @@ export default function Auth() {
           <label>password:<input  className='password-input-login' type='password' value={password} onChange={(e)=> setPassword(e.target.value)} required></input></label>
          </div>}
         <button className='Login-Button' type="submit">{isLoginMode ? "Login" : "Sign Up"}</button>
+
       </form>
       <p>
-        {isLoginMode ? "Don't have an account?" : 'Already have an account?'}
-        <button type='button' onClick={toggleLogin}>
-          {isLoginMode ? 'Sign Up' : 'Login'}
+        {isLoginMode ? "Don't have an account?" : "Already have an account?"}
+        <button type="button" onClick={toggleLoginMode}>
+          {isLoginMode ? "Sign Up" : "Login"}
         </button>
         { localStorage.getItem("token") ? <button   onClick={(logoutUser)} onChange={console.log("hi")}> Click Me! </button> : <p></p> }
         <button id="guestButton" onClick={(continueGuest)}>Continue as Guest</button>
