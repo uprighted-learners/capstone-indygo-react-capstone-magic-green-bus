@@ -1,14 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { jwtDecode } from "jwt-decode";
-
 import "./Sponsor.css";
 import Footer from "./Footer";
-
-import React, { useState } from "react";
-
-import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
 
 export default function SponsorRegister() {
   const location = useLocation(); // Retrieve selected location from previous page (map)

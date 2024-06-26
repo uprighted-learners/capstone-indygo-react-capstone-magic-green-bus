@@ -5,7 +5,7 @@
 .Contact-Container-Row{
 display: flex;
 flex-direction: column;
-
+}
   
 body {
   display: flex;
