@@ -2,6 +2,7 @@
   border: 5px solid black;
 }
 
+
 .Contact-Container-Row{
 display: flex-start;
 flex-direction: column;
@@ -9,6 +10,7 @@ margin-top: -480px;
 
 }
   
+
 body {
   display: flex;
   flex-direction: column;
@@ -37,6 +39,7 @@ body {
   margin: 20px;
   padding: 5px;
 }
+
 /* .Banner-About{
   position: relative;
   top: -360px;
@@ -62,6 +65,7 @@ body {
  }
 
  
+
 
 
 

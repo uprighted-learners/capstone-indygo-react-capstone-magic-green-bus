@@ -81,27 +81,28 @@ export default function App() {
 
   return (
 
-    // MapContainer component from react-leaflet to render the map
-    <MapContainer  center={[39.768577, -86.158098]} zoom={13}>
-      {/* TileLayer component to add the base map layer */}
-      <TileLayer
-        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        url= "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"     
-      />
-      {/* Iterate over locations and add markers for each location */}
-      {locations.map(location => (
-        <Marker key={location.id} position={[location.latitude, location.longitude]} icon={customIcon}>
-          {/* Popup component to display the location description */}
-          <Popup>{location.description}, {location.id},
-            {/* Conditionally render the button based on sponsorship status */}
-            {!isSponsored(location.id) && (
-              <button onClick={() => handleSponsorClick(location)}>Sponsor Me!</button>
-            )}
-          </Popup>
-        </Marker>
-      ))}
-    </MapContainer>
-
+    <>
+      {selectedLocation}
+      <MapContainer center={[39.768577, -86.158098]} zoom={13}>
+        {/* TileLayer component to add the base map layer */}
+        <TileLayer
+          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        {/* Iterate over locations and add markers for each location */}
+        {locations.map(location => (
+          <Marker key={location.id} position={[location.latitude, location.longitude]} icon={customIcon}>
+            {/* Popup component to display the location description */}
+            <Popup>{location.description}, {location.id},
+              {/* Conditionally render the button based on sponsorship status */}
+              {!isSponsored(location.id) && (
+                <button onClick={() => handleSponsorClick(location)}>Sponsor Me!</button>
+              )}
+            </Popup>
+          </Marker>
+        ))}
+      </MapContainer>
+    </>
   );
 }
 
