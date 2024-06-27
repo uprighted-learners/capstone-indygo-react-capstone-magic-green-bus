@@ -82,7 +82,7 @@ export default function App() {
   return (
 
     // MapContainer component from react-leaflet to render the map
-    <MapContainer center={[39.768577, -86.158098]} zoom={13}>
+    <MapContainer  center={[39.768577, -86.158098]} zoom={13}>
       {/* TileLayer component to add the base map layer */}
       <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

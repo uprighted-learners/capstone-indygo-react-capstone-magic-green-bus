@@ -17,15 +17,7 @@ export default function About() {
     <div className='Contact-Container-Row'>
       <h1 className='Row-Header'>About Us</h1>
       <p className='about-content'>Hello, we are IndyGo, one of the largest transportation businesses in Indianapolis. A common goal among IndyGo is that of bettering the community. Seamlessly, this website is centered around allowing a user to pick a bus stop and keep track of who's going to clean it (sponsoring). No approval needed—just select a stop and get started. This website is highly immersive if you're looking to get involved. If you're feeling extra zestful, please think about setting up a time to sponsor a bus stop. Given that this website is primarily centered around transforming the community, we're looking for individuals with a green thumb and a love for the environment</p>
-      <div className='about-pic'>
-
-        <img
-        className='Banner-About'
-          style={{ width: '30%' }}
-          src='https://st2.depositphotos.com/3765139/6173/i/950/depositphotos_61730885-stock-photo-old-bus-retro-style2.jpg'
-          alt='IndyGo Bus'
-        />
-       
+      <div className='about-pic'>     
       </div>
     </div>
       <img
