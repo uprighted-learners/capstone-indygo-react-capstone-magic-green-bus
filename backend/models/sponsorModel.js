@@ -8,11 +8,6 @@ const sponsorSchema = new mongoose.Schema({
     required: true,
   },
 
-  userId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "user",
-    required: false,
-  },
   location: {
     type: String,
     required: true,

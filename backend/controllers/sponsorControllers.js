@@ -43,24 +43,24 @@ exports.createSponsor = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-//UPDATE == 'update' a sponsor
-exports.updateSponsor = async (req, res) => {
-  const { id } = req.params;
-  const sponsor = req.body;
-  try {
-    const updatedSponsor = await Sponsor.findByIdAndUpdate(id, sponsor, {
-      new: true,
-    });
-    res.json(updatedSponsor);
-  } catch (error) {
-    res.status(409).json({ message: error.message });
-  }
-};
+// //UPDATE == 'update' a sponsor
+// exports.updateSponsor = async (req, res) => {
+//   const { id } = req.params;
+//   const sponsor = req.body;
+//   try {
+//     const updatedSponsor = await Sponsor.findByIdAndUpdate(id, sponsor, {
+//       new: true,
+//     });
+//     res.json(updatedSponsor);
+//   } catch (error) {
+//     res.status(409).json({ message: error.message });
+//   }
+// };
 //DELETE == 'delete' a sponsor
 exports.deleteSponsor = async (req, res) => {
-  const { id } = req.params;
+  const { username } = req.params;
   try {
-    const sponsor = await Sponsor.findByIdAndDelete(id);
+    const sponsor = await Sponsor.findByIdAndDelete(username:id);//test this 
     res.json({ message: "Sponsor deleted successfully." });
   } catch (error) {
     res.status(409).json({ message: error.message });
