@@ -4,7 +4,7 @@ import {  useLocation } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 
 import "./Sponsor.css";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 
 
 export default function SponsorRegister() {
