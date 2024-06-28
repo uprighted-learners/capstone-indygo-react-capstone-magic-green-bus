@@ -16,6 +16,11 @@ const sponsorSchema = new mongoose.Schema({
     type: Array,
     required: true,
   },
+  expiresAt: {
+    type: Date,
+    default: Date.now,
+    index: { expires: "30d" },
+  },
   timestamp: {
     type: Date,
     default: Date.now,

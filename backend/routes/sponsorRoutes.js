@@ -10,7 +10,7 @@ router.post("/create", sponsorController.createSponsor);
 //update sign up - put - /sponsor/update/:username
 router.put("/update/:username", sponsorController.updateSponsor);
 
-//delete sign up - delete - /sponsor/delete/:id
+//delete sign up - delete - /sponsor/delete/:username
 router.delete("/delete/:username", sponsorController.deleteSponsor);
 
 module.exports = router;
