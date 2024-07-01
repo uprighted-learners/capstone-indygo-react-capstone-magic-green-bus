@@ -14,8 +14,6 @@ export default function SponsorRegister() {
   const [userId, setUserId] = useState("");
   const [datesOfSponsoring, setDatesOfSponsoring] = useState([]);
 
-  const [UserId,setUserId] = useState('')
-
   const isLoggedIn = localStorage.getItem("token") ? true : false;
 
   const selectedLocation = location.state?.location; // Get selected location from state from map.js
@@ -73,11 +71,11 @@ export default function SponsorRegister() {
   };
 
   return (
-
+<>
     
     <div className='sponsor-form-container'>
       <label className='sponsor-form-container2'>Sponsor a stop
-\
+
  
       <h2 className='New-Sponsor'>Register New Sponsor</h2>
       <br></br>
@@ -145,7 +143,7 @@ export default function SponsorRegister() {
         </form>
         <br></br>
    { localStorage.getItem("token") ? <button className='ternary-button'onChange={console.log("hi")}> Click Me! </button> : <p>You must be logged in to view this button</p> }
-   </form></label>
+  </label>
 
       <form><br></br>
       <img
@@ -275,6 +273,7 @@ export default function SponsorRegister() {
         voluptatem.
       </p>
     </div>
+    </>
   )
 };
 
