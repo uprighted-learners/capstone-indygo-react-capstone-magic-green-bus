@@ -43,7 +43,7 @@ exports.loginUser = async (req, res) => {
       throw new Error('invalid credentials')
       
       const token = jwt.sign({ id: user._id }, SALT);
-      res.json({ token });
+      res.status(200).json({ token });
     } catch (error) {
       console.log(error);
       res.status(400).json({ message: error.message });
