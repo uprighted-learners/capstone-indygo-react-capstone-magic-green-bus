@@ -95,6 +95,7 @@ export default function App() {
   }, []); // Empty dependency array to run only once when component mounts
 
   return (
+
     <>
       <MapContainer center={[39.768577, -86.158098]} zoom={13}>
         {/* TileLayer component to add the base map layer */}

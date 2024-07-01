@@ -1,6 +1,7 @@
 import React from 'react';
 import './Home.css';
 
+import {Link } from 'react-router-dom'
 
 export default function Home() {
   return (
@@ -16,9 +17,13 @@ export default function Home() {
      <div className='hero-section-content'>
      <h1>Beterring the community</h1><br></br>
       <p>Every day, we're dedicated to enhancing Indiana's bus stops, one clean-up at a time. Join us — all we need are passionate locals like you!</p>    
-      <button className='Home-Button'>Sponsor A Stop</button>
+      <button type='submit'  className='Home-Button'> <Link to='/sponsor'>Sponsor a stop</Link></button>
 </div>
-
+<div className='flexbox-container'>
+<div className='box1'>text</div>
+<div className='box2'>text</div>
+<div className='box3'>test</div>
+</div>
 
     </>
   );

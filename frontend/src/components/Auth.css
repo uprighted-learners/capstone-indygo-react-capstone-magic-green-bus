@@ -71,10 +71,6 @@ body {
   margin: 10px 0;
 }
 @media only screen and (min-width: 1600px) {
-  body {
-    background-color: blue; /* Optional: background color for the nav */
-  }
-
   .container-section {
     padding: 20px;
     margin: 20px auto; 
