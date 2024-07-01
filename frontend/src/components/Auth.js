@@ -33,8 +33,8 @@ export default function Auth() {
     }
   };
 
-  const loginUser = () => authenticateUser(`${process.env.REACT_APP_API_URL}/users/login`, "Login failed");
-  const createUser = () => authenticateUser(`${process.env.REACT_APP_API_URL}/users/register`, "Signup failed");
+  const loginUser = () => authenticateUser(`${process.env.REACT_APP_API_URL}users/login`, "Login failed");
+  const createUser = () => authenticateUser(`${process.env.REACT_APP_API_URL}users/register`, "Signup failed");
   
   const handleSubmit = (event) => {
     event.preventDefault();
