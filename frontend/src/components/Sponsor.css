@@ -1,8 +1,50 @@
 
-
-.sponsor-form-container {
+.sponsor-form-container{
+    width: 40%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     background-color: rgba(201, 189, 189, 0.5);
+     position: relative;
+     left: 410px;
+     /* background: url('https://www.elements.org/media/3673/indygo_logo_indygo-logo-blue.png?mode=max&width=600&height=220&upscale=false'); */
+}
+.New-Sponsor{
+    color: white;
+}
+.sponsor-form-container2{
     width: 100%;
-    
+    display:block;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     font-size: larger;
+     font-weight: 900;
+}
+.input-sponsor{
+    margin: 10px;
+    width: 150px;
+    height: 25px;
+}
+.sponsor-form-container2{
+display: flex;
+justify-content: center;
+}
+.NameInput-sponsor{
+    margin: 10px;
+    width: 150px;
+    height: 25px;
+}
+.ternary-button{
+    margin: 10px;
+    width: 150px;
+    height: 25px;
+    border-radius: 2px;
+    background-color: #3DAE2B;
+    color: white;
+    font-weight: 800;
 }
 @media only screen and (min-width: 299px) and (max-width: 863px){
     body{
@@ -17,11 +59,16 @@
      text-align: center;
      width: 30%;
     }
+    .sponsor-form-container{
+        width: 30%;
+        display:block;
+         position: relative;
+    }
+    .New-Sponsor{
+        color: white;
+    }
 }
 @media only screen and (min-width: 900px) and (max-width: 1199px) {
-    body{
-      background-color: yellow; /* Optional: background color for the nav */
-    }
    .navList {
       flex-direction: row; /* Arrange items vertically */
       font-weight: 900;
@@ -53,16 +100,5 @@ body {
   min-height: 100vh;
 }
 
-.footer {
-  position: fixed;
-  margin-top: auto;
-  display: flex;
-  color: green;
-  justify-content: center;
-  font-size: 30px;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-}
+
 
