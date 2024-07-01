@@ -11,11 +11,6 @@ import Footer from "./components/Footer";
 import Map from "./components/Map";
 
 function App() {
-  // const textstyle = {
-  //   fontsize: "16px",
-  // };
-  // return <div style={textstyle}>Hello World</div>;
-  // }
   return (
     <Router>
       <NavBar />
