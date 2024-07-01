@@ -10,14 +10,22 @@ export default function Contact() {
         you will be redirected to resourses to get you connected to what you
         need help with!
       </h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-        consequat nisi id risus malesuada, vitae commodo nulla efficitur. Sed at
-        volutpat leo, at fermentum neque. Aliquam erat volutpat. Fusce auctor
-        sapien a mauris ullamcorper, a interdum elit vehicula. Phasellus in
+      <p className='contact-container'>
+        If you have a problem with the Indygo bus, please let us know by
+        contacting our customer service team at:
+        <br />
+        <span  className='Contact-Header'style={{ fontWeight: 'bold' }}>Customer Service Team:</span>
+        <div className='responsive-contact-container'></div>
+        <br />
+        <span className='contact1' style={{ color: 'blue' }}>Phone: (555) 555-5555</span>
+        <br />
+        <span className='contact2'style={{ color: 'blue' }}>Email: info@indygo.net</span>
+        <br />
+        <span className='contact3'style={{ color: 'blue' }}>Hours: 8:00 AM - 6:00 PM</span>
       </p>
       <div class='IndyContact'>
         <a
+        className='href-contact'
           style={{
             color: 'blue',
             fontSize: '75px',

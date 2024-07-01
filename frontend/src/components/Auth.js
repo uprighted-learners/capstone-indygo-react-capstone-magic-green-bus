@@ -136,7 +136,7 @@ export default function Auth() {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 required
-              />
+              /><br></br>
             </label>
             <label>
               Password:
@@ -165,8 +165,8 @@ export default function Auth() {
         <button type="button" onClick={toggleLoginMode}>
           {isLoginMode ? "Sign Up" : "Login"}
         </button>
-        <button   onClick={(logoutUser)} onChange={console.log("hi")}> Logout </button>
-        <button id="guestButton" onClick={(continueGuest)}>Continue as Guest</button>
+        <button  className='logout-btn'  onClick={(logoutUser)} onChange={console.log("hi")}> Logout </button>
+        <button className='Guest-Btn'id="guestButton" onClick={(continueGuest)}>Continue as Guest</button>
         {/* <button type='button' onClick={(updatePassword)}>Forgot your password?</button> */}
         {/* <button id='deleteButton'>Delete</button> */}
 

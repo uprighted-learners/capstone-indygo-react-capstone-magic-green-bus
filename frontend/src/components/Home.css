@@ -57,26 +57,17 @@ body {
 
 border: solid 2px black;
 height: 356px;
-width:466px;
+width:1350px;
 display: flex;
 flex-direction: column;
+background-color: #00539f;
+color: white;
 }
-.box2 {
-
-  border: solid 2px black;
-  height: 356px;
-  width:466px;
+.content-header{
   display: flex;
-  flex-direction: column;
-  }
-  .box3 {
-   
-    border: solid 2px black;
-    height: 356px;
-    width:466px;
-    display: flex;
-    flex-direction: column;
-    }
+  flex-direction: row;
+ 
+}
 
 @media only screen and (min-width: 600px) and (max-width: 899px) {
   .Hero-Container-Img{

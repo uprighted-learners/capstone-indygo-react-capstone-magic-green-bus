@@ -5,12 +5,16 @@ import './NavBar.css';
 
 export default function NavBar() {
   return (
-    <nav className='navWrapper'>
-      <img className='Logo-indyGO' src='https://www.elements.org/media/3673/indygo_logo_indygo-logo-blue.png?mode=max&width=600&height=220&upscale=false'></img>
+  <nav className='navWrapper'><p className='indyGo'>indyGo</p>
+
       <ul className='navList'>
-        
+        <li className='navItem-Logo'>indyGo</li>
         <li className='navItem'>
           <Link to='/'>HOME</Link>
+        </li>
+        <li className='navItemAbout'>
+         
+          <Link to='/about'>ABOUT</Link>
         </li>
         <li className='navItem2'>
           <Link to='/map'>MAP</Link>

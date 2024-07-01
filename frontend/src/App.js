@@ -7,12 +7,14 @@ import Auth from './components/Auth';
 import Contact from './components/Contact';
 import Sponsor from './components/Sponsor';
 import Footer from './components/Footer';
+import Header from './components/Header.jsx'
 
 import Map from './components/Map';
 
 function App() {
   return (
     <Router>
+<Header />
       <NavBar />
 
       <Routes>

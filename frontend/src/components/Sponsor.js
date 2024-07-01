@@ -1,17 +1,13 @@
 import React, { useState, useEffect } from "react";
 import {  useLocation } from "react-router-dom";
-
 import { jwtDecode } from "jwt-decode";
-
 import "./Sponsor.css";
-import { useLocation } from "react-router-dom";
-
 
 export default function SponsorRegister() {
   const [name, setName] = useState("");
   const location = useLocation(); // Retrieve selected location from previous page (map)
   const [locationInput, setLocationInput] = useState("");
-  const [userId, setUserId] = useState("");
+  // const [userId, setUserId] = useState("");
   const [datesOfSponsoring, setDatesOfSponsoring] = useState([]);
 
   const [UserId,setUserId] = useState('')
@@ -74,10 +70,10 @@ export default function SponsorRegister() {
 
   return (
 
-    
+    <>
     <div className='sponsor-form-container'>
       <label className='sponsor-form-container2'>Sponsor a stop
-\
+
  
       <h2 className='New-Sponsor'>Register New Sponsor</h2>
       <br></br>
@@ -90,29 +86,12 @@ export default function SponsorRegister() {
           onChange={(e) => setName(e.target.value)}
           required
         /><br></br>
-
-        <label className='nameLabel-Sponsor'>Location:</label>
-        {/* <input
-
-
-  
-          type='text'
-          value={userId}
-          onChange={(e) => setUserId(e.target.value)}
-          required
-        />
-
-
-          type="location"
-          value={locationInput}
-          onChange={(e) => setLocationInput(e.target.value)}
-          required
-        /> */}
+        
         <br></br>
         <label className='sponsordates-Header'>Dates of Sponsorship:</label>
         <input
         className='input-sponsor'
-          type="datesOfSponsoring"
+          type="date"
           value={datesOfSponsoring}
           onChange={(e) => changeDateArray(e)}
           required
@@ -128,21 +107,13 @@ export default function SponsorRegister() {
             required
           />
           <br></br>
-          <label>Dates of Sponsorship:</label>
-          <input
-            type="datesOfSponsoring"
-            value={datesOfSponsoring}
-            onChange={(e) => changeDateArray(e)}
-            required
-          />
-
           <br></br>
           {localStorage.getItem("token") ? (
             <button onChange={console.log("hi")}> Click Me! </button>
           ) : (
             <p>You must be logged in to view this button</p>
           )}
-        </form>
+      
         <br></br>
    { localStorage.getItem("token") ? <button className='ternary-button'onChange={console.log("hi")}> Click Me! </button> : <p>You must be logged in to view this button</p> }
    </form></label>
@@ -275,6 +246,7 @@ export default function SponsorRegister() {
         voluptatem.
       </p>
     </div>
+    </>
   )
 };
 
