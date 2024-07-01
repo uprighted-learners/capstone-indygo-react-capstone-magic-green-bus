@@ -12,7 +12,7 @@ export default function About() {
   <p> IndyGo actively engages with the community through various outreach programs, partnerships, and initiatives aimed at improving public transportation access and sustainability efforts in Indianapolis.</p>
 </div>
 <div className='Hero-Image'>
-  <img  className='Hero-Image' src='https://www.swg.com/can/wp-content/uploads/sites/38/2014/09/About-us-banner.jpg'></img>
+  <img  className='Hero-Image' src='https://www.swg.com/can/wp-content/uploads/sites/38/2014/09/About-us-banner.jpg' alt="about us banner" />
 </div>
 
     <div className='Contact-Container-Row'>
@@ -55,4 +55,3 @@ export default function About() {
   </>
   );
 }
-

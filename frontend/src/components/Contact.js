@@ -16,7 +16,7 @@ export default function Contact() {
         volutpat leo, at fermentum neque. Aliquam erat volutpat. Fusce auctor
         sapien a mauris ullamcorper, a interdum elit vehicula. Phasellus in
       </p>
-      <div class='IndyContact'>
+      <div className='IndyContact'>
         <a
           style={{
             color: 'blue',
