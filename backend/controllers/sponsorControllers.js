@@ -59,7 +59,6 @@ exports.updateSponsor = async (req, res) => {
 // DELETE == 'delete' a sponsor
 //delete sign up - delete - /sponsor/delete/:username
 exports.deleteSponsor = async (req, res) => {
-  console.log("we are here");
   const { username } = req.params;
   try {
     const sponsor = await Sponsor.findOne({ name: username }); //test this
