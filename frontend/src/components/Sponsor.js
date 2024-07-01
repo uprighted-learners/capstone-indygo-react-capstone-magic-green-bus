@@ -11,10 +11,8 @@ export default function SponsorRegister() {
   const [name, setName] = useState("");
   const location = useLocation(); // Retrieve selected location from previous page (map)
   const [locationInput, setLocationInput] = useState("");
-  const [userId, setUserId] = useState("");
   const [datesOfSponsoring, setDatesOfSponsoring] = useState([]);
 
-  const isLoggedIn = localStorage.getItem("token") ? true : false;
 
   const selectedLocation = location.state?.location; // Get selected location from state from map.js
 
@@ -55,7 +53,6 @@ export default function SponsorRegister() {
 
         setDatesOfSponsoring([]);
 
-        setUserId("");
         alert("User created successfully!");
       } else if (response.status === 409) {
         alert("Location already sponsored!");
