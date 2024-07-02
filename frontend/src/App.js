@@ -1,14 +1,14 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import NavBar from './NavBar';
-import About from './components/About';
-import Auth from './components/Auth';
-import Contact from './components/Contact';
-import Sponsor from './components/Sponsor';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import NavBar from "./NavBar";
+import About from "./components/About";
+import Auth from "./components/Auth";
+import Contact from "./components/Contact";
+import Sponsor from "./components/Sponsor";
 
-import Footer from './components/Footer';
+import Footer from "./components/Footer";
 
-import Map from './components/Map';
+import Map from "./components/Map";
 
 function App() {
   return (
@@ -16,12 +16,12 @@ function App() {
       <NavBar />
 
       <Routes>
-        {/* <Route path='/home' element={<Home />} /> */}
-        <Route path='/' element={<About />} />
-        <Route path='/auth' element={<Auth />} />
-        <Route path='/contact' element={<Contact />} />
-        <Route path='/sponsor' element={<Sponsor />} />
-        <Route path='/map' element={<Map />} />
+        {/* <Route path="/home" element={<Home />} /> */}
+        <Route path="/" element={<About />} />
+        <Route path="/auth" element={<Auth />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/sponsor" element={<Sponsor />} />
+        <Route path="/map" element={<Map />} />
       </Routes>
       <Footer />
     </Router>
@@ -29,4 +29,3 @@ function App() {
 }
 
 export default App;
-

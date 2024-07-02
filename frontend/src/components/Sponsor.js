@@ -8,7 +8,6 @@ export default function SponsorRegister() {
   const location = useLocation(); // Retrieve selected location from previous page (map)
   const [locationInput, setLocationInput] = useState("");
   const [userId, setUserId] = useState("");
-  const [datesOfSponsoring, setDatesOfSponsoring] = useState([]);
   const selectedLocation = location.state?.location; // Get selected location from state from map.js
 
   //use effect hook to allow the set location autfill to work along with be able to change the location if needed
@@ -20,7 +19,6 @@ export default function SponsorRegister() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(datesOfSponsoring);
     try {
       const response = await fetch(
         "http://localhost:8080/sponsor/create", //go check registerSponsor in backend/routes/sponsorRoutes to make sure names match.js
@@ -32,7 +30,6 @@ export default function SponsorRegister() {
           body: JSON.stringify({
             name,
             location: locationInput,
-            datesOfSponsoring,
           }),
         }
       );
@@ -45,8 +42,6 @@ export default function SponsorRegister() {
         console.log(decoded);
         console.log(token);
 
-        setDatesOfSponsoring([]);
-
         setUserId("");
         alert("User created successfully!");
       } else if (response.status === 409) {
@@ -57,9 +52,6 @@ export default function SponsorRegister() {
     } catch (error) {
       alert(error.message);
     }
-  };
-  const changeDateArray = (e) => {
-    setDatesOfSponsoring((prevDatesOfSponsoring) => [e.target.value]);
   };
 
   return (
@@ -86,19 +78,16 @@ export default function SponsorRegister() {
             required
           />
           <br></br>
-          <label>Dates of Sponsorship:</label>
-          <input
-            type="datesOfSponsoring"
-            value={datesOfSponsoring}
-            onChange={(e) => changeDateArray(e)}
-            required
-          />
-
-          <br></br>
           {localStorage.getItem("token") ? (
-            <button onChange={console.log("hi")}> Click Me! </button>
+            <button onChange={console.log("hi")}> REGISTER</button>
           ) : (
-            <p>You must be logged in to view this button</p>
+            ((<p>You must be logged in to view this button</p>),
+            (
+              <p>
+                Sponsorship responsibilities will be held for 1 month, feel free
+                to responsor after that.
+              </p>
+            ))
           )}
         </form>
         <br></br>
@@ -106,9 +95,6 @@ export default function SponsorRegister() {
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVrsXtoBS6GbuRmp_-W0FftkzFOl9FkJrJWQ&s"
           alt="IndyGo Logo"
         />
-
-        <button type="submit">Register</button>
-
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
