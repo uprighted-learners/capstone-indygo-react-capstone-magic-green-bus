@@ -81,16 +81,14 @@ export default function SponsorRegister() {
           {localStorage.getItem("token") ? (
             <button onChange={console.log("hi")}> REGISTER</button>
           ) : (
-            ((<p>You must be logged in to view this button</p>),
-            (
-              <p>
-                Sponsorship responsibilities will be held for 1 month, feel free
-                to responsor after that.
-              </p>
-            ))
+            <p>You must be logged in to view this button</p>
           )}
         </form>
         <br></br>
+        <p>
+          Sponsorship responsibilities will be held for 1 month, feel free to
+          responsor after that.
+        </p>
         <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVrsXtoBS6GbuRmp_-W0FftkzFOl9FkJrJWQ&s"
           alt="IndyGo Logo"
