@@ -1,14 +1,12 @@
-import React, { useState, useEffect } from "react";
-import {  useLocation } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
-import { jwtDecode } from "jwt-decode";
+import { jwtDecode } from 'jwt-decode';
 
-import "./Sponsor.css";
-// import { useLocation } from "react-router-dom";
-
+import './Sponsor.css';
 
 export default function SponsorRegister() {
-  const [name, setName] = useState("");
+  const [name, setName] = useState('');
   const location = useLocation(); // Retrieve selected location from previous page (map)
   const [locationInput, setLocationInput] = useState("");
   const [userId, setUserId] = useState("");
@@ -21,38 +19,36 @@ export default function SponsorRegister() {
     }
   }, [selectedLocation]);
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await fetch(
-        "http://localhost:8080/sponsor/create", //go check registerSponsor in backend/routes/sponsorRoutes to make sure names match.js
+        'http://localhost:8080/sponsor/create', //go check registerSponsor in backend/routes/sponsorRoutes to make sure names match.js
         {
-          method: "POST",
+          method: 'POST',
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
           },
           body: JSON.stringify({
             name,
             location: locationInput,
           }),
-        }
+        },
       );
       console.log(response);
       if (response.ok) {
-        setName("");
-        setLocationInput("");
-        const token = localStorage.getItem("token");
+        setName('');
+        setLocationInput('');
+        const token = localStorage.getItem('token');
         const decoded = jwtDecode(token);
         console.log(decoded);
         console.log(token);
-
         setUserId("");
         alert("User created successfully!");
       } else if (response.status === 409) {
-        alert("Location already sponsored!");
+        alert('Location already sponsored!');
       } else {
-        alert("Failed to sponsor, please check information");
+        alert('Failed to sponsor, please check information');
       }
     } catch (error) {
       alert(error.message);
@@ -77,47 +73,28 @@ export default function SponsorRegister() {
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
-        /><br></br>
-
-        <label className='nameLabel-Sponsor'>Location:</label>
-        {/* <input
-
-
-  
-          type='text'
-          value={userId}
-          onChange={(e) => setUserId(e.target.value)}
-          required
         />
-
-
-          type="location"
-          value={locationInput}
-          onChange={(e) => setLocationInput(e.target.value)}
-          required
-        /> */}
-        <br></br>
-        <label className='sponsordates-Header'>Dates of Sponsorship:</label>
-        <input
-        className='input-sponsor'
-          type="datesOfSponsoring"
-          value={datesOfSponsoring}
-          onChange={(e) => changeDateArray(e)}
-          required
-        />
-
+            <br></br>
+          <label className='sponsordates-Header'>Dates of Sponsorship:</label>
+          <input
+            className='input-sponsor'
+            type='datesOfSponsoring'
+            value={datesOfSponsoring}
+            onChange={(e) => changeDateArray(e)}
+            required
+          />
 
           <br></br>
           <label>Location:</label>
           <input
-            type="location"
+            type='location'
             value={locationInput}
             onChange={(e) => setLocationInput(e.target.value)}
             required
           />
           <br></br>
           {localStorage.getItem("token") ? (
-            <button onChange={console.log("hi")}> REGISTER</button>
+            <button onChange={console.log("hi")}> REGISTER</button> 
           ) : (
             <p>You must be logged in to view this button</p>
           )}
@@ -128,8 +105,8 @@ export default function SponsorRegister() {
           responsor after that.
         </p>
         <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVrsXtoBS6GbuRmp_-W0FftkzFOl9FkJrJWQ&s"
-          alt="IndyGo Logo"
+          src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVrsXtoBS6GbuRmp_-W0FftkzFOl9FkJrJWQ&s'
+          alt='IndyGo Logo'
         />
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
@@ -179,9 +156,9 @@ export default function SponsorRegister() {
         <div className="aboutPic">
           <br></br>
           <img
-            style={{ width: "30%" }}
-            src="https://st2.depositphotos.com/3765139/6173/i/950/depositphotos_61730885-stock-photo-old-bus-retro-style2.jpg"
-            alt="IndyGo Bus"
+            style={{ width: '30%' }}
+            src='https://st2.depositphotos.com/3765139/6173/i/950/depositphotos_61730885-stock-photo-old-bus-retro-style2.jpg'
+            alt='IndyGo Bus'
           />
           <br></br>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
@@ -196,9 +173,9 @@ export default function SponsorRegister() {
         </div>
         <br></br>
         <img
-          style={{ width: "30%" }}
-          src="https://st2.depositphotos.com/3765139/6173/i/950/depositphotos_61730885-stock-photo-old-bus-retro-style2.jpg"
-          alt="IndyGo Bus"
+          style={{ width: '30%' }}
+          src='https://st2.depositphotos.com/3765139/6173/i/950/depositphotos_61730885-stock-photo-old-bus-retro-style2.jpg'
+          alt='IndyGo Bus'
         />
         <br></br>
         <div className="randomParagraph">
@@ -217,8 +194,8 @@ export default function SponsorRegister() {
         <br></br>
         <div className="contact-pic">
           <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1MItdHg7Dft465SwXLUCH5IkW6bwP53V4LduwJQhMDI_-jDbmKhihTQqtIcicppNOoyo&usqp=CAU"
-            alt="IndyGo Bus"
+            src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1MItdHg7Dft465SwXLUCH5IkW6bwP53V4LduwJQhMDI_-jDbmKhihTQqtIcicppNOoyo&usqp=CAU'
+            alt='IndyGo Bus'
           />
         </div>
         <br></br>
@@ -253,4 +230,3 @@ export default function SponsorRegister() {
     </>
   )
 };
-
