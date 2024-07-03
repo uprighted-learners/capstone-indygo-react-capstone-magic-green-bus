@@ -69,10 +69,12 @@ export default function SponsorRegister() {
   };
 
   return (
-
+<>
     
     <div className='sponsor-form-container'>
+
       <label className='sponsor-form-container2'>Sponsor a stop</label>
+
  
       <h2 className='New-Sponsor'>Register New Sponsor</h2>
       <br></br>
@@ -269,6 +271,7 @@ export default function SponsorRegister() {
         voluptatem.
       </p>
     </div>
+    </>
   )
 };
 
