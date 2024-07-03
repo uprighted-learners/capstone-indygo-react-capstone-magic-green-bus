@@ -109,7 +109,7 @@ export default function SponsorRegister() {
           voluptatem sequi nesciunt. Neque porro quisquam
         </p>
         <div className="sponsor-pic">
-          <h1>SPONSOR A STOP!</h1>
+          <h1>SPONSOR A STOP</h1>
           <br></br>
           <p>
             take the the take the time to sponsor a bus stop near you NOW!!!.
