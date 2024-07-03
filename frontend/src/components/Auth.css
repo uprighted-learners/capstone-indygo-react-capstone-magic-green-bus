@@ -7,12 +7,23 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
+h1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 35px;
 
+
+}
 .footer {
   position: fixed;
   margin-top: auto;
   display: flex;
-  color: green;
+  color:black;
   justify-content: center;
   font-size: 30px;
   position: fixed;

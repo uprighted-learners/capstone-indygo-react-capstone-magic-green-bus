@@ -4,9 +4,10 @@ import "./About.css";
 export default function About() {
   return (
     <>
+      <br></br>
       <div className="Contact-Container-Row">
         <h1 className="Row-Header">About Us</h1>
-        {/* < div className="Paragraph-Font"> */}
+        <br></br>
         <p>
           Hello, we are indygo, one of the largest transportation buissnesses in
           indeanapolis. A common goal among indygo is that of bettering the
@@ -16,12 +17,14 @@ export default function About() {
           feeling extra zestful, please think about setting up a time to sponsor
           a bus stop.{" "}
         </p>
+        <br></br>
         <div className="about-pic">
           <img
             style={{ width: "30%" }}
             src="https://st2.depositphotos.com/3765139/6173/i/950/depositphotos_61730885-stock-photo-old-bus-retro-style2.jpg"
             alt="IndyGo Bus"
           />
+          <br></br>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
           consequat nisi id risus malesuada, vitae commodo nulla efficitur. Sed
           at volutpat leo, at fermentum neque. Aliquam erat volutpat. Fusce
@@ -43,11 +46,13 @@ export default function About() {
           dui velit non nulla.
         </div>
       </div>
+      <br></br>
       <img
         style={{ width: "30%" }}
         src="https://st2.depositphotos.com/3765139/6173/i/950/depositphotos_61730885-stock-photo-old-bus-retro-style2.jpg"
         alt="IndyGo Bus"
       />
+      <br></br>
       <div className="randomParagraph">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
@@ -71,12 +76,14 @@ export default function About() {
           dui velit non nulla.
         </p>
       </div>
+      <br></br>
       <div className="contact-pic">
         <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1MItdHg7Dft465SwXLUCH5IkW6bwP53V4LduwJQhMDI_-jDbmKhihTQqtIcicppNOoyo&usqp=CAU"
           alt="IndyGo Bus"
         />
       </div>
+      <br></br>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim

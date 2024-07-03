@@ -16,12 +16,12 @@ export default function Auth() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
       });
-      console.log(response)
+      console.log(response);
       if (!response.ok) throw new Error(errorMessage);
       const data = await response.json();
       localStorage.setItem("token", data.token);
       localStorage.setItem("username", data.username);
-      alert('Authentication successful.');
+      alert("Authentication successful.");
       navigate("/");
       setUsername("");
       setPassword("");
@@ -30,8 +30,10 @@ export default function Auth() {
     }
   };
 
-  const loginUser = () => authenticateUser("http://localhost:8080/users/login", "Login failed");
-  const createUser = () => authenticateUser("http://localhost:8080/users/register", "Signup failed");
+  const loginUser = () =>
+    authenticateUser("http://localhost:8080/users/login", "Login failed");
+  const createUser = () =>
+    authenticateUser("http://localhost:8080/users/register", "Signup failed");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -46,7 +48,7 @@ export default function Auth() {
   const logoutUser = () => {
     localStorage.clear();
     setIsLoginMode(true);
-    alert('Logout successful.');
+    alert("Logout successful.");
     navigate("/");
   };
 
@@ -62,11 +64,21 @@ export default function Auth() {
       <form onSubmit={handleSubmit}>
         <label>
           Username:
-          <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} required />
+          <input
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+          />
         </label>
         <label>
           Password:
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
         </label>
         <button type="submit">{isLoginMode ? "Login" : "Sign Up"}</button>
       </form>
@@ -75,8 +87,14 @@ export default function Auth() {
         <button type="button" onClick={toggleLoginMode}>
           {isLoginMode ? "Sign Up" : "Login"}
         </button>
-        {isLoginMode && <button type="button" onClick={logoutUser}>Logout</button>}
-        <button type="button" onClick={continueAsGuest}>Continue as Guest</button>
+        {isLoginMode && (
+          <button type="button" onClick={logoutUser}>
+            Logout
+          </button>
+        )}
+        <button type="button" onClick={continueAsGuest}>
+          Continue as Guest
+        </button>
       </p>
     </div>
   );

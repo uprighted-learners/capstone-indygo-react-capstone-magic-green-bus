@@ -110,20 +110,21 @@ export default function SponsorRegister() {
         </p>
         <div className="sponsor-pic">
           <h1>SPONSOR A STOP!</h1>
-          <p c>
-            {" "}
+          <br></br>
+          <p>
             take the the take the time to sponsor a bus stop near you NOW!!!.
             With the value of your information that allow us to collect data,
             and build infastructure, we can provide fast bus stops all over
             indeanapolis. With your input we can return accurate bus stops
             accordingto your coordinats
           </p>
-
+          <br></br>
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVrsXtoBS6GbuRmp_-W0FftkzFOl9FkJrJWQ&s"
             alt="IndyGo Logo"
           />
         </div>
+        <br></br>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
           consequat nisi id risus malesuada, vitae commodo nulla efficitur. Sed
@@ -138,11 +139,13 @@ export default function SponsorRegister() {
           at ultricies pulvinar, orci
         </p>
         <div className="aboutPic">
+          <br></br>
           <img
             style={{ width: "30%" }}
             src="https://st2.depositphotos.com/3765139/6173/i/950/depositphotos_61730885-stock-photo-old-bus-retro-style2.jpg"
             alt="IndyGo Bus"
           />
+          <br></br>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
           consequat nisi id risus malesuada, vitae commodo nulla efficitur. Sed
           at volutpat leo, at fermentum neque. Aliquam erat volutpat. Fusce
@@ -153,11 +156,13 @@ export default function SponsorRegister() {
           Morbi non metus nulla. Donec dictum fringilla nisl, eget consectetur
           felis tempus id. Cras et
         </div>
+        <br></br>
         <img
           style={{ width: "30%" }}
           src="https://st2.depositphotos.com/3765139/6173/i/950/depositphotos_61730885-stock-photo-old-bus-retro-style2.jpg"
           alt="IndyGo Bus"
         />
+        <br></br>
         <div className="randomParagraph">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -171,12 +176,14 @@ export default function SponsorRegister() {
             nisl, eget consectetur
           </p>
         </div>
+        <br></br>
         <div className="contact-pic">
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1MItdHg7Dft465SwXLUCH5IkW6bwP53V4LduwJQhMDI_-jDbmKhihTQqtIcicppNOoyo&usqp=CAU"
             alt="IndyGo Bus"
           />
         </div>
+        <br></br>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad

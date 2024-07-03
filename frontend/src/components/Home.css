@@ -13,9 +13,9 @@ body {
   position: fixed;
   margin-top: auto;
   display: flex;
-  color: green;
+  color: rgb(11, 1, 1);
   justify-content: center;
-  font-size: 30px;
+  font-size: 20px;
   position: fixed;
   left: 0;
   bottom: 0;
