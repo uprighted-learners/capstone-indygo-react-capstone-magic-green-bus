@@ -1,22 +1,19 @@
-import React, { useState, useEffect } from "react";
-import {  useLocation } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
-import { jwtDecode } from "jwt-decode";
+import { jwtDecode } from 'jwt-decode';
 
-import "./Sponsor.css";
+import './Sponsor.css';
 // import { useLocation } from "react-router-dom";
 
-
 export default function SponsorRegister() {
-  const [name, setName] = useState("");
+  const [name, setName] = useState('');
   const location = useLocation(); // Retrieve selected location from previous page (map)
-  const [locationInput, setLocationInput] = useState("");
-  const [userId, setUserId] = useState("");
+  const [locationInput, setLocationInput] = useState('');
+  const [userId, setUserId] = useState('');
   const [datesOfSponsoring, setDatesOfSponsoring] = useState([]);
 
-  const [UserId,setUserId] = useState('')
-
-  const isLoggedIn = localStorage.getItem("token") ? true : false;
+  const isLoggedIn = localStorage.getItem('token') ? true : false;
 
   const selectedLocation = location.state?.location; // Get selected location from state from map.js
 
@@ -27,42 +24,41 @@ export default function SponsorRegister() {
     }
   }, [selectedLocation]);
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(datesOfSponsoring);
     try {
       const response = await fetch(
-        "http://localhost:8080/sponsor/create", //go check registerSponsor in backend/routes/sponsorRoutes to make sure names match.js
+        'http://localhost:8080/sponsor/create', //go check registerSponsor in backend/routes/sponsorRoutes to make sure names match.js
         {
-          method: "POST",
+          method: 'POST',
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
           },
           body: JSON.stringify({
             name,
             location: locationInput,
             datesOfSponsoring,
           }),
-        }
+        },
       );
       console.log(response);
       if (response.ok) {
-        setName("");
-        setLocationInput("");
-        const token = localStorage.getItem("token");
+        setName('');
+        setLocationInput('');
+        const token = localStorage.getItem('token');
         const decoded = jwtDecode(token);
         console.log(decoded);
         console.log(token);
 
         setDatesOfSponsoring([]);
 
-        setUserId("");
-        alert("User created successfully!");
+        setUserId('');
+        alert('User created successfully!');
       } else if (response.status === 409) {
-        alert("Location already sponsored!");
+        alert('Location already sponsored!');
       } else {
-        alert("Failed to sponsor, please check information");
+        alert('Failed to sponsor, please check information');
       }
     } catch (error) {
       alert(error.message);
@@ -73,29 +69,27 @@ export default function SponsorRegister() {
   };
 
   return (
-
-    
     <div className='sponsor-form-container'>
-      <label className='sponsor-form-container2'>Sponsor a stop
-\
- 
-      <h2 className='New-Sponsor'>Register New Sponsor</h2>
-      <br></br>
-      <form onSubmit={handleSubmit}>
-        <label className='nameLabel-Sponsor'>Name:</label>
-        <input className='NameInput-sponsor'
-          list="name-options"
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        /><br></br>
+      <label className='sponsor-form-container2'>
+        Sponsor a stop \<h2 className='New-Sponsor'>Register New Sponsor</h2>
+        <br></br>
+        <form onSubmit={handleSubmit}>
+          <label className='nameLabel-Sponsor'>Name:</label>
+          <input
+            className='NameInput-sponsor'
+            list='name-options'
+            type='text'
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+          <br></br>
 
-        <label className='nameLabel-Sponsor'>Location:</label>
-        {/* <input
+          <label className='nameLabel-Sponsor'>Location:</label>
+          {/* <input
 
 
-  
+
           type='text'
           value={userId}
           onChange={(e) => setUserId(e.target.value)}
@@ -108,21 +102,20 @@ export default function SponsorRegister() {
           onChange={(e) => setLocationInput(e.target.value)}
           required
         /> */}
-        <br></br>
-        <label className='sponsordates-Header'>Dates of Sponsorship:</label>
-        <input
-        className='input-sponsor'
-          type="datesOfSponsoring"
-          value={datesOfSponsoring}
-          onChange={(e) => changeDateArray(e)}
-          required
-        />
-
+          <br></br>
+          <label className='sponsordates-Header'>Dates of Sponsorship:</label>
+          <input
+            className='input-sponsor'
+            type='datesOfSponsoring'
+            value={datesOfSponsoring}
+            onChange={(e) => changeDateArray(e)}
+            required
+          />
 
           <br></br>
           <label>Location:</label>
           <input
-            type="location"
+            type='location'
             value={locationInput}
             onChange={(e) => setLocationInput(e.target.value)}
             required
@@ -130,31 +123,39 @@ export default function SponsorRegister() {
           <br></br>
           <label>Dates of Sponsorship:</label>
           <input
-            type="datesOfSponsoring"
+            type='datesOfSponsoring'
             value={datesOfSponsoring}
             onChange={(e) => changeDateArray(e)}
             required
           />
 
           <br></br>
-          {localStorage.getItem("token") ? (
-            <button onChange={console.log("hi")}> Click Me! </button>
+          {localStorage.getItem('token') ? (
+            <button onChange={console.log('hi')}> Click Me! </button>
+          ) : (
+            <p>You must be logged in to view this button</p>
+          )}
+          {/* </form> */}
+          <br></br>
+          {localStorage.getItem('token') ? (
+            <button className='ternary-button' onChange={console.log('hi')}>
+              {' '}
+              Click Me!{' '}
+            </button>
           ) : (
             <p>You must be logged in to view this button</p>
           )}
         </form>
-        <br></br>
-   { localStorage.getItem("token") ? <button className='ternary-button'onChange={console.log("hi")}> Click Me! </button> : <p>You must be logged in to view this button</p> }
-   </form></label>
+      </label>
 
-      <form><br></br>
-      <img
+      <form>
+        <br></br>
+        <img
           src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVrsXtoBS6GbuRmp_-W0FftkzFOl9FkJrJWQ&s'
           alt='IndyGo Logo'
         />
 
         <button type='submit'>Register</button>
-
       </form>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
@@ -163,15 +164,20 @@ export default function SponsorRegister() {
         voluptatem.
       </p>
 
-
       <div className='sponsor-pic'>
         <h1>SPONSOR A STOP!</h1>
-      <p c> take the the take the time to sponsor a bus stop near you NOW!!!. With the value of your information that allow us to collect data, and build infastructure, we can provide fast bus stops all over indeanapolis. With your input we can return accurate bus stops accordingto your coordinats</p>
-
+        <p c>
+          {' '}
+          take the the take the time to sponsor a bus stop near you NOW!!!. With
+          the value of your information that allow us to collect data, and build
+          infastructure, we can provide fast bus stops all over indeanapolis.
+          With your input we can return accurate bus stops accordingto your
+          coordinats
+        </p>
 
         <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVrsXtoBS6GbuRmp_-W0FftkzFOl9FkJrJWQ&s"
-          alt="IndyGo Logo"
+          src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVrsXtoBS6GbuRmp_-W0FftkzFOl9FkJrJWQ&s'
+          alt='IndyGo Logo'
         />
       </div>
       <p>
@@ -180,11 +186,11 @@ export default function SponsorRegister() {
         volutpat leo, at fermentum neque. Aliquam erat volutpat. Fusce auctor
         felis varius felis, et cursus dui velit non nulla.
       </p>
-      <div className="aboutPic">
+      <div className='aboutPic'>
         <img
-          style={{ width: "30%" }}
-          src="https://st2.depositphotos.com/3765139/6173/i/950/depositphotos_61730885-stock-photo-old-bus-retro-style2.jpg"
-          alt="IndyGo Bus"
+          style={{ width: '30%' }}
+          src='https://st2.depositphotos.com/3765139/6173/i/950/depositphotos_61730885-stock-photo-old-bus-retro-style2.jpg'
+          alt='IndyGo Bus'
         />
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
         consequat nisi id risus malesuada, vitae commodo nulla efficitur. Sed at
@@ -193,25 +199,22 @@ export default function SponsorRegister() {
         felis varius felis, et cursus dui velit non nulla.
       </div>
       <img
-        style={{ width: "30%" }}
-        src="https://st2.depositphotos.com/3765139/6173/i/950/depositphotos_61730885-stock-photo-old-bus-retro-style2.jpg"
-        alt="IndyGo Bus"
+        style={{ width: '30%' }}
+        src='https://st2.depositphotos.com/3765139/6173/i/950/depositphotos_61730885-stock-photo-old-bus-retro-style2.jpg'
+        alt='IndyGo Bus'
       />
-      <div className="randomParagraph">
+      <div className='randomParagraph'>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
           risus id facilisis ullamcorper, libero felis varius felis, et cursus
           dui velit non nulla.
-
-
-        <button type="submit">Register</button>
-
+          <button type='submit'>Register</button>
         </p>
-        <div className="aboutPic">
+        <div className='aboutPic'>
           <img
-            style={{ width: "30%" }}
-            src="https://st2.depositphotos.com/3765139/6173/i/950/depositphotos_61730885-stock-photo-old-bus-retro-style2.jpg"
-            alt="IndyGo Bus"
+            style={{ width: '30%' }}
+            src='https://st2.depositphotos.com/3765139/6173/i/950/depositphotos_61730885-stock-photo-old-bus-retro-style2.jpg'
+            alt='IndyGo Bus'
           />
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
           consequat nisi id risus malesuada, vitae commodo nulla efficitur. Sed
@@ -224,11 +227,11 @@ export default function SponsorRegister() {
           felis tempus id. Cras et
         </div>
         <img
-          style={{ width: "30%" }}
-          src="https://st2.depositphotos.com/3765139/6173/i/950/depositphotos_61730885-stock-photo-old-bus-retro-style2.jpg"
-          alt="IndyGo Bus"
+          style={{ width: '30%' }}
+          src='https://st2.depositphotos.com/3765139/6173/i/950/depositphotos_61730885-stock-photo-old-bus-retro-style2.jpg'
+          alt='IndyGo Bus'
         />
-        <div className="randomParagraph">
+        <div className='randomParagraph'>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Pellentesque consequat nisi id risus malesuada, vitae commodo nulla
@@ -241,10 +244,10 @@ export default function SponsorRegister() {
             nisl, eget consectetur
           </p>
         </div>
-        <div className="contact-pic">
+        <div className='contact-pic'>
           <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1MItdHg7Dft465SwXLUCH5IkW6bwP53V4LduwJQhMDI_-jDbmKhihTQqtIcicppNOoyo&usqp=CAU"
-            alt="IndyGo Bus"
+            src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1MItdHg7Dft465SwXLUCH5IkW6bwP53V4LduwJQhMDI_-jDbmKhihTQqtIcicppNOoyo&usqp=CAU'
+            alt='IndyGo Bus'
           />
         </div>
         <p>
@@ -275,6 +278,6 @@ export default function SponsorRegister() {
         voluptatem.
       </p>
     </div>
-  )
-};
+  );
+}
 
