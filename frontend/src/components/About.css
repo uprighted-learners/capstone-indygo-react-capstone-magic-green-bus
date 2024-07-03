@@ -5,12 +5,14 @@
 .Contact-Container-Row {
   display: flex;
   flex-direction: column;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .footer {
