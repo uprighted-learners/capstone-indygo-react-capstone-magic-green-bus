@@ -49,7 +49,9 @@ export default function About() {
         A few facts about Indygo that might prove instresting is the founding,  IndyGo, officially known as the Indianapolis Public Transportation Corporation (IPTC), was established in 1975 to oversee public transportation services in Indianapolis, Cultivating the Corporation sense 1975 has given IndyGo time to establish their desire, dedication, and discipline towards being the best.
       </p><br></br>
       <p>     Indiana. over the years the growth and expansion was very impressive, given IndyGo has become the largest public transportation service in the state of indiana serving Marion County. With our website handling all the stops in Marion County you can count on us to provide accurate information on the location, of your desired stop. </p>
+   </div>
     </>
+
   );
 }
 
