@@ -31,6 +31,11 @@
   margin: 20px 40px; /* Add some space between the items */
 
 }
+.Logo-indyGO{
+  width: 5%;
+  position: relative;
+  top: 60px;
+}
 
 a {
   text-decoration: none; /* Remove underline from links */
@@ -88,12 +93,72 @@ a:hover {
     position: relative;
     left: 60px;  
   }
+
+  .navItem6{
+ position: relative;
+ left: 70px;
+}
+.navItem7{
+  position: relative;
+  left: 80px;
+}
+.Logo-indyGO{
+  width: 5%;
+  position: relative;
+  top: 60px;
+}
+
 }
 @media only screen and (width: 899px) and (height: 863px) {
   /* Your CSS styles for this specific viewport size */
-  body {
-    /* Example styles */
-    background-color: lightblue;
+avWrapper{
+    display: flex;
+    top: -90px;
+    justify-content: center;
+    text-align: center;
+  }
+  .navList{
+    display: flex;
+    flex-direction: column; /* Arrange items vertically */
+    align-items: center; /* Align items to the start of the column */
+    position: relative;
+    right: 100px;
+    align-items: cen
+  }
+  .navItem {
+    font-size: 1.5em; /* Adjust font size for slightly bigger items */
+    margin-left: 15px; /* Adjust spacing between items */
+    margin-right: 15px; /* Adjust spacing between items */
+  }
+ .navItem2 {
+    font-size: 1.5em; /* Adjust font size for slightly bigger items */
+    margin-left: 15px; /* Adjust spacing between items */
+    margin-right: 15px; /* Adjust spacing between items */
+  }
+  .navItem3 {
+    font-size: 1.5em; /* Adjust font size for slightly bigger items */
+    margin-left: 15px; /* Adjust spacing between items */
+    margin-right: 15px; /* Adjust spacing between items */
+  }
+  .navItem4 {
+    font-size: 1.5em; /* Adjust font size for slightly bigger items */
+    margin-left: 15px; /* Adjust spacing between items */
+    margin-right: 15px; /* Adjust spacing between items */
+  }
+  .navItem5 {
+    font-size: 1.5em; /* Adjust font size for slightly bigger items */
+    margin-left: 15px; /* Adjust spacing between items */
+    margin-right: 15px; /* Adjust spacing between items */
+  }
+  .navItem6 {
+    font-size: 1.5em; /* Adjust font size for slightly bigger items */
+    margin-left: 15px; /* Adjust spacing between items */
+    margin-right: 15px; /* Adjust spacing between items */
+  }
+  .navItem7 {
+    font-size: 1.5em; /* Adjust font size for slightly bigger items */
+    margin-left: 15px; /* Adjust spacing between items */
+    margin-right: 15px; /* Adjust spacing between items */
   }
 
   /* Example additional styles */
@@ -106,12 +171,13 @@ a:hover {
 }
 @media only screen and (width: 599px) and (height: 972px) {
   /* Your CSS styles for this specific viewport size */
-  body {
-    /* Example styles */
-    background-color: red;
-  }
-
   /* Example additional styles */
+  .navWrapper{
+    display: flex;
+    top: -90px;
+    justify-content: center;
+    text-align: center;
+  }
   .container {
     /* Example styles */
     width: 80%;
@@ -120,10 +186,6 @@ a:hover {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 899px) {
-  .navList {
-
-    
-  }
   .navWrapper{
    display: flex;
     top: -90px;
@@ -184,9 +246,7 @@ a:hover {
   }
 }
 @media only screen and (min-width: 1200px) and (max-width: 1599px) {
-  body{
-    /* background-color: green; Optional: background color for the nav */
-  }
+
  .navList {
     flex-direction: row; /* Arrange items vertically */
 
@@ -194,8 +254,9 @@ a:hover {
 }
 
 @media only screen and (min-width: 1600px) {
-  body{
-    background-color: blue; /* Optional: background color for the nav */
-  }
+ .navWarpper{
+position: relative;
+
+ }
 
 }

@@ -165,7 +165,7 @@ export default function Auth() {
         <button type="button" onClick={toggleLoginMode}>
           {isLoginMode ? "Sign Up" : "Login"}
         </button>
-        { localStorage.getItem("token") ? <button   onClick={(logoutUser)} onChange={console.log("hi")}> Click Me! </button> : <p></p> }
+        <button   onClick={(logoutUser)} onChange={console.log("hi")}> Logout </button>
         <button id="guestButton" onClick={(continueGuest)}>Continue as Guest</button>
         {/* <button type='button' onClick={(updatePassword)}>Forgot your password?</button> */}
         {/* <button id='deleteButton'>Delete</button> */}

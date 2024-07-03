@@ -24,21 +24,21 @@ exports.createSponsor = async (req, res) => {
   const { name, userId, location, datesOfSponsoring } = sponsor;
   // const newSponsor = new Sponsor(sponsor);
   try {
-    const existingSponsor = await Sponsor.findOne({ location })
+    const existingSponsor = await Sponsor.findOne({ location });
     if (existingSponsor) {
       res.status(409).json({ message: "Location already sponsored" });
     } else {
-    //create new sponsor
-    const newSponsor = new Sponsor({
-      name,
-      userId,
-      location,
-      datesOfSponsoring,
-    });
+      //create new sponsor
+      const newSponsor = new Sponsor({
+        name,
+        userId,
+        location,
+        datesOfSponsoring,
+      });
 
-    await newSponsor.save();
-    res.status(201).json(newSponsor);
-  }
+      await newSponsor.save();
+      res.status(201).json(newSponsor);
+    }
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -56,11 +56,13 @@ exports.updateSponsor = async (req, res) => {
     res.status(409).json({ message: error.message });
   }
 };
-//DELETE == 'delete' a sponsor
+// DELETE == 'delete' a sponsor
+//delete sign up - delete - /sponsor/delete/:username
 exports.deleteSponsor = async (req, res) => {
-  const { id } = req.params;
+  const { username } = req.params;
   try {
-    const sponsor = await Sponsor.findByIdAndDelete(id);
+    const sponsor = await Sponsor.findOne({ name: username }); //test this
+    console.log(sponsor);
     res.json({ message: "Sponsor deleted successfully." });
   } catch (error) {
     res.status(409).json({ message: error.message });

@@ -4,6 +4,8 @@ const cors = require('cors'); // Importing the cors module
 require('dotenv').config(); // Importing the dotenv module
 const app = express(); // Importing the express module
 const { connect } = require('./db.js');
+
+//database connection
 connect();
 
 //middleware setup
@@ -19,6 +21,9 @@ app.use("/sponsor", sponsorRoutes); // Using the sponsorRoutes
 
 const authRoutes = require('./routes/authRoutes');
 app.use('/users', authRoutes);
+
+const stopsRoutes = require('./routes/stopsRoutes');
+app.use('/stops', stopsRoutes);
 
 // Importing PORT from the .env file
 const PORT = process.env.PORT || 3000;
