@@ -1,16 +1,30 @@
 import React from 'react';
 import './Home.css';
 
+import {Link } from 'react-router-dom'
+
 export default function Home() {
   return (
     <>
-      <h1>Home</h1>
-      <div className='img-home-wrapper'>
+      <div className='hero-section'>
         <img
-          src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYwJ1xdArBgOUhNBmbd86c_a6tgs_Xe_XJig4Zna7zdCsdrs5vCcYb0_91Z9Xa1gFJxQU&usqp=CAU'
+        className='Hero-Container-Img'
+          src='https://www.indygo.net/wp-content/uploads/2023/01/Homepage-Slider-Photos.png'
           alt='IndyGo Bus'
         />
       </div>
+   
+     <div className='hero-section-content'>
+     <h1>Beterring the community</h1><br></br>
+      <p>Every day, we're dedicated to enhancing Indiana's bus stops, one clean-up at a time. Join us — all we need are passionate locals like you!</p>    
+      <button type='submit'  className='Home-Button'> <Link to='/sponsor'>Sponsor a stop</Link></button>
+</div>
+<div className='flexbox-container'>
+<div className='box1'>text</div>
+<div className='box2'>text</div>
+<div className='box3'>test</div>
+</div>
+
     </>
   );
 }

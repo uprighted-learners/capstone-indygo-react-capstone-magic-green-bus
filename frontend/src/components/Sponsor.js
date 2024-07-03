@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
+import {  useLocation } from "react-router-dom";
+
 import { jwtDecode } from "jwt-decode";
-import { useLocation } from "react-router-dom";
+
 import "./Sponsor.css";
+// import { useLocation } from "react-router-dom";
+
 
 export default function SponsorRegister() {
   const [name, setName] = useState("");
@@ -16,6 +20,7 @@ export default function SponsorRegister() {
       setLocationInput(selectedLocation.id);
     }
   }, [selectedLocation]);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -55,19 +60,52 @@ export default function SponsorRegister() {
   };
 
   return (
-    <>
-      <div className="sponsor-form-container">
-        <h2 className="New-Sponsor">Register New Sponsor</h2>
+<>
+    
+    <div className='sponsor-form-container'>
+
+      <label className='sponsor-form-container2'>Sponsor a stop</label>
+
+ 
+      <h2 className='New-Sponsor'>Register New Sponsor</h2>
+      <br></br>
+      <form onSubmit={handleSubmit}>
+        <label className='nameLabel-Sponsor'>Name:</label>
+        <input className='NameInput-sponsor'
+          list="name-options"
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        /><br></br>
+
+        <label className='nameLabel-Sponsor'>Location:</label>
+        {/* <input
+
+
+  
+          type='text'
+          value={userId}
+          onChange={(e) => setUserId(e.target.value)}
+          required
+        />
+
+
+          type="location"
+          value={locationInput}
+          onChange={(e) => setLocationInput(e.target.value)}
+          required
+        /> */}
         <br></br>
-        <form onSubmit={handleSubmit}>
-          <label>Name:</label>
-          <input
-            list="name-options"
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
+        <label className='sponsordates-Header'>Dates of Sponsorship:</label>
+        <input
+        className='input-sponsor'
+          type="datesOfSponsoring"
+          value={datesOfSponsoring}
+          onChange={(e) => changeDateArray(e)}
+          required
+        />
+
 
           <br></br>
           <label>Location:</label>
@@ -204,6 +242,15 @@ export default function SponsorRegister() {
           ullam corporis suscipit laboriosam, nisi ut
         </p>
       </div>
+
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+        quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
+        eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
+        voluptatem.
+      </p>
+    </div>
     </>
-  );
-}
+  )
+};
+
