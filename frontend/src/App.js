@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './components/Home.js'
 import NavBar from './NavBar';
 import About from './components/About';
 import Auth from './components/Auth';
@@ -14,8 +13,7 @@ function App() {
     <Router>
       <NavBar />
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} />
+        <Route path='/' element={<About />} />
         <Route path='/auth' element={<Auth />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/sponsor' element={<Sponsor />} />
