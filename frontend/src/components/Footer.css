@@ -1,8 +1,18 @@
-.footer{
-    background-color: black;
+.footer {
+    background-color: #282c34;
     color: white;
-    font-size: 12px;
-    display: flex;
-    justify-content: center;
-    height: 30px;
-}
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    border-top: 4px solid #13a443;
+  }
+  
+  .footer p {
+    margin: 10px 0;
+  }
+  
+  .footer .Footer-Creators {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 20px;
+  }

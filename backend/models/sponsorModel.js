@@ -18,10 +18,10 @@ const sponsorSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  datesOfSponsoring: {
-    type: Array,
-    required: true,
-  },
+  // datesOfSponsoring: {
+  //   type: Array,
+  //   required: true,
+  // },
   expireAt: {
     type: Date,
     default: oneMonthFromNow,

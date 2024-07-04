@@ -7,8 +7,28 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
-
-
+h1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 35px;
+}
+.footer {
+  position: fixed;
+  margin-top: auto;
+  display: flex;
+  color:black;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(194, 192, 192, 0.671);
+  width: 50%;
+  height: 400px;
+  position: relative;
+}
 .container-section {
   padding: 20px;
   margin: 20px auto; 
@@ -18,11 +38,9 @@ body {
   justify-content: center;
   align-items: center;
   background-color: rgba(194, 192, 192, 0.671);
-
   width: 50%;
   height: 400px;
   position: relative;
-
 }
 .Login-Button{
   background-color: #00539F;

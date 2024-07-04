@@ -19,10 +19,6 @@ exports.registerNewUser = async (req, res) => {
       if (!req.body.username || !req.body.password) {
           throw new Error("Please provide username and password.");
       }
-      if (req.body.password.length < 6) {
-          throw new Error("Password must be at least 6 characters long.");
-      }
-
       const newUser = await user.save();
       res.status(201).json(newUser);
   } catch (error) {
@@ -47,7 +43,7 @@ exports.loginUser = async (req, res) => {
       throw new Error('invalid credentials')
       
       const token = jwt.sign({ id: user._id }, SALT);
-      res.json({ token });
+      res.status(200).json({ token });
     } catch (error) {
       console.log(error);
       res.status(400).json({ message: error.message });
