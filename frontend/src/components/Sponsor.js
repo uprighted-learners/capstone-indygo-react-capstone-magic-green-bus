@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-
-import { jwtDecode } from 'jwt-decode';
-
 import './Sponsor.css';
 
 export default function SponsorRegister() {
   const [name, setName] = useState('');
   const location = useLocation(); // Retrieve selected location from previous page (map)
   const [locationInput, setLocationInput] = useState("");
-  const [userId, setUserId] = useState("");
   const selectedLocation = location.state?.location; // Get selected location from state from map.js
 
   //use effect hook to allow the set location autfill to work along with be able to change the location if needed
@@ -39,12 +35,7 @@ export default function SponsorRegister() {
       if (response.ok) {
         setName('');
         setLocationInput('');
-        const token = localStorage.getItem('token');
-        const decoded = jwtDecode(token);
-        console.log(decoded);
-        console.log(token);
-        setUserId("");
-        alert("User created successfully!");
+        alert("Sponsor created successfully!");
       } else if (response.status === 409) {
         alert('Location already sponsored!');
       } else {
@@ -74,16 +65,6 @@ export default function SponsorRegister() {
           onChange={(e) => setName(e.target.value)}
           required
         />
-            <br></br>
-          <label className='sponsordates-Header'>Dates of Sponsorship:</label>
-          <input
-            className='input-sponsor'
-            type='datesOfSponsoring'
-            value={datesOfSponsoring}
-            onChange={(e) => changeDateArray(e)}
-            required
-          />
-
           <br></br>
           <label>Location:</label>
           <input
@@ -226,7 +207,6 @@ export default function SponsorRegister() {
         eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
         voluptatem.
       </p>
-    </div>
     </>
   )
 };
