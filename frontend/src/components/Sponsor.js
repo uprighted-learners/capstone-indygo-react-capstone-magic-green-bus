@@ -85,10 +85,6 @@ export default function SponsorRegister() {
           Sponsorship responsibilities will be held for 1 month, feel free to
           responsor after that.
         </p>
-        <img
-          src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVrsXtoBS6GbuRmp_-W0FftkzFOl9FkJrJWQ&s'
-          alt='IndyGo Logo'
-        />
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -104,7 +100,6 @@ export default function SponsorRegister() {
           odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
           voluptatem sequi nesciunt. Neque porro quisquam
         </p>
-        <div className="sponsor-pic">
           <h1>SPONSOR A STOP</h1>
           <br></br>
           <p>
@@ -114,99 +109,7 @@ export default function SponsorRegister() {
             indeanapolis. With your input we can return accurate bus stops
             accordingto your coordinats
           </p>
-          <br></br>
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVrsXtoBS6GbuRmp_-W0FftkzFOl9FkJrJWQ&s"
-            alt="IndyGo Logo"
-          />
         </div>
-        <br></br>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-          consequat nisi id risus malesuada, vitae commodo nulla efficitur. Sed
-          at volutpat leo, at fermentum neque. Aliquam erat volutpat. Fusce
-          auctor sapien a mauris ullamcorper, a interdum elit vehicula.
-          Phasellus in justo sit amet odio sodales vehicula sit amet eget magna.
-          Ut vel ligula vitae turpis dignissim lacinia. Curabitur sit amet eros
-          ut lacus aliquam blandit. Sed ut arcu purus. Suspendisse potenti.
-          Morbi non metus nulla. Donec dictum fringilla nisl, eget consectetur
-          felis tempus id. Cras et viverra turpis. Vestibulum faucibus dui in
-          velit vulputate, a cursus risus tristique. Integer scelerisque, metus
-          at ultricies pulvinar, orci
-        </p>
-        <div className="aboutPic">
-          <br></br>
-          <img
-            style={{ width: '30%' }}
-            src='https://st2.depositphotos.com/3765139/6173/i/950/depositphotos_61730885-stock-photo-old-bus-retro-style2.jpg'
-            alt='IndyGo Bus'
-          />
-          <br></br>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-          consequat nisi id risus malesuada, vitae commodo nulla efficitur. Sed
-          at volutpat leo, at fermentum neque. Aliquam erat volutpat. Fusce
-          auctor sapien a mauris ullamcorper, a interdum elit vehicula.
-          Phasellus in justo sit amet odio sodales vehicula sit amet eget magna.
-          Ut vel ligula vitae turpis dignissim lacinia. Curabitur sit amet eros
-          ut lacus aliquam blandit. Sed ut arcu purus. Suspendisse potenti.
-          Morbi non metus nulla. Donec dictum fringilla nisl, eget consectetur
-          felis tempus id. Cras et
-        </div>
-        <br></br>
-        <img
-          style={{ width: '30%' }}
-          src='https://st2.depositphotos.com/3765139/6173/i/950/depositphotos_61730885-stock-photo-old-bus-retro-style2.jpg'
-          alt='IndyGo Bus'
-        />
-        <br></br>
-        <div className="randomParagraph">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Pellentesque consequat nisi id risus malesuada, vitae commodo nulla
-            efficitur. Sed at volutpat leo, at fermentum neque. Aliquam erat
-            volutpat. Fusce auctor sapien a mauris ullamcorper, a interdum elit
-            vehicula. Phasellus in justo sit amet odio sodales vehicula sit amet
-            eget magna. Ut vel ligula vitae turpis dignissim lacinia. Curabitur
-            sit amet eros ut lacus aliquam blandit. Sed ut arcu purus.
-            Suspendisse potenti. Morbi non metus nulla. Donec dictum fringilla
-            nisl, eget consectetur
-          </p>
-        </div>
-        <br></br>
-        <div className="contact-pic">
-          <img
-            src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1MItdHg7Dft465SwXLUCH5IkW6bwP53V4LduwJQhMDI_-jDbmKhihTQqtIcicppNOoyo&usqp=CAU'
-            alt='IndyGo Bus'
-          />
-        </div>
-        <br></br>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum. Sed ut
-          perspiciatis unde omnis iste natus error sit voluptatem accusantium
-          doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-          inventore veritatis et quasi architecto beatae vitae dicta sunt
-          explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
-          odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-          voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum
-          quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
-          eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
-          voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem
-          ullam corporis suscipit laboriosam, nisi ut
-        </p>
-      </div>
-
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-        quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
-        eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
-        voluptatem.
-      </p>
     </>
   )
 };

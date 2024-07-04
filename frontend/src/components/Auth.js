@@ -50,72 +50,11 @@ export default function Auth() {
     alert("Logout successful.");
     navigate("/");
   };
-
-
-  // const updatePassword = async () => {//make a notification/form to navigate to when a button is selected
-  //   try {
-  //     const response = await fetch("http://localhost:3000/users/updateUser", {
-  //       method: "PUT",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({//allowing the user to change their password ONLY!
-  //         password: password,
-  //       }),
-  //     });
-  //     if (!response.ok) {
-  //       throw new Error("Update failed");
-  //     }
-  //     const data = await response.json();//parsing our data to be able to use it outside of our fetch
-
-  //     setUpdatedUserPassword('', data.password)//sas that the input field for setUpadtedUserPassword is expected to be a string that is directly related to the password our Database has already
-  //     alert("updated successfully.");//user feedback
-
-  //   } catch (error) {
-  //     console.error("Signup error:", error.message);
-  //   }
-  // };
-
-  
   
   const continueGuest = () => {
      setIsGuest(true);//just setting setIsGuest to true because we don't want that to count as being logged in incase permissions variy for logged in users vs Guests down the road
      navigate("/")
   }
-
-  // guestButton.addEventListener("click", function(){
-  //   continueGuest();
-  // })
-
-// if(isLoginMode) {
-//   localStorage.getItem("token").then()
-// }
-// const deleteUser = async () => {
-// try{
-//   const response = await fetch("http://localhost:3000/users/deleteUser", {
-//     method: "DELETE",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify({
-    
-      
-//     }),
-//   });
-//   if(!response.ok){
-//     throw new Error("Delete failed");
-//   }
-
-// }catch(error){
-// console.log(error);
-// }
-// }
-// const deleteButton = document.getElementById("deleteButton");
-// deleteButton.addEventListener("click", function(){
-//   const userId = this.localStorage.getItem("Id");
-//   console.log(userId)
-//   deleteUser(userId);
-// })
 
   return (
    <div>
