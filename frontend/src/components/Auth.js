@@ -5,10 +5,7 @@ import "./Auth.css";
 export default function Auth() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
-
   const [isLoginMode, setIsLoginMode] = useState(true); //tracking login state
-
   const [isGuest, setIsGuest] = useState(false);
   const navigate = useNavigate();
 
@@ -29,6 +26,7 @@ export default function Auth() {
       setUsername("");
       setPassword("");
     } catch (error) {
+      console.log(error);
       console.error("Authentication error:", error.message);
     }
   };
@@ -164,7 +162,9 @@ export default function Auth() {
         <button type="button" onClick={toggleLoginMode}>
           {isLoginMode ? "Sign Up" : "Login"}
         </button>
-        <button   onClick={(logoutUser)} onChange={console.log("hi")}> Logout </button>
+        {localStorage.getItem("token") && !isGuest ?
+        <button   onClick={(logoutUser)} onChange={console.log("hi")}> Logout </button> : null
+        }
         <button id="guestButton" onClick={(continueGuest)}>Continue as Guest</button>
       </p>
     </div>
