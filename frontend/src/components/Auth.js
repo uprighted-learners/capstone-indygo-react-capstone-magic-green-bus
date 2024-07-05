@@ -28,6 +28,9 @@ export default function Auth() {
     } catch (error) {
       console.log(error);
       console.error("Authentication error:", error.message);
+      // alert("Invalid credentials. Please try again.");  //quinn is working on this 
+      // setUsername("");
+      // setPassword("");
     }
   };
 
@@ -89,22 +92,22 @@ export default function Auth() {
           </>
          
         ): <div>
-          <label>username: 
+          <label>Username: 
           <input className='username-input-login'type='username' value={username} onChange={(e) => setUsername(e.target.value)} required></input><br></br>
           </label>
-          <label>password:<input  className='password-input-login' type='password' value={password} onChange={(e)=> setPassword(e.target.value)} required></input></label>
+          <label>Password:<input  className='password-input-login' type='password' value={password} onChange={(e)=> setPassword(e.target.value)} required></input></label>
          </div>}
         <button className='Login-Button' type="submit">{isLoginMode ? "Login" : "Sign Up"}</button>
       </form>
       <p>
         {isLoginMode ? "Don't have an account?" : "Already have an account?"}
-        <button type="button" onClick={toggleLoginMode}>
+        <button className="signup-or-login" type="button" onClick={toggleLoginMode}>
           {isLoginMode ? "Sign Up" : "Login"}
         </button>
         {localStorage.getItem("token") && !isGuest ?
-        <button   onClick={(logoutUser)} onChange={console.log("hi")}> Logout </button> : null
+        <button onClick={(logoutUser)} onChange={console.log("hi")}> Logout </button> : null
         }
-        <button id="guestButton" onClick={(continueGuest)}>Continue as Guest</button>
+        <button className="guestButton" onClick={(continueGuest)}>Continue as Guest</button>
       </p>
     </div>
    </div>
