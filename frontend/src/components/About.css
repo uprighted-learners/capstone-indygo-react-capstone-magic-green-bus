@@ -1,16 +1,19 @@
-.Home-Button {
+.Sponsor-Button-container{
   display: flex;
+  box-sizing: border-box;
   justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 50px;
+}
+
+.Sponsor-Button {
+  margin-top: 10vh;
+  padding: 20px;
   background-color: #3dae2b;
-  /* border: none; */
+  border: none;
   border-radius: 25px;
   font-size: 20px;
   font-weight: 600;
-  margin: 20px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 
