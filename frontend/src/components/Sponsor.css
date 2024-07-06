@@ -11,6 +11,8 @@ width: 33%;
      align-items: center;
      justify-content: center;
      background-color: rgba(201, 189, 189, 0.5);
+     position: relative;
+     left: 410px;
      text-wrap: wrap;
      
 }

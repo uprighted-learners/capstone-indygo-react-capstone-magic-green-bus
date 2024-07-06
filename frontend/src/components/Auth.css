@@ -1,19 +1,16 @@
-.img-home-wrapper img {
-  border: 5px solid black;
-}
 
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
-h1{
+.Login-Title{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 0;
-  color: white;
+  color: black;
   font-family: 'Times New Roman', Times, serif;
   font-size: 35px;
 }
@@ -64,6 +61,14 @@ h1{
   margin: 10px 0;
   cursor: pointer;
 }
+.signup-or-login {
+  margin: 0 5px;
+}
+
+.guestButton {
+  margin: 0 5px;
+}
+
 .signup-header{
   font-size: 40px;
   font-weight: 600;
@@ -75,6 +80,7 @@ h1{
 .prompt-overlay{
   font-size: small;
   display: flex;
+  color: black;
 
 }
 .username-input-login{
