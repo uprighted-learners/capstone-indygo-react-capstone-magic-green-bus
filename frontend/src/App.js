@@ -7,13 +7,14 @@ import Contact from "./components/Contact";
 import Sponsor from "./components/Sponsor";
 import Footer from "./components/Footer";
 import Map from "./components/Map";
+// import Home from "./components/Home";
 
 function App() {
   return (
     <Router>
       <NavBar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        {/* <Route path="/" element={<Home />} /> */}
         <Route path="/about" element={<About />} />
         <Route path="/auth" element={<Auth />} />
         <Route path="/contact" element={<Contact />} />
