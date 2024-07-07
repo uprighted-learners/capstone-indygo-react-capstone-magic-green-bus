@@ -1,8 +1,9 @@
 .nav-wrapper {
   background-color: #3dae2b;
-  margin: 30px;
+  margin: 0 auto;
   box-sizing: border-box;
   display: flex;
+  margin-bottom: 2em;
 }
 
 .nav-container {
@@ -53,17 +54,14 @@
     align-items: center;
     background-color: #3dae2b;
     width: 100%;
-    margin: 20px auto;
   }
 
   .nav-container {
-    margin: 20px auto;
   }
 
   .nav-name {
     display: inline-block;
     width: 100%;
-    margin: 20px;
   }
 }
 
@@ -73,7 +71,7 @@
     align-items: center;
     background-color: #3dae2b;
     width: 100%;
-    margin: 20px auto;
+    /* margin: 20px auto; */
   }
 
   .nav-container {

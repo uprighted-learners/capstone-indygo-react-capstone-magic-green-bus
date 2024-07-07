@@ -5,7 +5,7 @@ import "./Sponsor.css";
 export default function SponsorRegister() {
   const [name, setName] = useState("");
   const location = useLocation(); // Retrieve selected location from previous page (map)
-  const [locationInput, setLocationInput] = useState("");
+  const [locationInput, setLocationInput] = useState('');
   const selectedLocation = location.state?.location; // Get selected location from state from map.js
 
   //use effect hook to allow the set location autfill to work along with be able to change the location if needed
