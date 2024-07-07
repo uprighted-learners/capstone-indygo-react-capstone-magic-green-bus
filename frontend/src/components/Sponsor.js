@@ -89,22 +89,7 @@ export default function SponsorRegister() {
           </p>
         </div>
         <br></br>
-        <p>
-          Sponsorship responsibilities will be held for 1 month, feel free to
-          responsor after that.
-        </p>
 
-        <div className="Sponsor-Time">
-          <p>
-            Sponsorship responsibilities will be held for 1 month, feel free to
-            responsor after that.
-          </p>
-        </div>
-        <br></br>
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVrsXtoBS6GbuRmp_-W0FftkzFOl9FkJrJWQ&s"
-          alt="IndyGo Logo"
-        />
         <p className="lorem-text">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -120,7 +105,6 @@ export default function SponsorRegister() {
           odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
           voluptatem sequi nesciunt. Neque porro quisquam
         </p>
-        <h1>SPONSOR A STOP</h1>
         <br></br>
         <p className="lorem-text">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
@@ -133,6 +117,7 @@ export default function SponsorRegister() {
           Morbi non metus nulla. Donec dictum fringilla nisl, eget consectetur
           felis tempus id. Cras et
         </p>
+        <br></br>
       </div>
     </>
   );
