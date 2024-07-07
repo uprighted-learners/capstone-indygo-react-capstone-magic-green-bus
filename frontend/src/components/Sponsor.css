@@ -1,113 +1,109 @@
-
-.sponsor-form-container{
-    width: 40%;
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     justify-content: center;
-     background-color: rgba(201, 189, 189, 0.5);
-     position: relative;
-     left: 410px;
+.sponsor-form-container {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(201, 189, 189, 0.5);
+  position: relative;
+  left: 410px;
 }
-.New-Sponsor{
+.New-Sponsor {
+  color: white;
+}
+.sponsor-form-container2 {
+  width: 100%;
+  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: larger;
+  font-weight: 900;
+}
+.input-sponsor {
+  margin: 10px;
+  width: 150px;
+  height: 25px;
+}
+.sponsor-form-container2 {
+  display: flex;
+  justify-content: center;
+}
+.NameInput-sponsor {
+  margin: 10px;
+  width: 150px;
+  height: 25px;
+}
+.ternary-button {
+  margin: 10px;
+  width: 150px;
+  height: 25px;
+  border-radius: 2px;
+  background-color: #3dae2b;
+  color: white;
+  font-weight: 800;
+}
+@media only screen and (min-width: 299px) and (max-width: 863px) {
+  body {
+    padding: 0px;
+    margin: 0px;
+  }
+  .navList {
+    flex-direction: row; /* Arrange items vertically */
+    font-weight: 900;
+    font-size: 0.6rem;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+  }
+  .sponsor-form-container {
+    width: 30%;
+    display: block;
+    position: relative;
+  }
+  .New-Sponsor {
     color: white;
-}
-.sponsor-form-container2{
-    width: 100%;
-    display:block;
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     justify-content: center;
-     font-size: larger;
-     font-weight: 900;
-}
-.input-sponsor{
-    margin: 10px;
-    width: 150px;
-    height: 25px;
-}
-.sponsor-form-container2{
-display: flex;
-justify-content: center;
-}
-.NameInput-sponsor{
-    margin: 10px;
-    width: 150px;
-    height: 25px;
-}
-.ternary-button{
-    margin: 10px;
-    width: 150px;
-    height: 25px;
-    border-radius: 2px;
-    background-color: #3DAE2B;
-    color: white;
-    font-weight: 800;
-}
-@media only screen and (min-width: 299px) and (max-width: 863px){
-    body{
-      padding: 0px;
-      margin: 0px;
-    }
-    .navList {
-      flex-direction: row; /* Arrange items vertically */
-      font-weight: 900;
-     font-size: .60rem;
-     justify-content: center;
-     text-align: center;
-     width: 30%;
-    }
-    .sponsor-form-container{
-        width: 30%;
-        display:block;
-         position: relative;
-    }
-    .New-Sponsor{
-        color: white;
-    }
+  }
 }
 @media only screen and (min-width: 900px) and (max-width: 1199px) {
-   .navList {
-      flex-direction: row; /* Arrange items vertically */
-      font-weight: 900;
-     font-size: 1rem;
-    }
-    .sponsor-form-container{
-width: 30%;
-display:block;
- position: relative;
-    }
-    .sponsor-pic{
-position: relative;
-left:300px;
-bottom: 220px;
-    }
-
+  .navList {
+    flex-direction: row; /* Arrange items vertically */
+    font-weight: 900;
+    font-size: 1rem;
+  }
+  .sponsor-form-container {
+    width: 30%;
+    display: block;
+    position: relative;
+  }
+  .sponsor-pic {
+    position: relative;
+    left: 300px;
+    bottom: 220px;
+  }
 }
-.New-Sponsor{
-    width: 100%;
-    display: flex;
-    font-size: 50px;
-    color: white;
-    justify-content: center;
-    font-family: 'Times New Roman', Times, serif;
+.New-Sponsor {
+  width: 100%;
+  display: flex;
+  font-size: 50px;
+  color: white;
+  justify-content: center;
+  font-family: 'Times New Roman', Times, serif;
 }
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
-h1{
+h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color:white;
+  color: white;
   font-family: 'Times New Roman', Times, serif;
   font-size: 35px;
-
-
 }
 
 .footer {
@@ -122,3 +118,4 @@ h1{
   bottom: 0;
   width: 100%;
 }
+

@@ -6,7 +6,7 @@ import Auth from './components/Auth';
 import Contact from './components/Contact';
 import Sponsor from './components/Sponsor';
 import Footer from './components/Footer';
-import Map from "./components/Map";
+import Map from './components/Map';
 
 function App() {
   return (
@@ -25,3 +25,4 @@ function App() {
 }
 
 export default App;
+

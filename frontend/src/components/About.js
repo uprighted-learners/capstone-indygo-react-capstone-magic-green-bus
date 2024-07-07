@@ -9,10 +9,13 @@ export default function Home() {
         <h1>Bettering the community</h1>
         <br></br>
         <p>
-          Every day, we're dedicated to enhancing Indiana's bus stops, one
-          clean-up at a time. Join us — all we need are passionate locals like
-          you!
+          <strong>
+            Every day, we're dedicated to enhancing Indiana's bus stops, one
+            clean-up at a time. Join us — all we need are passionate locals like
+            you!
+          </strong>
         </p>
+
         <button type='submit' className='Home-Button'>
           <Link to='/sponsor'>Sponsor a stop</Link>
         </button>
