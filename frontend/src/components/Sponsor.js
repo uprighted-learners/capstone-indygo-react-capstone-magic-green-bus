@@ -93,7 +93,7 @@ export default function SponsorRegister() {
           Sponsorship responsibilities will be held for 1 month, feel free to
           responsor after that.
         </p>
-        <p>
+
         <div className="Sponsor-Time">
           <p>
             Sponsorship responsibilities will be held for 1 month, feel free to
@@ -120,20 +120,20 @@ export default function SponsorRegister() {
           odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
           voluptatem sequi nesciunt. Neque porro quisquam
         </p>
-          <h1>SPONSOR A STOP</h1>
-          <br></br>
-          <p className="lorem-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Pellentesque consequat nisi id risus malesuada, vitae commodo nulla
-            efficitur. Sed at volutpat leo, at fermentum neque. Aliquam erat
-            volutpat. Fusce auctor sapien a mauris ullamcorper, a interdum elit
-            vehicula. Phasellus in justo sit amet odio sodales vehicula sit amet
-            eget magna. Ut vel ligula vitae turpis dignissim lacinia. Curabitur
-            sit amet eros ut lacus aliquam blandit. Sed ut arcu purus.
-            Suspendisse potenti. Morbi non metus nulla. Donec dictum fringilla
-            nisl, eget consectetur felis tempus id. Cras et
-          </p>
-        </div>
+        <h1>SPONSOR A STOP</h1>
+        <br></br>
+        <p className="lorem-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+          consequat nisi id risus malesuada, vitae commodo nulla efficitur. Sed
+          at volutpat leo, at fermentum neque. Aliquam erat volutpat. Fusce
+          auctor sapien a mauris ullamcorper, a interdum elit vehicula.
+          Phasellus in justo sit amet odio sodales vehicula sit amet eget magna.
+          Ut vel ligula vitae turpis dignissim lacinia. Curabitur sit amet eros
+          ut lacus aliquam blandit. Sed ut arcu purus. Suspendisse potenti.
+          Morbi non metus nulla. Donec dictum fringilla nisl, eget consectetur
+          felis tempus id. Cras et
+        </p>
+      </div>
     </>
   );
 }
