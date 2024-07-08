@@ -1,4 +1,3 @@
-
 body {
   display: flex;
   flex-direction: column;
@@ -14,21 +13,21 @@ body {
   font-family: 'Times New Roman', Times, serif;
   font-size: 35px;
 }
-.footer {
+/* .footer {
   position: fixed;
   margin-top: auto;
   display: flex;
-  color:black;
+  color: black;
   justify-content: center;
   align-items: center;
   background-color: rgba(194, 192, 192, 0.671);
   width: 50%;
   height: 400px;
   position: relative;
-}
+} */
 .container-section {
   padding: 20px;
-  margin: 20px auto; 
+  margin: 20px auto;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -39,8 +38,8 @@ body {
   height: 400px;
   position: relative;
 }
-.Login-Button{
-  background-color: #00539F;
+.Login-Button {
+  background-color: #00539f;
   color: white;
   font-size: 20px;
   font-weight: 600;
@@ -50,7 +49,7 @@ body {
   margin: 10px 0;
   cursor: pointer;
 }
-.Login-Button:hover{
+.Login-Button:hover {
   background-color: #222160;
   color: white;
   font-size: 20px;
@@ -75,21 +74,19 @@ body {
   margin-bottom: 20px;
   position: relative;
   right: 260px;
-  bottom: 25%;;
+  bottom: 25%;
 }
-.prompt-overlay{
+.prompt-overlay {
   font-size: small;
   display: flex;
   color: black;
-
 }
-.username-input-login{
-  
- width: 250px;
+.username-input-login {
+  width: 250px;
   padding: 10px 20px;
   margin: 10px 0;
 }
-.password-input-login{
+.password-input-login {
   width: 250px;
   padding: 10px 20px;
   margin: 10px 0;
@@ -97,7 +94,7 @@ body {
 @media only screen and (min-width: 1600px) {
   .container-section {
     padding: 20px;
-    margin: 20px auto; 
+    margin: 20px auto;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -107,7 +104,6 @@ body {
     width: 50%;
     height: 430px;
     position: relative;
-  
   }
 
   .signup-header {
@@ -120,15 +116,15 @@ body {
   }
 }
 @media only screen and (max-width: 599px) {
-  .username-input-login{
-  
+  .username-input-login {
     width: 100px;
-     padding: 10px 20px;
-     margin: 10px 0;
-   }
-   .password-input-login{
-     width: 100px;
-     padding: 10px 20px;
-     margin: 10px 0;
-   }
+    padding: 10px 20px;
+    margin: 10px 0;
+  }
+  .password-input-login {
+    width: 100px;
+    padding: 10px 20px;
+    margin: 10px 0;
+  }
 }
+
