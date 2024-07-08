@@ -22,7 +22,7 @@ function App() {
         <Route path="/sponsor" element={<Sponsor />} />
         <Route path="/map" element={<Map />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </Router>
   );
 }

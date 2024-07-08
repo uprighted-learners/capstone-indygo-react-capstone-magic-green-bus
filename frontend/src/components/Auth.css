@@ -1,30 +1,8 @@
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
 .Login-Title{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
   color: black;
   font-family: 'Times New Roman', Times, serif;
   font-size: 35px;
 }
-/* .footer {
-  position: fixed;
-  margin-top: auto;
-  display: flex;
-  color: black;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(194, 192, 192, 0.671);
-  width: 50%;
-  height: 400px;
-  position: relative;
-} */
 .container-section {
   padding: 20px;
   margin: 20px auto;
@@ -38,8 +16,8 @@ body {
   height: 400px;
   position: relative;
 }
-.Login-Button {
-  background-color: #00539f;
+.Ternary-Button{
+  background-color: #00539F;
   color: white;
   font-size: 20px;
   font-weight: 600;
@@ -49,23 +27,35 @@ body {
   margin: 10px 0;
   cursor: pointer;
 }
-.Login-Button:hover {
-  background-color: #222160;
-  color: white;
-  font-size: 20px;
-  font-weight: 600;
-  border: none;
-  border-radius: 20px;
-  padding: 10px 20px;
-  margin: 10px 0;
-  cursor: pointer;
+.Ternary-Button:hover{
+  background-color: lightblue;
 }
 .signup-or-login {
-  margin: 0 5px;
+  background-color: #00539F;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin: 10px 0;
+  cursor: pointer;
 }
 
 .guestButton {
-  margin: 0 5px;
+  background-color: #00539F;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+.guestButton:hover{
+background-color: lightblue;
+transition: all 0.2s ease-in-out;
 }
 
 .signup-header{
@@ -91,6 +81,24 @@ body {
   padding: 10px 20px;
   margin: 10px 0;
 }
+.username-input-signup{
+  width: 250px;
+  padding: 10px 20px;
+  margin: 10px 0;
+}
+.password-input-signup{
+  width: 250px;
+  padding: 10px 20px;
+  margin: 10px 0;
+}
+
+.ternary-text{
+  font-size: small;
+  display: flex;
+  color: black;
+  position: relative;
+}
+
 @media only screen and (min-width: 1600px) {
   .container-section {
     padding: 20px;
@@ -105,26 +113,41 @@ body {
     height: 430px;
     position: relative;
   }
+  
 
   .signup-header {
     font-size: 40px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    position: relative;
-    right: 340px;
+    font-weight: 600;margin-bottom: 20px;
+    position: relative;right: 340px;
     bottom: 30%;
-  }
-}
+  }}
 @media only screen and (max-width: 599px) {
   .username-input-login {
     width: 100px;
-    padding: 10px 20px;
-    margin: 10px 0;
+     padding: 10px 20px;
+     margin: 10px 0;
+   }
+   .password-input-login{
+     width: 100px;
+     padding: 10px 20px;
+     margin: 10px 0;
+   }
+}
+@media only screen and (max-width: 952px){
+  .container-section{
+    width: 200px;
+    height: 450px;
+    position: relative;
   }
-  .password-input-login {
-    width: 100px;
+  .password-input-signup{
+    width: 120px;
     padding: 10px 20px;
-    margin: 10px 0;
+    margin: 10px 5px;
+  }
+  .usernaem-input-signup{
+    width: 120px;
+   padding: 10px 20px;
+   margin: 10px 5px;
   }
 }
 
