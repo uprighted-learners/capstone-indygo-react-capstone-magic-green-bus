@@ -8,7 +8,7 @@ function Footer() {
         Call our Customer Care Center: 317-635-3344 Relay Indiana: 711 or
         Email us at "example@email.com" (Indiana)
       </p>
-      <p className='Footer-Creators'>Creators</p>
+      <p className='Footer-Creators'>Site creators:</p>
       <ul className="footer-links">
         <li><a href="https://www.linkedin.com/in/quinn-lansbury-6a5a452b5/">Quinn</a></li>
         <li><a href="https://www.linkedin.com/in/ryan-fish-15791517b/">Ryan</a></li>

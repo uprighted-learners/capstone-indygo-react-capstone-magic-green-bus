@@ -13,6 +13,7 @@ body, html {
   }
   
   .footer {
+    border-top: 4px solid green;
     background-color: #333;
     color: white;
     text-align: center;
