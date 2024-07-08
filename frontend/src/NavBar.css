@@ -1,25 +1,24 @@
 .nav-wrapper {
   background-color: #3dae2b;
-  margin: 30px;
+  margin: 0 auto;
   box-sizing: border-box;
   display: flex;
+  margin-bottom: 2em;
 }
 
 .nav-container {
   display: flex;
   padding: 30px;
   justify-content: space-around;
-  margin: 30px;
   text-align: center;
   box-sizing: border-box;
   width: 100%;
-  height: 15vh;
+  margin: 20px auto;
 }
 
 .nav-name {
   color: white;
   font-size: 20px;
-  padding: 20px;
   display: inline-block;
   min-width: 80px;
   text-decoration: none;
@@ -40,7 +39,7 @@
     display: block;
     padding: 20px;
     margin: 10px auto;
-    margin-bottom: 9em;
+    margin-bottom: 1em;
   }
 
   .nav-name {
@@ -55,28 +54,24 @@
     align-items: center;
     background-color: #3dae2b;
     width: 100%;
-    margin: 20px auto;
   }
 
   .nav-container {
-    padding: 20px;
-    margin: 20px auto;
   }
 
   .nav-name {
     display: inline-block;
     width: 100%;
-    margin: 20px;
   }
 }
 
 @media screen and (min-width: 900px) and (max-width: 1199px) {
   .nav-wrapper {
-    /* flex-direction: column; */
+    flex-direction: column;
     align-items: center;
     background-color: #3dae2b;
     width: 100%;
-    margin: 20px auto;
+    /* margin: 20px auto; */
   }
 
   .nav-container {

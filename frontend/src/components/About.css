@@ -1,30 +1,16 @@
-.img-home-wrapper img {
-  border: 5px solid black;
+.hero-section {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(201, 189, 189, 0.5);
+
+  padding-top: 3em;
+
+  margin: 0 5%;
+  margin: 0 auto;
 }
 
-.Contact-Container-Row {
-  display: flex;
-  flex-direction: column;
-  font-family: 'Courier New', Courier, monospace;
-  margin-top: -480px;
-}
-  
-
-body {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  min-height: 100vh;
-  font-family: 'Courier New', Courier, monospace;
-}
-.Row-Header {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 40px;
-  color:white
-}
 
 /* .footer {
   position: fixed;
@@ -51,40 +37,22 @@ body {
   height: 100%;
   margin-top: -100px;
   padding: 5px;
+
+.hero-section h1 {
+  color: black;
 }
-.about-content{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  width: 95%;
-  height: 100%;
+.hero-section p {
+  color: black;
+
+}
+
+.Home-Button {
+  height: 50px;
+  background-color: red;
+  border-radius: 25px;
+  font-size: 20px;
+  font-weight: 600;
   margin: 20px;
-  padding: 5px;
+  cursor: pointer;
 }
-.Hero-Content{
-  display: flex-start;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  width: 95%;
-  height: 100%;
-  margin-top: -100px;
-  padding: 5px;
-}
- .Hero-Image{
-   position: relative;
-   top: -260px;
- left: 20px;
- width: 1250px;
- height: 250px;
- 
- }
-
- 
-
-
-
 
