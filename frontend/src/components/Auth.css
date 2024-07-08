@@ -17,7 +17,7 @@ h1{
   font-family: 'Times New Roman', Times, serif;
   font-size: 35px;
 }
-.footer {
+/* .footer {
   position: fixed;
   margin-top: auto;
   display: flex;
@@ -28,7 +28,7 @@ h1{
   width: 50%;
   height: 400px;
   position: relative;
-}
+} */
 .container-section {
   padding: 20px;
   margin: 20px auto; 

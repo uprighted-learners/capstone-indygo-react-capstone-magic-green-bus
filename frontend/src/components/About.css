@@ -26,7 +26,7 @@ body {
   color:white
 }
 
-.footer {
+/* .footer {
   position: fixed;
   margin-top: auto;
   display: flex;
@@ -40,7 +40,7 @@ body {
   height: 100%;
   margin-top: -100px;
   padding: 5px;
-}
+} */
 .Row-Header{
   display: flex;
   flex-direction: column;
