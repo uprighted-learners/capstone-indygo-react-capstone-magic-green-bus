@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');//authentication token depending on jsonwebt
 const SALT = process.env.SALT//uses enviroment variable assuming the salt rounds are set via .env
 
 
-exports.registerNewUser = async (req, res) => {
+exports.registerNewUser = async (req, res) => {//declares a async function that will be called when the user is registered, being executed by our req, res big arrow function
   try {
       const hashedPassword = await bcrypt.hash(req.body.password, 10);
 
@@ -19,30 +19,30 @@ exports.registerNewUser = async (req, res) => {
       if (!req.body.username || !req.body.password) {
           throw new Error("Please provide username and password.");
       }
-      const newUser = await user.save();
-      res.status(201).json(newUser);
-  } catch (error) {
-      console.error("Registration error:", error);
-      res.status(500).json({ message: error.message });
+      const newUser = await user.save();//saving our new user because user is already in our database/schema
+      res.status(201).json(newUser);//201 for successful registration/creation
+  } catch (error) {//the catch is important for catching all sorts of erorrs
+      console.error("Registration error:", error);//log it to the console just in case
+      res.status(500).json({ message: "internal server error" });//error of 500 means theirs an internal server erorr
   }
 };
 
 
 
-exports.loginUser = async (req, res) => {
+exports.loginUser = async (req, res) => {//decalres a function that will hold our try catch block and allow a user to login using async and our req,res 
     try {
-      const user = await User.findOne({username: req.body.username});
+      const user = await User.findOne({username: req.body.username});//will allow other code to wait from executing until the user is found 
       console.log(user)
-      if (!user) 
+      if (!user) //data validation  if the user is not a user throw an erorr
       throw new Error('invalid credentials')
        
       
      
-      const validPassword = await bcrypt.compare(req.body.password, user.password);
+      const validPassword = await bcrypt.compare(req.body.password, user.password);//comapres the entered password to the users password 
       if (!validPassword) 
       throw new Error('invalid credentials')
       
-      const token = jwt.sign({ id: user._id }, SALT);
+      const token = jwt.sign({ id: user._id }, SALT);//declaring a token variable to be used elsewhere and assigning the users token to their automatically assinged ID
       res.status(200).json({ token });
     } catch (error) {
       console.log(error);

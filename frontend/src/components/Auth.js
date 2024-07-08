@@ -77,7 +77,7 @@ export default function Auth() {
                 onChange={(e) => setUsername(e.target.value)}
                 required
               />
-            </label>
+            </label><br></br>
             <label>
               Password:
               <input
@@ -97,10 +97,11 @@ export default function Auth() {
           </label>
           <label>Password:<input  className='password-input-login' type='password' value={password} onChange={(e)=> setPassword(e.target.value)} required></input></label>
          </div>}
-        <button className='Login-Button' type="submit">{isLoginMode ? "Login" : "Sign Up"}</button>
+  
       </form>
-      <p>
-        {isLoginMode ? "Don't have an account?" : "Already have an account?"}
+      <div className='button-container'>
+      <button className='Ternary-Button' type="submit">{isLoginMode ? "Login" : "Sign Up"}</button>
+       <div className="ternary-text"> {isLoginMode ? "Don't have an account?" : "Already have an account?"}</div>
         <button className="signup-or-login" type="button" onClick={toggleLoginMode}>
           {isLoginMode ? "Sign Up" : "Login"}
         </button>
@@ -108,7 +109,7 @@ export default function Auth() {
         <button onClick={(logoutUser)} onChange={console.log("hi")}> Logout </button> : null
         }
         <button className="guestButton" onClick={(continueGuest)}>Continue as Guest</button>
-      </p>
+      </div>
     </div>
    </div>
   )
