@@ -74,9 +74,9 @@ export default function SponsorRegister() {
           <br></br>
           <div className="Register-buttons">
             {localStorage.getItem("token") ? (
-              <button onChange={console.log("hi")}> REGISTER</button>
+              <button> REGISTER</button>
             ) : (
-              <p>You must be logged in to view this button</p>
+              <p>You must be logged in to register.</p>
             )}
           </div>
         </form>
