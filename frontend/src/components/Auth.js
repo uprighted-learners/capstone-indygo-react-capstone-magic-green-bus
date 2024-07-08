@@ -16,7 +16,6 @@ export default function Auth() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
       });
-      console.log(response);
       if (!response.ok) throw new Error(errorMessage);
       const data = await response.json();
       localStorage.setItem("token", data.token);
@@ -28,9 +27,9 @@ export default function Auth() {
     } catch (error) {
       console.log(error);
       console.error("Authentication error:", error.message);
-      // alert("Invalid credentials. Please try again.");  //quinn is working on this 
-      // setUsername("");
-      // setPassword("");
+      alert("Invalid credentials. Please try again.");   
+      setUsername("");
+      setPassword("");
     }
   };
 
@@ -105,7 +104,7 @@ export default function Auth() {
           {isLoginMode ? "Sign Up" : "Login"}
         </button>
         {localStorage.getItem("token") && !isGuest ?
-        <button onClick={(logoutUser)} onChange={console.log("hi")}> Logout </button> : null
+        <button onClick={(logoutUser)}> Logout </button> : null
         }
         <button className="guestButton" onClick={(continueGuest)}>Continue as Guest</button>
       </p>
