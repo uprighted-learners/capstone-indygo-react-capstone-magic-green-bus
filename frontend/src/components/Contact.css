@@ -1,20 +1,52 @@
+.security-image {
+  width: 25%;
+  height: auto;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: flex;
+  margin: 0 auto;
+}
+
+.bus-image {
+  width: 25%;
+  height: 10%;
+  border-radius: 50%;
+  /* margin: 0 auto; */
+  /* display: flex; */
+  /* margin: 0 auto; */
+}
+
+.contact-image {
+  display: block;
+  width: 25%;
+  object-fit: cover;
+  object-position: center;
+
+  justify-content: flex-end;
+  align-self: center;
+  align-self: center;
+}
+
 .contact-content {
+  flex-direction: column;
+  display: block;
   margin: 0 auto;
   background-color: rgba(201, 189, 189, 0.5);
-  padding-bottom: 1em;
+  padding-bottom: 11em;
 }
 .contact-content p {
   display: flex;
   justify-content: space-evenly;
   padding: 1.1em;
   font-size: 1.5rem;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
+  /* padding-top: 5em; */
 }
 .contact-button {
   color: #551a8b;
   display: flex;
   font-size: 1.2rem;
-  margin-bottom: 30px;
+
   margin: 0 auto;
 }
 

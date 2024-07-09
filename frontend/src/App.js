@@ -8,21 +8,20 @@ import Sponsor from './components/Sponsor';
 import Footer from './components/Footer';
 import Map from './components/Map';
 
-
 function App() {
   return (
     <Router>
       <NavBar />
 
       <Routes>
-        {/* <Route path="/home" element={<Home />} /> */}
-        <Route path="/" element={<About />} />
-        <Route path="/auth" element={<Auth />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/sponsor" element={<Sponsor />} />
-        <Route path="/map" element={<Map />} />
+        {/* <Route path='/home' element={<Home />} /> */}
+        <Route path='/' element={<About />} />
+        <Route path='/auth' element={<Auth />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/sponsor' element={<Sponsor />} />
+        <Route path='/map' element={<Map />} />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </Router>
   );
 }
