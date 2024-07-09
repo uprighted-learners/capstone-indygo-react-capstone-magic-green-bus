@@ -9,7 +9,7 @@ export default function NavBar() {
     <nav className='nav-wrapper'>
       <div className='nav-container'>
         <Link to='/' className='nav-name'>
-          ABOUT
+          HOME
         </Link>
         <Link to='/map' className='nav-name'>
           MAP

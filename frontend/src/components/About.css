@@ -4,29 +4,10 @@
   align-items: center;
   text-align: center;
   background-color: rgba(201, 189, 189, 0.5);
-
   padding-top: 3em;
-
   margin: 0 5%;
   margin: 0 auto;
 }
-
-
-/* .footer {
-  position: fixed;
-  margin-top: auto;
-  display: flex;
-  color: black;
-  justify-content: center;
-  font-size: 20px;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  margin-top: -100px;
-  padding: 5px;
-} */
 
 .Row-Header{
   display: flex;
@@ -45,16 +26,24 @@
 }
 .hero-section p {
   color: black;
-
 }
 
+.Home-Button:hover {
+  background-color: lightblue;
+}
+.Home-Button a {
+  text-decoration: none;
+  color: white;
+}
 .Home-Button {
-  height: 50px;
-  background-color: red;
-  border-radius: 25px;
+  background-color: #00539F;
+  color: white;
   font-size: 20px;
   font-weight: 600;
-  margin: 20px;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin: 10px 0;
   cursor: pointer;
 }
 
