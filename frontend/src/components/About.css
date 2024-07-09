@@ -30,6 +30,7 @@
 
 .Home-Button:hover {
   background-color: lightblue;
+  transition: all 0.2s ease-in-out;
 }
 .Home-Button a {
   text-decoration: none;

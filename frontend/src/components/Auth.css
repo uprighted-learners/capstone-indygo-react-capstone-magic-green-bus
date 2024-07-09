@@ -59,8 +59,8 @@
   cursor: pointer;
 }
 .guestButton:hover{
-background-color: lightblue;
-transition: all 0.2s ease-in-out;
+  background-color: lightblue;
+  transition: all 0.2s ease-in-out;
 }
 
 .signup-header{
@@ -125,18 +125,19 @@ transition: all 0.2s ease-in-out;
     font-weight: 600;margin-bottom: 20px;
     position: relative;right: 340px;
     bottom: 30%;
-  }}
+  }
+}
 @media only screen and (max-width: 599px) {
   .username-input-login {
     width: 100px;
-     padding: 10px 20px;
-     margin: 10px 0;
-   }
+    padding: 10px 20px;
+    margin: 10px 0;
+  }
    .password-input-login{
-     width: 100px;
-     padding: 10px 20px;
-     margin: 10px 0;
-   }
+    width: 100px;
+    padding: 10px 20px;
+    margin: 10px 0;
+  }
 }
 @media only screen and (max-width: 952px){
   .container-section{
@@ -149,10 +150,10 @@ transition: all 0.2s ease-in-out;
     padding: 10px 20px;
     margin: 10px 5px;
   }
-  .usernaem-input-signup{
+  .username-input-signup{
     width: 120px;
-   padding: 10px 20px;
-   margin: 10px 5px;
+    padding: 10px 20px;
+    margin: 10px 5px;
   }
 }
 
