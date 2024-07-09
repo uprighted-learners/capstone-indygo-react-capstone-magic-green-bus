@@ -59,7 +59,7 @@ export default function Auth() {
   }
 
   return (
-   <div>
+   <div className="auth-wrapper">
         <div className="container-section">
       <h1 className='Login-Title'>{isLoginMode ? "Login" : "Sign Up"}
       <label className='prompt-overlay'>To Sponsor A Stop</label>

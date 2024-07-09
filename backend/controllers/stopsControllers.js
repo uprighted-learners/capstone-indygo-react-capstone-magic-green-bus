@@ -63,7 +63,6 @@ exports.getStops = async (req, res) => {
     try {
         // Fetch all stops from MongoDB
         const stops = await Stop.find();
-        console.log('fetched stops', stops);
         res.json(stops);
     } catch (error) {
         console.error('Error fetching stops:', error);
