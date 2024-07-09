@@ -26,9 +26,10 @@
   padding: 10px 20px;
   margin: 10px 0;
   cursor: pointer;
-}c
+}
 .Ternary-Button:hover{
   background-color: lightblue;
+  transition: all 0.2s ease-in-out;
 }
 .signup-or-login {
   background-color: #00539F;
@@ -40,6 +41,10 @@
   padding: 10px 20px;
   margin: 10px 0;
   cursor: pointer;
+}
+.signup-or-login:hover{
+  background-color: lightblue;
+  transition: all 0.2s ease-in-out;
 }
 
 .guestButton {
