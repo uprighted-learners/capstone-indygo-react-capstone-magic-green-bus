@@ -59,7 +59,7 @@ export default function Auth() {
   }
 
   return (
-   <div>
+   <div className="auth-wrapper">
         <div className="container-section">
       <h1 className='Login-Title'>{isLoginMode ? "Login" : "Sign Up"}
       <label className='prompt-overlay'>To Sponsor A Stop</label>
@@ -99,13 +99,13 @@ export default function Auth() {
   
       </form>
       <div className='button-container'>
-      <button className='Ternary-Button' type="submit">{isLoginMode ? "Login" : "Sign Up"}</button>
+      <button onClick={handleSubmit} className='Ternary-Button' type="submit">{isLoginMode ? "Login" : "Sign Up"}</button>
        <div className="ternary-text"> {isLoginMode ? "Don't have an account?" : "Already have an account?"}</div>
         <button className="signup-or-login" type="button" onClick={toggleLoginMode}>
           {isLoginMode ? "Sign Up" : "Login"}
         </button>
         {localStorage.getItem("token") && !isGuest ?
-        <button onClick={(logoutUser)}> Logout </button> : null
+        <button className="guestButton" onClick={(logoutUser)}> Logout </button> : null
         }
         <button className="guestButton" onClick={(continueGuest)}>Continue as Guest</button>
       </div>

@@ -5,7 +5,7 @@ import "./Sponsor.css";
 export default function SponsorRegister() {
   const [name, setName] = useState("");
   const location = useLocation(); // Retrieve selected location from previous page (map)
-  const [locationInput, setLocationInput] = useState('');
+  const [locationInput, setLocationInput] = useState("");
   const selectedLocation = location.state?.location; // Get selected location from state from map.js
 
   //use effect hook to allow the set location autfill to work along with be able to change the location if needed
@@ -49,7 +49,7 @@ export default function SponsorRegister() {
   return (
     <>
       <div className="sponsor-form-container">
-        <h2 className="New-Sponsor">Register New Sponsor</h2>
+        <h2>Register New Sponsor</h2> {/* Handled by Ryan */}
         <br></br>
         <form onSubmit={handleSubmit}>
           <div className="labels">
@@ -65,6 +65,7 @@ export default function SponsorRegister() {
             <br></br>
             <label className="locationLabel-Sponsor">Location:</label>
             <input
+              className="locationInput-sponsor"
               type="location"
               value={locationInput}
               onChange={(e) => setLocationInput(e.target.value)}
@@ -74,13 +75,12 @@ export default function SponsorRegister() {
           <br></br>
           <div className="Register-buttons">
             {localStorage.getItem("token") ? (
-              <button> REGISTER</button>
+              <button className="LoggedIn-Button"> REGISTER</button>
             ) : (
-              <p>You must be logged in to register.</p>
+              <p className="Guest-Message">You must be logged in to register.</p>
             )}
           </div>
         </form>
-
         <br></br>
         <div className="Sponsor-Time">
           <p>
@@ -89,7 +89,6 @@ export default function SponsorRegister() {
           </p>
         </div>
         <br></br>
-
         <p className="lorem-text">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
