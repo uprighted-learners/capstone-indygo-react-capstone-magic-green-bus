@@ -3,10 +3,28 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: rgba(201, 189, 189, 0.5);
   padding-top: 3em;
   margin: 0 5%;
   margin: 0 auto;
+  position: relative;
+  bottom: 237px;
+}
+.hero-image{
+
+  width: 100%;
+  height: 70%;
+ filter: brightness(30%)
+}
+.hero-text{
+color: WHITE;
+
+}
+.hero-header{
+color: white;
+}
+.paragraph-hero{
+  margin: -170px 20px;
+  font-size: 20px;
 }
 
 .Row-Header{
@@ -19,22 +37,6 @@
   height: 100%;
   margin-top: -100px;
   padding: 5px;
-}
-
-.hero-section h1 {
-  color: black;
-}
-.hero-section p {
-  color: black;
-}
-
-.Home-Button:hover {
-  background-color: lightblue;
-  transition: all 0.2s ease-in-out;
-}
-.Home-Button a {
-  text-decoration: none;
-  color: white;
 }
 .Home-Button {
   background-color: #00539F;
