@@ -65,6 +65,7 @@ export default function SponsorRegister() {
             <br></br>
             <label className="locationLabel-Sponsor">Location:</label>
             <input
+              className="locationInput-sponsor"
               type="location"
               value={locationInput}
               onChange={(e) => setLocationInput(e.target.value)}
@@ -74,9 +75,9 @@ export default function SponsorRegister() {
           <br></br>
           <div className="Register-buttons">
             {localStorage.getItem("token") ? (
-              <button> REGISTER</button>
+              <button className="LoggedIn-Button"> REGISTER</button>
             ) : (
-              <p>You must be logged in to register.</p>
+              <p className="Guest-Message">You must be logged in to register.</p>
             )}
           </div>
         </form>
