@@ -26,6 +26,7 @@
   background-color: rgba(201, 189, 189, 0.5);
   padding-bottom: 11em;
 }
+
 .contact-content p {
   display: flex;
   justify-content: center;
@@ -33,6 +34,7 @@
   font-size: 1.5rem;
   padding-top: 2em;
 }
+
 .contact-button {
   display: flex;
   margin: 0 auto;

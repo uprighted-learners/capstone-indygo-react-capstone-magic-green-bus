@@ -38,6 +38,13 @@
   transition: all 0.2s ease-in-out;
 }
 
+.lorem-text {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
 
 .Guest-Message {
   font-size: 18px;

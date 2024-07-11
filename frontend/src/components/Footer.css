@@ -12,7 +12,6 @@ body, html {
     min-height: 100vh;
   }
 
-  /* I added this, flex: 1 tells it to grow and take up all available space in the vertical direction, pushing the footer to the bottom, .content parent is #root */
   .content {
     flex: 1;
   }
@@ -23,12 +22,9 @@ body, html {
     color: white;
     text-align: center;
     padding: 1rem 0;
-    /* position: absolute; */
     bottom: 0;
     width: 100%;
     margin-top: auto; 
-    /* I added this to push the footer to the bottom, it consumes all available vertical space */
-    /* z-index: 100000; */
   }
   
   .footer p {

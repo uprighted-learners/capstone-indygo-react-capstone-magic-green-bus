@@ -3,6 +3,13 @@
     margin: 0;
     padding: 0;
   }
+
+  .Instruction {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(201, 189, 189, 0.5);
+    padding: 1vh;
+  }
   
   #root {
     height: 100vh;
@@ -12,7 +19,9 @@
   .leaflet-container {
     height: 100%;
   }
-  .Instruction{
-    color: black;
     
+  @media screen and (max-width: 899px) {
+    .Instruction {
+      font-size: large;
+    }
   }
