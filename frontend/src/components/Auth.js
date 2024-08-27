@@ -84,20 +84,19 @@ export default function Auth() {
                 type='password'
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                required
-              />
+                required/>
             </label>
-         
           </>
-         
         ): <div>
-          <label>Username: 
-          <input className='username-input-login'type='username' value={username} onChange={(e) => setUsername(e.target.value)} required></input><br></br>
+            <label>Username: 
+              <input className='username-input-login'type='username' value={username} onChange={(e) => setUsername(e.target.value)} required></input><br></br>
           </label>
-          <label>Password:<input  className='password-input-login' type='password' value={password} onChange={(e)=> setPassword(e.target.value)} required></input></label>
+          <label>Password:
+            <input  className='password-input-login' type='password' value={password} onChange={(e)=> setPassword(e.target.value)} required></input>
+            </label>
          </div>}
-  
       </form>
+
       <div className='button-container'>
       <button onClick={handleSubmit} className='Ternary-Button' type="submit">{isLoginMode ? "Login" : "Sign Up"}</button>
        <div className="ternary-text"> {isLoginMode ? "Don't have an account?" : "Already have an account?"}</div>
