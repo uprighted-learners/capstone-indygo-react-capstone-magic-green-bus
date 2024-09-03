@@ -1,0 +1,59 @@
+.hero-section {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 3em;
+  position: relative;
+  bottom: 237px;
+}
+
+.hero-image{
+  width: 100%;
+  height: 70%;
+  filter: brightness(30%)
+}
+
+.hero-text{
+  color: white;
+}
+
+.hero-header{
+  color: white;
+}
+
+.paragraph-wrapper {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  bottom: 100px;
+}
+
+.paragraph-hero{
+  width: 100%;
+  font-size: 20px;
+} 
+
+.Home-Button {
+  background-color: #00539F;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.Home-Button:hover{
+  background-color: lightblue;
+  transition: all 0.2s ease-in-out;
+}
+
+.Home-Button a {
+  color: white;
+  text-decoration: none;
+}
+

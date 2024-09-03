@@ -1,0 +1,76 @@
+.sponsor-form-container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(201, 189, 189, 0.5);
+  padding: 20px; 
+  width: 100%; 
+}
+
+.NameInput-sponsor {
+  width: 100%; 
+  height: 30px; 
+  margin: 5px 0;
+}
+.locationInput-sponsor {
+  width: 100%; 
+  height: 30px; 
+  margin: 10px 0; 
+}
+
+.LoggedIn-Button {
+  background-color: #00539F;
+  color: white;
+  font-size: 18px; 
+  font-weight: 600;
+  border: none;
+  border-radius: 20px;
+  padding: 12px 24px; 
+  cursor: pointer;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+.LoggedIn-Button:hover {
+  background-color: lightblue;
+  transition: all 0.2s ease-in-out;
+}
+
+.lorem-text {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.Guest-Message {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.Sponsor-Time {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+
+/* Media Query for smaller screens */
+@media only screen and (max-width: 768px) {
+  .sponsor-form-container {
+    width: 90%;
+    padding: 10px;
+  }
+  
+  .Register-buttons {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
+
+
+

@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .Instruction {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(201, 189, 189, 0.5);
+    padding: 1vh;
+  }
+  
+  #root {
+    height: 100vh;
+  }
+  
+  /* sizing of map container */
+  .leaflet-container {
+    height: 100%;
+  }
+    
+  @media screen and (max-width: 899px) {
+    .Instruction {
+      font-size: large;
+    }
+  }
