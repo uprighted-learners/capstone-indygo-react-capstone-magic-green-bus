@@ -103,12 +103,12 @@ export default function App() {
     // Navigate to the sponsor form route with the selected location data
     navigate("/sponsor", { state: { location } });
   };
-  <h1>Select a Bus Stop on the Map to Begin Sponsoring!</h1>;
+
   // Fetch data when component mounts
   useEffect(() => {
     fetchData();
   }, []); // Empty dependency array to run only once when component mounts
-
+  console.log(locations);
   return (
     <>
       <h1 className="Instruction">
@@ -116,14 +116,16 @@ export default function App() {
       </h1>
 
       {/* MapContainer component to render the map */}
-      <MapContainer center={[39.768577, -86.158098]} zoom={13}>
-        TileLayer component to add the base map layer
+      <MapContainer center={[44.5594, -73.0843]} zoom={13}> {/* Updated center to Essex, VT */}
+        {/* TileLayer component to add the base map layer */}
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         {/* Iterate over locations and add markers for each location */}
+        
         {locations.map((location) => (
+        
           <Marker
             key={location.id}
             position={[location.latitude, location.longitude]}

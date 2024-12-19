@@ -5,8 +5,8 @@ function Footer() {
   return (
     <footer className="footer">
       <p>
-        Call our Customer Care Center: 317-635-3344 Relay Indiana: 711 or
-        Email us at "example@email.com" (Indiana)
+        Call our Customer Care Center: 802-557-7719 Alex Aubin: 711 or
+        Email us at "example@email.com"
       </p>
       <p className='Footer-Creators'>Site creators:</p>
       <ul className="footer-links">

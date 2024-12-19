@@ -53,7 +53,7 @@ exports.loginUser = async (req, res) => {//decalres a function that will hold ou
     try {
         const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
         if (!updatedUser) {
-            return res.status(404).json({ message: "User not found" });
+          return res.status(404).json({ message: "User not found" });
         }
         res.status(200).json({ message: "User updated successfully", user: updatedUser });
     } catch (error) {

@@ -62,7 +62,7 @@ export default function Auth() {
    <div className="auth-wrapper">
         <div className="container-section">
       <h1 className='Login-Title'>{isLoginMode ? "Login" : "Sign Up"}
-      <label className='prompt-overlay'>To Sponsor A Stop</label>
+      <label className='prompt-overlay'>To become a sponsor, feel free to login</label>
       </h1>
       <form onSubmit={handleSubmit}>
         {!isLoginMode ? (

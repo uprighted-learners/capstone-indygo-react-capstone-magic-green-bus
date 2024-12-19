@@ -1,7 +1,7 @@
 import React from 'react';
 import './About.css';
 import { Link } from 'react-router-dom';
-import myImage from '../publicphotos/greenbus.jpg'
+import myImage from '../publicphotos/UELE4484.PNG'
 export default function Home() {
   return (
     <>
@@ -11,7 +11,7 @@ export default function Home() {
           <br></br>
           <p className='hero-text'>
             <strong>
-              Every day, we're dedicated to enhancing Indiana's bus stops, one
+              Every day, we're dedicated to enhancing Vermont's bus stops, one
               clean-up at a time. Join us — all we need are passionate locals like
               you!
             </strong>
@@ -22,12 +22,13 @@ export default function Home() {
       </div>
       <div className='paragraph-wrapper'>
         <p className='paragraph-hero'>
-          Indiana's bus service history is deeply intertwined with the evolution of public transportation in the United States. The state's bus service began in the early 20th century as an answer to the growing need for efficient and affordable mass transit. The rise of the automobile had reduced the demand for interurban railways, prompting cities and towns to explore bus services as a flexible and cost-effective alternative. The earliest buses were often converted trucks, which provided a rudimentary but essential service, linking rural areas to urban centers and helping to foster economic growth and social mobility.
-        <br></br>
-          The Great Depression and World War II era marked a significant period of transformation for Indiana's bus service. Economic hardships necessitated cost-effective transportation solutions, and buses filled this role admirably. The Indiana Motor Bus Association, established during this period, played a pivotal role in standardizing services, advocating for better infrastructure, and coordinating routes. The war effort also boosted bus usage as fuel rationing and manufacturing priorities limited car production, making buses a crucial component of the home front's transportation network. This period also saw the consolidation of many smaller bus companies, leading to more organized and reliable services.
-        <br></br>
-          Post-World War II, Indiana experienced a surge in suburbanization, which posed new challenges and opportunities for bus services. As populations moved to the suburbs, bus routes had to be expanded and adapted to cover greater distances and more dispersed destinations. The 1950s and 1960s saw significant investments in road infrastructure, which benefited bus services. Companies like Greyhound and Trailways became prominent players, providing extensive intercity and interstate connections that facilitated long-distance travel. However, the rise of private car ownership began to pose a threat to bus ridership, prompting service providers to innovate and improve the quality and frequency of their offerings.
-        </p>
+        Transportation in Vermont, particularly through the use of buses, has a rich history that reflects the state's commitment to accessibility and sustainability. The development of bus services in Vermont began in the early 20th century, as the need for reliable public transportation grew alongside the rise of the automobile. Initially, buses served as a crucial link between rural communities and urban centers, providing residents with access to jobs, education, and essential services. Over the decades, the state has seen a gradual expansion of its bus networks, with services like the Green Mountain Transit (GMT) playing a pivotal role in connecting various regions. GMT, which evolved from the Chittenden County Transportation Authority, has been instrumental in enhancing public transit options in the Burlington area and beyond.  </p>
+<br></br>
+<p className='paragraph-hero'>The importance of bus transportation in Vermont cannot be overstated, as it serves as a lifeline for many residents, particularly in rural areas where other forms of public transit are limited. Buses offer an affordable and environmentally friendly alternative to personal vehicles, helping to reduce traffic congestion and lower carbon emissions. This is particularly significant in Vermont, a state known for its commitment to environmental conservation and sustainability. Public transportation initiatives, including bus services, are supported by state policies aimed at reducing the carbon footprint and promoting green energy solutions. Additionally, buses provide essential services for those without access to private vehicles, including the elderly, students, and low-income individuals, thereby promoting social equity and inclusion.</p>
+
+<br></br>
+<p className='paragraph-hero'>In recent years, the growth of bus transportation in Vermont has been marked by efforts to modernize and expand services to meet the evolving needs of its population. This includes the introduction of more efficient and eco-friendly buses, such as those powered by electricity or alternative fuels. Vermont has also focused on improving the frequency and coverage of bus routes, making public transit more convenient and accessible. Technological advancements, such as real-time tracking and mobile ticketing, have further enhanced the user experience, encouraging more residents to opt for public transportation. As Vermont continues to prioritize sustainable development, the role of buses in the state's transportation landscape is expected to grow, supporting both economic growth and environmental stewardship.</p>
+      
       </div>
     </>
   );

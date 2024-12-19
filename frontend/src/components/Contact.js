@@ -41,7 +41,7 @@ export default function Contact() {
             className='contact-button'
             onClick={() =>
               alert(
-                'Please contact William @ 123-456-7894 if there are issues with the website',
+                'Please contact Alex@ 802-557-7719 if there are issues with the website',
               )
             }
           >

@@ -90,31 +90,11 @@ export default function SponsorRegister() {
         </div>
         <br></br>
         <p className="lorem-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum. Sed ut
-          perspiciatis unde omnis iste natus error sit voluptatem accusantium
-          doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-          inventore veritatis et quasi architecto beatae vitae dicta sunt
-          explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
-          odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-          voluptatem sequi nesciunt. Neque porro quisquam
+        Are you passionate about making a positive impact in your community? Our Bus Stop Sponsorship program allows you to take action by sponsoring a local bus stop for 30 days. Simply choose a bus stop in your area within Vermont, and take responsibility for its upkeep. Whether it's picking up litter, adding a fresh coat of paint, or simply keeping the area tidy, your efforts will help create a cleaner, more welcoming environment for everyone who uses the stop. This is your chance to be a visible force for good in your community while making a real difference in the places we all depend on.
         </p>
         <br></br>
         <p className="lorem-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-          consequat nisi id risus malesuada, vitae commodo nulla efficitur. Sed
-          at volutpat leo, at fermentum neque. Aliquam erat volutpat. Fusce
-          auctor sapien a mauris ullamcorper, a interdum elit vehicula.
-          Phasellus in justo sit amet odio sodales vehicula sit amet eget magna.
-          Ut vel ligula vitae turpis dignissim lacinia. Curabitur sit amet eros
-          ut lacus aliquam blandit. Sed ut arcu purus. Suspendisse potenti.
-          Morbi non metus nulla. Donec dictum fringilla nisl, eget consectetur
-          felis tempus id. Cras et
+        At the end of the 30-day sponsorship period, you can choose to either refresh your sponsorship or select a new bus stop to care for. Keep in mind that each individual can only sponsor one bus stop at a time, ensuring that as many people as possible can participate in this initiative. The goal of this program is to foster community pride, improve the appearance of public spaces, and bring neighbors together. By sponsoring a bus stop, you're not just helping to clean up an area—you're actively contributing to a better, more connected Vermont.
         </p>
         <br></br>
       </div>
