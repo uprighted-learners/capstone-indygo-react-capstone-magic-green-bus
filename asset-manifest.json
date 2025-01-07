@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.f1f3a12a.css",
+    "main.js": "/static/js/main.5954e52c.js",
+    "static/media/contact-page-image-1.png": "/static/media/contact-page-image-1.66e45421b0f580effbd9.png",
+    "static/media/contact-page-image-3.png": "/static/media/contact-page-image-3.837a1dd866368d4c6480.png",
+    "static/media/contact-page-image-2.png": "/static/media/contact-page-image-2.46f52dfefcd204014b25.png",
+    "static/media/bus-stop-image.png": "/static/media/bus-stop-image.fd696a9bad253c131991.png",
+    "static/media/greenbus.jpg": "/static/media/greenbus.6dd16902a554e7ec7106.jpg",
+    "index.html": "/index.html",
+    "main.f1f3a12a.css.map": "/static/css/main.f1f3a12a.css.map",
+    "main.5954e52c.js.map": "/static/js/main.5954e52c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f1f3a12a.css",
+    "static/js/main.5954e52c.js"
+  ]
+}
