@@ -1,4 +1,4 @@
-//use mongoose to connect to mongo db\
+//use mongoose to connect to mongo db\\
 const mongoose = require('mongoose');
 const MONGO_URI = process.env.MONGO_URI;
 
@@ -11,4 +11,33 @@ async function connect() {
     console.log(error);
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 module.exports = { connect, mongoose };
